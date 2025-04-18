@@ -62,6 +62,8 @@
     <link rel="stylesheet" href="{{asset('')}}assets/css/EmailVerify-Dp0-5g_d.css">
     <link rel="modulepreload" as="script" crossorigin="" href="{{asset('')}}assets/js/login-CQSdKFaq.js">
     <link rel="stylesheet" href="{{asset('')}}assets/css/login-CxmahPYR.css">
+    <link rel="icon"  href="{{ asset('static/img/logo2.png') }}">
+
 </head>
 
 <body class="">

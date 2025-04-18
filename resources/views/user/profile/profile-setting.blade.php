@@ -112,6 +112,8 @@
     <script charset="utf-8" src="/js1743475952730/chunk-0119f9da.fe8857a9.1743475952730.js?v=1743475952730"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('') }}static/css/chunk-0b116a05.250ed6be.css">
     <script charset="utf-8" src="/js1743475952730/chunk-0b116a05.fe8857a9.1743475952730.js?v=1743475952730"></script>
+    <link rel="icon"  href="{{ asset('static/img/logo2.png') }}">
+
 </head>
 <style>
     .top-com[data-v-184f5bd0] {
@@ -177,9 +179,7 @@
                         <!---->
                         <!---->
                         <div data-v-b73557e2="" class="flex1"></div>
-                        <div data-v-b73557e2="" class="clear">
-                            <img data-v-b73557e2="" src="{{ asset('assets/images/brush.png') }}">
-                        </div>
+                       
                         <div data-v-b73557e2="" class="notice" style="margin-left: 0rem; margin-right: 0.32rem;">
                             <a href="{{ route('user.notice') }}">
                                 <img data-v-b73557e2="" src="{{ asset('assets/images/bell.png') }}" alt="">
@@ -258,12 +258,14 @@
                                             style="color:white;">@lang('My level')</span>
                                         VIP0
                                     </div>
-                                    <div data-v-0e8d00e8="" data-v-887483d6="" class="str">Upgrade</div>
+                                    <div data-v-0e8d00e8="" data-v-887483d6="" class="str" style="color:black;"> <a href="{{route('user.share')}}"> Upgrade</a></div>
                                    
 
                                     <!-- <div data-v-184f5bd0="" data-v-6e2d35de="" class="str"> <a href="{{ route('user.vip') }}">@lang('Upgrade')</div> -->
                                 </div>
                             </div>
+                            <a href="{{route('user.share')}}">
+
                             <div data-v-184f5bd0="" data-v-6e2d35de="" class="invate-com">
                                 <div data-v-0e8d00e8="" data-v-887483d6="" class="com1"> Invite friends </div>
                                 <div data-v-0e8d00e8="" data-v-887483d6="" class="com2"> Invite friends and earn
@@ -273,15 +275,21 @@
 
                                 </div>
                             </div>
+</a>
                             <div data-v-184f5bd0="" data-v-6e2d35de="" class="container">
                                 <ul data-v-184f5bd0="" data-v-6e2d35de="" class="nav1">
+
+                                <a
+                                href="{{ route('user.roi-bonus') }}">
                                     <li data-v-184f5bd0="" data-v-6e2d35de="">
                                         <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img
                                                 data-v-184f5bd0="" data-v-6e2d35de=""
                                                 src="{{ asset('') }}static/img/13.png" alt=""></div>
-                                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="n"><a
-                                                href="{{ route('user.roi-bonus') }}">@lang('My income')</a></div>
+                                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="n" style="color:white;">@lang('My income')</div>
                                     </li>
+
+</a>
+
                                     <li data-v-184f5bd0="" data-v-6e2d35de="">
                                         <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img
                                                 data-v-184f5bd0="" data-v-6e2d35de=""
@@ -290,44 +298,82 @@
                                             style="color:white;">
                                             @lang('About Us')</div>
                                     </li>
+                                    <a
+                                                href="{{ route('user.terms') }}">
                                     <li data-v-184f5bd0="" data-v-6e2d35de="">
                                         <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img
                                                 data-v-184f5bd0="" data-v-6e2d35de=""
                                                 src="{{ asset('') }}static/img/34.png" alt=""></div>
-                                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="n"><a
-                                                href="{{ route('user.terms') }}">@lang('Terms of Use')</a></div>
+                                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="n">@lang('Terms of Use')</a></div>
                                     </li>
+</a>    <a
+href="{{ route('user.reward-bonus') }}">
                                     <li data-v-184f5bd0="" data-v-6e2d35de="">
                                         <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img
                                                 data-v-184f5bd0="" data-v-6e2d35de=""
                                                 src="{{ asset('') }}static/img/34.png" alt="">
 
                                         </div>
-                                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="n"><a
-                                                href="{{ route('user.reward-bonus') }}">@lang('Record')</a></div>
+                                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="n" style="color:white;">
+                                            
+                                    @lang('Record')</div>
                                     </li>
+</a>
                                 </ul>
                                 <div data-v-184f5bd0="" data-v-6e2d35de="" class="line">
                                     <ul data-v-184f5bd0="" data-v-6e2d35de="" class="ul1">
 
 
-
+                                    @if (empty(Auth::user()->email))
 
                                         <li data-v-184f5bd0="" data-v-6e2d35de="">
+                                            
                                             <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img
                                                     data-v-184f5bd0="" data-v-6e2d35de=""
                                                     src="{{ asset('') }}static/img/122.png" alt=""></div>
                                             <a href="{{ route('user.bindMail') }}">
                                                 <div data-v-184f5bd0="" data-v-6e2d35de="" class="flex1">@lang
-                                                    @lang('Mailbox')
+                                                    @lang('Bind Email')
                                             </a>
+
                                 </div>
-                                <div data-v-184f5bd0="" data-v-6e2d35de="" class="arr"> <a
-                                        href="{{ route('user.bindMail') }}"><img data-v-184f5bd0=""
-                                            data-v-6e2d35de="" src="{{ asset('') }}static/img/114.png"
-                                            alt=""> </a></div>
-                                </a>
-                                </li>
+
+
+                                <div data-v-184f5bd0="" data-v-6e2d35de="" class="arr"><img
+                                            data-v-184f5bd0="" data-v-6e2d35de=""
+                                            src="{{ asset('') }}static/img/114.png" alt="">
+                                    </div>
+
+
+</li>
+
+@else
+
+<li data-v-184f5bd0="" data-v-6e2d35de="">
+                                            
+                                            <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img
+                                                    data-v-184f5bd0="" data-v-6e2d35de=""
+                                                    src="{{ asset('') }}static/img/122.png" alt=""></div>
+                                            <a href="{{ route('user.ChangeMail') }}">
+                                                <div data-v-184f5bd0="" data-v-6e2d35de="" class="flex1">@lang
+                                                    @lang('Change Email')
+                                            </a>
+
+
+                                </div>
+
+
+                                <div data-v-184f5bd0="" data-v-6e2d35de="" class="arr"><img
+                                            data-v-184f5bd0="" data-v-6e2d35de=""
+                                            src="{{ asset('') }}static/img/114.png" alt="">
+                                    </div>
+
+</li>
+
+                                
+
+@endif
+
                                 <li data-v-184f5bd0="" data-v-6e2d35de="">
                                     <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img
                                             data-v-184f5bd0="" data-v-6e2d35de=""

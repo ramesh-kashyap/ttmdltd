@@ -124,6 +124,8 @@
     <script charset="utf-8" src="/js1743619988925/chunk-b2c9775c.d968e27a.1743619988925.js?v=1743619988925"></script>
     <link rel="stylesheet" type="text/css" href="{{asset('')}}static/css/chunk-39d146b7.e86e8ed5.css">
     <script charset="utf-8" src="/js1743619988925/chunk-39d146b7.d968e27a.1743619988925.js?v=1743619988925"></script>
+    <link rel="icon"  href="{{ asset('static/img/logo2.png') }}">
+
 </head>
 
 <body class="mein_cn">

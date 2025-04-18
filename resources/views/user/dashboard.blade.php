@@ -2,7 +2,9 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Dashboard | {{ siteName() }}</title>
+    <title>   Dashboard | {{ siteName() }}
+
+    </title>
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
@@ -16,6 +18,8 @@
     <meta name="renderer" content="webkit">
     <meta name="robots" content="noindex, nofollow">
     <link rel="manifest" href="/manifest.json">
+    <link rel="icon"  href="{{ asset('static/img/logo2.png') }}">
+
     <script>
         window.addEventListener("error", function(event) {
             if (event.message.indexOf("Unexpected token '<'") > -1) {
@@ -146,6 +150,11 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('') }}static/css/chunk-67912ed2.ae8d438d.css">
     <script charset="utf-8" src="/js1743475952730/chunk-67912ed2.fe8857a9.1743475952730.js?v=1743475952730"></script>
 </head>
+
+<!-- 
+<img data-v-b73557e2="" src="{{ asset('') }}static/img/logo2.png"
+style="width: 80px; height: 37px;" alt="">  -->
+
 
 <style>
     ul li[data-v-2b218ac2] {
@@ -321,9 +330,7 @@
                         <div data-v-b73557e2="" class="flex1">
 
                         </div>
-                        <div data-v-b73557e2="" class="clear">
-                            <img data-v-b73557e2="" src="{{ asset('assets/images/brush.png') }}">
-                        </div>
+                      
                         <div data-v-b73557e2="" class="notice" style="margin-left: 0rem; margin-right: 0.32rem;">
                             <a href="{{ route('user.notice') }}">
                                 <img data-v-b73557e2="" src="{{ asset('assets/images/bell.png') }}" alt="">
@@ -366,24 +373,31 @@
                                 </div>
                             </div>
                             <ul data-v-2b218ac2="" data-v-6b16f068="" class="flex list" data-v-6e2d35de="">
+
+                            
                                 <li data-v-2b218ac2="">
+                                <a href="{{route('user.asset')}}">
                                     <div data-v-2b218ac2="" class="title" style="">@lang('Total Assets')
                                         <img data-v-2b218ac2="" src="{{ asset('') }}static/img/10.png"
                                             style="filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(245deg) brightness(104%) contrast(104%)"
                                             alt="">
                                     </div>
                                     <div data-v-2b218ac2="" class="val" style="">
-                                        ${{ number_format(Auth::user()->available_balance(), 2) }}</div>
+                                       
+                                    ${{ number_format(Auth::user()->available_balance(), 2) }}</div>
+                                    </a>
                                 </li>
+
                                 <li data-v-2b218ac2="">
+                                <a
+                                href="{{ route('user.vip') }}">
                                     <div data-v-2b218ac2="" class="title" style="">@lang('Level')
                                         <img data-v-2b218ac2="" src="{{ asset('') }}static/img/10.png"
                                             style="filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(245deg) brightness(104%) contrast(104%)"
                                             alt="">
                                     </div>
 
-                                    <a
-                                    href="{{ route('user.vip') }}">
+                                  
                                     <div data-v-2b218ac2="" class="val" style="">  <img data-v-2b218ac2=""
                                                 src="{{ asset('') }}static/img/V0_icon.69de7dcc.png"
                                                 alt="">VIP0 </div>
@@ -404,17 +418,15 @@
 
                                 </div>
                             </div>
+
+                            <a href="{{route('user.tasks')}}">
                             <div data-v-d59d9098="" data-v-6b16f068="" class="info" data-v-6e2d35de="">
                                 <h3 data-v-d59d9098="">@lang(' Campaigns Order
                                                                                                                                                                     ')</h3>
                                 <p data-v-d59d9098="">@lang('Complete Daily Tasks & Earn Rewards Instantly!
                                                                                                                                                                     Explore Exciting Offers from Top International Brands like')</p>
-                                <!-- <a href="{{ route('user.quality') }}">   <div data-v-d59d9098="" class="view" >  View details<img data-v-d59d9098="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADjSURBVHgB
-                                7ZXfDcIgEIcPdABHcAYWUDepA2hHkG7gnwHaTYgLdAc3aKrPnNCk+lITDi4xafieeLjw+wLcAZDJZP6MCC3cmnrVy1cJFh/t7
-                                tgAEzK0sIdnAYjaKdfqfjsBE8ECju6zciJcEsECw7EjVtwSwW9gRJmLuwbxDRZCt5tDBZGQBbglogQ4JaIFuCSSBCYlEPaUOUF
-                                pwx87SIQEkgSGNvTDacS1KXVKxj/CyfBSE7eJbEOm8CgBznCyAHc4SUCZa+F/Qs5wD6ELcM0d7lmGFlqwZ4kL/yV3LryBTCYzF
-                                95dfHtiVPp2SwAAAABJRU5ErkJggg==" alt=""></div></a> -->
-                            </div>
+                              
+                            </div></a>
                             <div data-v-6b16f068="" data-v-6e2d35de="" class="itemBox">
                                 <div data-v-6b16f068="" data-v-6e2d35de="" class="com-title flex">
                                     <div data-v-6b16f068="" data-v-6e2d35de="" class="left">@lang('Partners')</div>

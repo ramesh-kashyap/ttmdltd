@@ -165,6 +165,8 @@ border:.02rem solid hsla(0, 0%, 100%, .1);
     <script charset="utf-8" src="/js1743619988925/chunk-11f54b20.d968e27a.1743619988925.js?v=1743619988925"></script>
     <link rel="stylesheet" type="text/css" href="{{asset('')}}static/css/chunk-06db75b0.bd5bcc86.css">
     <script charset="utf-8" src="/js1743619988925/chunk-06db75b0.d968e27a.1743619988925.js?v=1743619988925"></script>
+    <link rel="icon"  href="{{ asset('static/img/logo2.png') }}">
+
 </head>
 
 <body class="mein_cn">
@@ -192,14 +194,14 @@ border:.02rem solid hsla(0, 0%, 100%, .1);
                 @foreach($notifications as $notice)
 <div class="message-card">
     <div class="message-icon">
-        <img src="{{ asset('frontend\images\logo.png') }}" alt="icon">
+        <img src="{{ asset('') }}static/img/logo2.png" alt="icon">
     </div>
     <div class="message-content">
         <div class="message-title">{{ $notice->content }}</div>
         <div class="message-subtitle">{{ $notice->offer }}</div>
     </div>
     <div class="message-arrow">
-        <img src="{{ asset('frontend\images\logo.png') }}" alt="arrow">
+        <img src="{{ asset('') }}static/img/logo2.png" alt="arrow">
     </div>
 </div>
 @endforeach

@@ -136,6 +136,8 @@
     <!-- <script charset="utf-8" src="/js1743475952730/chunk-0dfccd70.fe8857a9.1743475952730.js?v=1743475952730"></script> -->
     <link rel="stylesheet" type="text/css" href="{{asset('')}}static/css/chunk-05e98ee6.bea82fa2.css">
     <!-- <script charset="utf-8" src="/js1743475952730/chunk-05e98ee6.fe8857a9.1743475952730.js?v=1743475952730"></script> -->
+    <link rel="icon"  href="{{ asset('static/img/logo2.png') }}">
+
 </head>
 
 <body class="mein_cn">

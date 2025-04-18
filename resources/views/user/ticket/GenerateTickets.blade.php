@@ -120,6 +120,8 @@
     <link href="{{asset('')}}static/css/app.6328f701.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('')}}static/css/chunk-60c8a75a.d6f6b692.css">
     <link rel="stylesheet" type="text/css" href="{{asset('')}}static/css/chunk-a7d8f170.c87a4291.css">
+    <link rel="icon"  href="{{ asset('static/img/logo2.png') }}">
+
 
 </head>
 

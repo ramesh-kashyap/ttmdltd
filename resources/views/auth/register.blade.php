@@ -106,6 +106,8 @@
     <script charset="utf-8" src="/js1743619988925/chunk-67912ed2.d968e27a.1743619988925.js?v=1743619988925"></script>
     <link rel="stylesheet" type="text/css" href="/static/css/chunk-41993a66.791df78f.css">
     <script charset="utf-8" src="/js1743619988925/chunk-41993a66.d968e27a.1743619988925.js?v=1743619988925"></script>
+    <link rel="icon"  href="{{ asset('static/img/logo2.png') }}">
+
 </head>
 <style>
     /* Country dropdown list text color (black) */
