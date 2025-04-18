@@ -53,6 +53,8 @@
     <link rel="modulepreload" as="script" crossorigin=""
         href="{{ asset('') }}assets/js/ComBtn-NyABp2iF.js">
     <link rel="stylesheet" href="{{ asset('') }}assets/css/ComBtn-CgiT3mnI.css">
+    <link rel="icon"  href="{{ asset('static/img/logo2.png') }}">
+
 </head>
 
 <body class="">

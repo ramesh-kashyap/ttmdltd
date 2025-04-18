@@ -147,6 +147,9 @@
     <script charset="utf-8"
         src="{{ asset('') }}static/js1743619988925/chunk-0dfccd70.d968e27a.1743619988925.js?v=1743619988925"></script>
 </head>
+
+<link rel="icon"  href="{{ asset('static/img/logo2.png') }}">
+
 <style>
     .items-wrapper {
         transition: all 0.3s ease;

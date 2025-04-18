@@ -104,6 +104,8 @@
     <script charset="utf-8" src="/js1743619988925/qrcodejs2.d968e27a.1743619988925.js?v=1743619988925"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('') }}static/css/chunk-bc11d8ce.85a5c909.css">
     <script charset="utf-8" src="/js1743619988925/vue.d968e27a.1743619988925.js"></script>
+    <link rel="icon"  href="{{ asset('static/img/logo2.png') }}">
+
 </head>
 <style>
     .home[data-v-7ca1be93] {

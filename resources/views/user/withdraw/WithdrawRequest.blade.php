@@ -91,6 +91,15 @@
     <link rel="stylesheet" type="text/css" href="{{asset('')}}static/css/chunk-747287e5.9009fee8.css">
     <script charset="utf-8" src="/js1743619988925/chunk-747287e5.d968e27a.1743619988925.js?v=1743619988925"></script>
     <link rel="stylesheet" type="text/css" href="{{asset('')}}static/css/chunk-6b11ef3e.540ca443.css">
+
+    <link rel="icon"  href="{{ asset('static/img/logo2.png') }}">
+
+
+    <style>
+    .cnames {
+        color: white;
+    }
+</style>
     <style>
         * {
             margin: 0;
@@ -189,27 +198,29 @@
             <div data-v-7daccefc="" id="content" class="content-scroll">
                     <div data-v-c0dba864="" data-v-7daccefc="" class="container"><!---->
                         <div data-v-c0dba864="" data-v-7daccefc="" class="item valMob">
-                            <div data-v-c0dba864="" data-v-7daccefc="" class="cname">@lang('Select Currency')</div>
+                            <div data-v-c0dba864="" data-v-7daccefc="" class="cname" style="color:white;">@lang('Select Currency')</div>
                             <div data-v-c0dba864="" data-v-7daccefc="" class="inp flex">
                                 <div data-v-c0dba864="" data-v-7daccefc="" class="icon"><img data-v-c0dba864=""
                                         data-v-7daccefc=""
                                         src="{{ asset('') }}static/img/usdt.png"
                                         alt=""></div>
-                                <div data-v-c0dba864="" data-v-7daccefc="" class="flex1"><input data-v-c0dba864=""
-                                        data-v-7daccefc="" type="text" readonly="readonly" style="color:white;"></div>
-                                <div data-v-c0dba864="" data-v-7daccefc="" class="arr">
+                                <div data-v-c0dba864="" data-v-7daccefc="" class="flex1">
+                                
+                                <input data-v-c0dba864=""
+                                        data-v-7daccefc="" type="text" readonly="readonly" ></div>
+                                <div data-v-c0dba864="" data-v-7daccefc="" class="">
                              
                                         </div>
                             </div>
                         </div>
                         <div data-v-c0dba864="" data-v-7daccefc="" class="item valMob">
-                            <div data-v-c0dba864="" data-v-7daccefc="" class="cname">@lang('Select Network')</div>
+                            <div data-v-c0dba864="" data-v-7daccefc="" class="cname" style="color:white;">@lang('Select Network')</div>
                             <div data-v-c0dba864="" data-v-7daccefc="" class="inp flex">
                                 <div data-v-c0dba864="" data-v-7daccefc="" class="icon"><img data-v-c0dba864=""
                                         data-v-7daccefc=""
                                         src="{{ asset('') }}static/img/wallet.png"
                                         alt=""></div>
-                                <div data-v-c0dba864="" data-v-7daccefc="" class="flex1"><input data-v-c0dba864=""
+                                <div data-v-c0dba864="" data-v-7daccefc="" class="flex1"><input  style="color:white;" data-v-c0dba864=""
                                         data-v-7daccefc="" type="text" readonly="readonly" style="color:white;"></div>
                                 <div data-v-c0dba864="" data-v-7daccefc="" class="arr">
                                 
@@ -219,7 +230,7 @@
                             </div>
                         </div>
                         <div data-v-c0dba864="" data-v-7daccefc="" class="item valMob">
-                            <div data-v-c0dba864="" data-v-7daccefc="" class="cname">@lang('Withdrawal Address')</div>
+                            <div data-v-c0dba864="" data-v-7daccefc="" class="cname" style="color:white;">@lang('Withdrawal Address')</div>
                             <div data-v-c0dba864="" data-v-7daccefc="" class="val inp flex">
                                 <div data-v-c0dba864="" data-v-7daccefc="" class="flex1"><input data-v-c0dba864="" id="walletAddress"
                                         data-v-7daccefc="" type="text"  name="walletAddress"   value="{{Auth::user()->usdtBep20}}" 
@@ -227,8 +238,8 @@
                             </div>
                         </div>
                         <div data-v-c0dba864="" data-v-7daccefc="" class="item valMob">
-                            <div data-v-c0dba864="" data-v-7daccefc="" class="cname"> @lang('Withdrawal Amount') <div
-                                    data-v-c0dba864="" data-v-7daccefc="" class="balance blue">@lang('Available Balance'):
+                            <div data-v-c0dba864="" data-v-7daccefc="" class="cname" style="color:white;"> @lang('Withdrawal Amount') <div
+                                    data-v-c0dba864="" data-v-7daccefc="" class="balance blue" style="color:white;">@lang('Available Balance'):
                                     {{ number_format(Auth::user()->available_balance(), 2) }} USDT</div>
                             </div>
                             <div data-v-c0dba864="" data-v-7daccefc="" class="inp val flex">
@@ -239,7 +250,7 @@
                             </div>
                         </div>
                         <div data-v-c0dba864="" data-v-7daccefc="" class="item valMob">
-                            <div data-v-c0dba864="" data-v-7daccefc="" class="cname">@lang('Verification Code')
+                            <div data-v-c0dba864="" data-v-7daccefc="" class="cname" style="color:white;">@lang('Verification Code')
                             </div>
                             <div data-v-c0dba864="" data-v-7daccefc="" class="inp val flex">
                             <input type="hidden" name="" id="emailId" value="{{ Auth::user()->email }}">
@@ -250,7 +261,7 @@
                             </div>
                         </div>
                         <div data-v-c0dba864="" data-v-7daccefc="" class="item valMob">
-                            <div data-v-c0dba864="" data-v-7daccefc="" class="cname">@lang('Transaction Password')
+                            <div data-v-c0dba864="" data-v-7daccefc="" class="cname" style="color:white;">@lang('Transaction Password')
                             </div>
                             <div data-v-c0dba864="" data-v-7daccefc="" class="inp val flex">
                                 <div data-v-c0dba864="" data-v-7daccefc="" class="flex1"><input data-v-c0dba864=""
@@ -263,7 +274,7 @@
                             <div data-v-c0dba864="" data-v-7daccefc="" class="tips">
                                 <ul data-v-c0dba864="" data-v-7daccefc="">
                                     <li data-v-c0dba864="" data-v-7daccefc="" class="wrap bet">
-                                        <div data-v-c0dba864="" data-v-7daccefc="" class="n">@lang('Arrival Amount')</div>
+                                        <div data-v-c0dba864="" data-v-7daccefc="" class="n"  >@lang('Arrival Amount')</div>
                                         <div data-v-c0dba864="" data-v-7daccefc="" class="s blue">NaN USDT</div>
                                     </li>
                                     <li data-v-c0dba864="" data-v-7daccefc="" class="wrap bet">

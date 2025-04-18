@@ -112,6 +112,8 @@
     <script charset="utf-8" src="/js1743475952730/chunk-0119f9da.fe8857a9.1743475952730.js?v=1743475952730"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('') }}static/css/chunk-0b116a05.250ed6be.css">
     <script charset="utf-8" src="/js1743475952730/chunk-0b116a05.fe8857a9.1743475952730.js?v=1743475952730"></script>
+    <link rel="icon"  href="{{ asset('static/img/logo2.png') }}">
+
 </head>
 
 <body class="mein_cn">
@@ -151,9 +153,7 @@
                                 src="{{ asset('') }}static/img/logo.png" style=" width: 80px; height: 37px;"
                                 alt=""></div><!----><!----><!----><!---->
                         <div data-v-b73557e2="" class="flex1"></div>
-                        <div data-v-b73557e2="" class="clear">
-                            <img data-v-b73557e2="" src="{{ asset('assets/images/brush.png') }}">
-                        </div>
+                      
                         <div data-v-b73557e2="" class="notice" style="margin-left: 0rem; margin-right: 0.32rem;">
                             <a href="{{ route('user.notice') }}">
                                 <img data-v-b73557e2="" src="{{ asset('assets/images/bell.png') }}" alt="">
@@ -231,8 +231,8 @@
                         </div>
                         <div data-v-32fa28da="" data-v-6e2d35de="" class="box-com">
                             <div data-v-396fd10e="" data-v-32fa28da="" class="box" data-v-6e2d35de="">
-                                <div data-v-396fd10e="" class="cname"> @lang('My income')<img data-v-396fd10e=""
-                                        src="{{ asset('') }}static/img/ero.png" alt=""></div>
+                                <div data-v-396fd10e="" class="cname"> @lang('My income')<a href="{{route('user.roi-bonus')}}"><img data-v-396fd10e=""
+                                        src="{{ asset('') }}static/img/ero.png" alt=""></a></div>
                                 <ul data-v-396fd10e="" class="flex">
                                     <li data-v-396fd10e="">
                                         <div data-v-396fd10e="" class="title">@lang('Total Income')</div>

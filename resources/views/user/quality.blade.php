@@ -117,6 +117,8 @@
     <script charset="utf-8" src="/js1743475952730/chunk-5b5516a4.fe8857a9.1743475952730.js?v=1743475952730"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('') }}static/css/chunk-bb17762c.89cc2aa3.css">
     <script charset="utf-8" src="/js1743475952730/chunk-bb17762c.fe8857a9.1743475952730.js?v=1743475952730"></script>
+    <link rel="icon"  href="{{ asset('static/img/logo2.png') }}">
+
 </head>
 <style>
     .btn_box .btn[data-v-c95fb5c2] {

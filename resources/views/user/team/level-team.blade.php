@@ -108,6 +108,8 @@
     <script charset="utf-8" src="/js1743475952730/chunk-0119f9da.fe8857a9.1743475952730.js?v=1743475952730"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('') }}static/css/chunk-bb17762c.89cc2aa3.css">
     <script charset="utf-8" src="/js1743475952730/chunk-bb17762c.fe8857a9.1743475952730.js?v=1743475952730"></script>
+    <link rel="icon"  href="{{ asset('static/img/logo2.png') }}">
+
 </head>
 
 <style>
@@ -134,9 +136,7 @@
                                     src="{{ asset('') }}static/img/logo.png" style=" width: 80px; height: 37px;"
                                     alt=""></div><!----><!----><!----><!---->
                             <div data-v-b73557e2="" class="flex1"></div>
-                            <div data-v-b73557e2="" class="clear">
-                                <img data-v-b73557e2="" src="{{ asset('assets/images/brush.png') }}">
-                            </div>
+                           
                             <div data-v-b73557e2="" class="notice" style="margin-left: 0rem; margin-right: 0.32rem;">
                                 <a href="{{ route('user.notice') }}">
                                     <img data-v-b73557e2="" src="{{ asset('assets/images/bell.png') }}"
@@ -236,6 +236,7 @@
 
                                         
                                     </div>
+                                    <a href="{{route('user.share')}}">
                                     <div data-v-361779d3="" data-v-127dfd5e="" data-v-6e2d35de="">
                                         <div data-v-361779d3="" class="invate-com">
                                             <div data-v-361779d3="" class="com1" style="color:white;">
@@ -244,14 +245,15 @@
                                                 @lang('Invite friends and earn coins together')
                                             </div>
                                             <div data-v-361779d3="" class="com3" style="color:white;">
-                                                @lang('Go to invite') <img data-v-361779d3=""
+                                                @lang('Go to invite') <a href="{{route('user.share')}}"><img data-v-361779d3=""
                                                     src="{{ asset('') }}static/img/ero.png
                                                     "
-                                                    alt=""></div>
+                                                    alt=""></a></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+</a>
                             <div data-v-127dfd5e="" data-v-6e2d35de="" class="itemBox">
                                 <div data-v-42e6b7af="" data-v-127dfd5e="" data-v-6e2d35de="">
 
@@ -268,7 +270,7 @@
                                             </li>
                                             <li data-v-42e6b7af="">
                                                 <div data-v-42e6b7af="" class="title">@lang('Commission')</div>
-                                                <div data-v-42e6b7af="" class="val">12%</div>
+                                                <div data-v-42e6b7af="" class="val">3%</div>
                                             </li>
                                             <li data-v-42e6b7af="">
                                                 <div data-v-42e6b7af="" class="title">@lang('Total Earnings')</div>
@@ -298,7 +300,7 @@
                                             </li>
                                             <li data-v-42e6b7af="">
                                                 <div data-v-42e6b7af="" class="title">@lang('Commission')</div>
-                                                <div data-v-42e6b7af="" class="val">4%</div>
+                                                <div data-v-42e6b7af="" class="val">2%</div>
                                             </li>
                                             <li data-v-42e6b7af="">
                                                 <div data-v-42e6b7af="" class="title">@lang(' Total Earnings')</div>
@@ -328,7 +330,7 @@
                                             </li>
                                             <li data-v-42e6b7af="">
                                                 <div data-v-42e6b7af="" class="title">@lang('Commission')</div>
-                                                <div data-v-42e6b7af="" class="val">2%</div>
+                                                <div data-v-42e6b7af="" class="val">1%</div>
                                             </li>
                                             <li data-v-42e6b7af="">
                                                 <div data-v-42e6b7af="" class="title">@lang('Total Earnings')</div>

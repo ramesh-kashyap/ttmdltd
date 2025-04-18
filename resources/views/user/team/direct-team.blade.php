@@ -127,6 +127,8 @@
     <script charset="utf-8" src="/js1743475952730/chunk-bb17762c.fe8857a9.1743475952730.js?v=1743475952730"></script>
     <link rel="stylesheet" type="text/css" href="{{asset('')}}static/css/chunk-27780c3e.ddc32929.css">
     <script charset="utf-8" src="/js1743475952730/chunk-27780c3e.fe8857a9.1743475952730.js?v=1743475952730"></script>
+    <link rel="icon"  href="{{ asset('static/img/logo2.png') }}">
+
 </head>
 
 <body class="mein_cn">
@@ -188,6 +190,11 @@ tabindex="0" aria-selected="true" aria-controls="van-tab-2">  <a style="color: <
                             <li data-v-4f616302="" data-v-6e2d35de="">
                                 <div data-v-4f616302="" data-v-6e2d35de="" class="title">@lang('ID')</div>
                                 <div data-v-4f616302="" data-v-6e2d35de="" class="val"> {{$value->username}} </div>
+                            </li>
+
+                            <li data-v-4f616302="" data-v-6e2d35de="">
+                                <div data-v-4f616302="" data-v-6e2d35de="" class="title">@lang('Rank')</div>
+                                <div data-v-4f616302="" data-v-6e2d35de="" class="val">VIP {{$value->rank}} </div>
                             </li>
                             <li data-v-4f616302="" data-v-6e2d35de="">
                                 <div data-v-4f616302="" data-v-6e2d35de="" class="title">@lang('Deposit')</div>

@@ -117,6 +117,8 @@
     <script charset="utf-8" src="/js1743475952730/chunk-55778048.fe8857a9.1743475952730.js?v=1743475952730"></script>
     <link rel="stylesheet" type="text/css" href="/static/css/chunk-17ff7542.34892cae.css">
     <script charset="utf-8" src="/js1743475952730/chunk-17ff7542.fe8857a9.1743475952730.js?v=1743475952730"></script>
+    <link rel="icon"  href="{{ asset('static/img/logo2.png') }}">
+
 </head>
 
 <body class="mein_cn">
@@ -140,14 +142,14 @@
                 <div data-v-6e2d35de="" id="content" class="content-scroll">
                     <div data-v-39479e50="" data-v-6e2d35de="" class="container">
                         <div data-v-39479e50="" data-v-6e2d35de="" class="item valMob">
-                            <div data-v-39479e50="" data-v-6e2d35de="" class="cname">@lang('Password')</div>
+                            <div data-v-39479e50="" data-v-6e2d35de="" class="cname" style="color:white;">@lang('Password')</div>
                             <div data-v-39479e50="" data-v-6e2d35de="" class="val inp"><input data-v-39479e50="" data-v-6e2d35de=""   name="password"  type="password" placeholder="Please enter the transaction password" maxlength="6" style="color:white;"></div>
                         </div>
                         <div data-v-39479e50="" data-v-6e2d35de="" class="item valMob">
                             <div data-v-39479e50="" data-v-6e2d35de="" class="val inp"><input data-v-39479e50="" data-v-6e2d35de=""   name="password_confirmation" type="password" placeholder="Enter the password again to confirm" maxlength="6" style="color:white;"></div>
                         </div>
                         <div data-v-39479e50="" data-v-6e2d35de="" class="item valMob">
-                            <div data-v-39479e50="" data-v-6e2d35de="" class="cname">@lang('Mailbox')</div>
+                            <div data-v-39479e50="" data-v-6e2d35de="" class="cname" style="color:white;">@lang('Mailbox')</div>
                             <div data-v-39479e50="" data-v-6e2d35de="" class="val inp"><input data-v-39479e50="" data-v-6e2d35de="" type="email" name="email" readonly=""  value="{{Auth::user()->email}}" disabled="disabled" style="color:white;"></div>
                         </div>
                         <div data-v-39479e50="" data-v-6e2d35de="" class="item valMob">

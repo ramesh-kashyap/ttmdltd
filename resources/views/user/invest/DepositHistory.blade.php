@@ -65,6 +65,8 @@
     <link rel="stylesheet" href="{{ asset('') }}assets/css/index-CB8PRsXb.css">
     <link rel="modulepreload" as="script" crossorigin="" href="{{ asset('') }}assets/js/index-xPBJ99Wx.js">
     <link rel="stylesheet" href="{{ asset('') }}assets/css/index-D0RfEik9.css">
+    <link rel="icon"  href="{{ asset('static/img/logo2.png') }}">
+
 </head>
 
 <body class="">

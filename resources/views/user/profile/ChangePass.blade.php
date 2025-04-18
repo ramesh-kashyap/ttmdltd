@@ -109,6 +109,8 @@
     <script charset="utf-8" src="/js1743475952730/chunk-00b1464f.fe8857a9.1743475952730.js?v=1743475952730"></script>
     <link rel="stylesheet" type="text/css" href="{{asset('')}}static/css/chunk-b5658432.1d75afbf.css">
     <script charset="utf-8" src="/js1743475952730/chunk-b5658432.fe8857a9.1743475952730.js?v=1743475952730"></script>
+    <link rel="icon"  href="{{ asset('static/img/logo2.png') }}">
+
 </head>
 
 <body class="mein_cn">
@@ -134,7 +136,7 @@
                 <div data-v-6e2d35de="" id="content" class="content-scroll">
                     <div data-v-47636760="" data-v-6e2d35de="" class="container">
                         <div data-v-47636760="" data-v-6e2d35de="" class="item valMob">
-                            <div data-v-47636760="" data-v-6e2d35de="" class="cname">@lang('New password')</div>
+                            <div data-v-47636760="" data-v-6e2d35de="" class="cname" style="color:white;">@lang('New password')</div>
                             <div data-v-47636760="" data-v-6e2d35de="" class="val inp flex">
                                 <div data-v-47636760="" data-v-6e2d35de="" class="flex1">
                                     <input data-v-47636760="" data-v-6e2d35de="" type="password" name="password" placeholder="Enter your password" required style="color:white;"></div>
@@ -151,7 +153,7 @@
                             </div>
                         </div>
                         <div data-v-47636760="" data-v-6e2d35de="" class="item valMob">
-                            <div data-v-47636760="" data-v-6e2d35de="" class="cname">@lang('Mailbox')</div>
+                            <div data-v-47636760="" data-v-6e2d35de="" class="cname" style="color:white;">@lang('Mailbox')</div>
                             <div data-v-47636760="" data-v-6e2d35de="" class="inp val">
                                 <input data-v-47636760="" data-v-6e2d35de="" type="email" name="email" readonly=""  value="{{Auth::user()->email}}" style="color:white;"></div>
                         </div>
