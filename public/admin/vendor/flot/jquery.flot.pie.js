@@ -27,7 +27,7 @@ The plugin supports these options:
 				left: integer value to move the pie left or right, or 'auto'
 			},
 			stroke: {
-				color: any hexidecimal color value (other formats may or may not work, so best to stick with something like '#0f0e11')
+				color: any hexidecimal color value (other formats may or may not work, so best to stick with something like '#FFF')
 				width: integer pixel width of the stroke
 			},
 			label: {
@@ -782,7 +782,7 @@ More detail and specific examples can be found in the included HTML file.
 					left: "auto"
 				},
 				stroke: {
-					color: "#0f0e11",
+					color: "#fff",
 					width: 1
 				},
 				label: {
@@ -803,7 +803,7 @@ More detail and specific examples can be found in the included HTML file.
 					label: "Other"	// label to give the new slice
 				},
 				highlight: {
-					//color: "#0f0e11",		// will add this functionality once parseColor is available
+					//color: "#fff",		// will add this functionality once parseColor is available
 					opacity: 0.5
 				}
 			}

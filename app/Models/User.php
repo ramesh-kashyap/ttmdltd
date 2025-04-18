@@ -55,18 +55,19 @@ class User extends Authenticatable
 
     public function FundBalance()
     {
-    $balance = Auth::user()->buy_fundAmt->sum('amount_total_fiat')-(Auth::user()->buy_packageAmt());
+    $balance = Auth::user()->buy_fundAmt->sum('amount')-(Auth::user()->buy_packageAmt());
     return $balance;
     } 
 
     public function buy_fundAmt(){
-        return $this->hasMany('App\Models\CoinpaymentTransaction','buyer_name','username')->where('status','>=',1);
+        return $this->hasMany('App\Models\BuyFund','user_id','id')->where('status','Approved');
     }
 
 
 
     public function buy_packageAmt(){
-        $amt= Investment::where('active_from',Auth::user()->username)->where('walletType',1)->sum('amount');
+        $amt = Investment::where('active_from', Auth::user()->username)
+        ->orderBy('id', 'DESC')->limit(1)->value('amount');
         return $amt;
     }
 
@@ -114,7 +115,7 @@ class User extends Authenticatable
 
      public function tradingProfit()
     {
-    return $this->hasMany('App\Models\Contract','user_id','id')->where('c_status','-1');
+    return $this->hasMany('App\Models\Order','user_id','id');
     }      
           
     public function reward_bonus()
@@ -142,7 +143,7 @@ class User extends Authenticatable
     
     public function available_balance()
     {
-    $balance = (Auth::user()->investment->sum('amount')+Auth::user()->users_incomes()+Auth::user()->tradingProfit->sum('profit')) - (Auth::user()->withdraw());
+    $balance = (Auth::user()->buy_fundAmt->sum('amount')+Auth::user()->users_incomes()+Auth::user()->tradingProfit->sum('roi')) - (Auth::user()->withdraw()+Auth::user()->buy_packageAmt());
     return $balance;
     } 
 
