@@ -200,8 +200,7 @@
         background-color: #96c907;
     }
 
-    /* === DARK MODE === */
-    @media (prefers-color-scheme: dark) {
+
 
         .card {
             background-color: #2b2b2b;
@@ -228,7 +227,7 @@
         .button:hover {
             background-color: #96c907;
         }
-    }
+
 
     .order-box {
         background-color: #e4ad53;
@@ -254,9 +253,6 @@
         line-height: 1.5;
     }
 
-    /* === DARK MODE === */
-    @media (prefers-color-scheme: dark) {
-
 
         .order-box {
             background-color: #2b2b2b;
@@ -267,7 +263,7 @@
         .order-box p {
             color: #fff;
         }
-    }
+    
 
 
     /* From Uiverse.io by ZacharyCrespin */
