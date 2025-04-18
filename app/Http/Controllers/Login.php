@@ -38,6 +38,7 @@ class Login extends Controller
 
 
             if (Auth::attempt($credentials)) {
+                $request->session()->regenerate(); // ← Add this line
                 $user = Auth::user();
 
                 if($user->active_status=="Block")
@@ -76,8 +77,8 @@ class Login extends Controller
     {
         Auth::logout();
 
-        request()->session()->invalidate();
-
+        session()->invalidate();
+        session()->regenerateToken();
         $notify[] = ['success', 'You have been logged out.'];
         return redirect()->route('login')->withNotify($notify);
     }

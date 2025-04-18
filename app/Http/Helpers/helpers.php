@@ -391,20 +391,18 @@ return true;
                        {
                          if($cnt==1)
                           {
-                            $pp= $amount*12;
+                            $pp= $amount*6;
 
                           } if($cnt==2)
                           {
-                            $pp= $amount*4;
+                            $pp= $amount*1;
 
                           } if($cnt==3)
                           {
-                            $pp= $amount*2;
+                            $pp= $amount*1;
 
                           }  
-                          
-                       
-
+                             
                         }
                         else
                         {
@@ -426,7 +424,7 @@ return true;
                         'user_id_fk' =>$Sposnor_status->username,
                         'amt' => $amt,
                         'comm' => $pp,
-                        'remarks' =>'Quantify Level Income',
+                        'remarks' =>'Level Bonus',
                         'level' => $cnt,
                         'rname' => $rname,
                         'fullname' => $fullname,

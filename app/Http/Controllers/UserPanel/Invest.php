@@ -482,7 +482,6 @@ public function viewdetail($txnId)
     public function fundActivation2(Request $request)
     {
 
-      // dd("hiii");
   try{
     $validation =  Validator::make($request->all(), [
         'amount' => 'required|numeric|min:50',
@@ -585,86 +584,86 @@ public function viewdetail($txnId)
         $user = Auth::user();
         $balance = $user->available_balance();
 
-        if ($balance < $request->amount) {
-            return redirect()->back()->withErrors('Insufficient balance for upgrade.')->withInput();
-        }
-
-        // Check if user is eligible to upgrade to requested rank
-        $rank = (int) $request->rank;
-        $amount = (float) $request->amount;
-
-        // Example rules for VIP upgrades
+        // Define VIP rules
         $vipRules = [
-          1 => ['amount' => 60,   'requires' => 0],
-          2 => ['amount' => 120,  'requires' => 1],
-          3 => ['amount' => 360,  'requires' => 2],
-          4 => ['amount' => 840,  'requires' => 3],
-          5 => ['amount' => 1680, 'requires' => 4],
-          6 => ['amount' => 3600, 'requires' => 5],
-          7 => ['amount' => 7560, 'requires' => 6],
-          8 => ['amount' => 15000, 'requires' => 7], // ← was 1500, likely meant 15000
-      ];
+            1 => ['amount' => 60,   'requires' => 0],
+            2 => ['amount' => 120,  'requires' => 1],
+            3 => ['amount' => 360,  'requires' => 2],
+            4 => ['amount' => 840,  'requires' => 3],
+            5 => ['amount' => 1680, 'requires' => 4],
+            6 => ['amount' => 3600, 'requires' => 5],
+            7 => ['amount' => 7560, 'requires' => 6],
+            8 => ['amount' => 15000, 'requires' => 7],
+        ];
+
+        $rank = (int) $request->rank;
 
         if (!isset($vipRules[$rank])) {
             return redirect()->back()->withErrors("Invalid upgrade rank requested.");
         }
 
         $rule = $vipRules[$rank];
+        $targetAmount = $rule['amount'];
+        $currentPackage = (float) $user->package ?? 0;
+        $amount = $targetAmount - $currentPackage;
 
-        // Check if user already has this or higher rank
         if ($user->rank >= $rank) {
             return redirect()->back()->withErrors("You already have this rank or higher.");
         }
 
-        // Check if current rank meets requirement
         if ($user->rank < $rule['requires']) {
             return redirect()->back()->withErrors("To upgrade to VIP {$rank}, you must first be VIP {$rule['requires']}.");
         }
 
-        // Check if amount matches
-        if ($amount != $rule['amount']) {
-            return redirect()->back()->withErrors("VIP {$rank} upgrade requires exact amount of {$rule['amount']}.");
+        if ($amount <= 0) {
+            return redirect()->back()->withErrors("You have already paid this amount or more.");
         }
 
-        // Deduct balance (implement your logic, e.g. wallet deduction)
-        // Assuming available_balance() is a custom accessor and you have `wallet` field
+        if ($balance < $amount) {
+            return redirect()->back()->withErrors("Insufficient balance. You need {$amount} USDT more to upgrade.");
+        }
 
-          $data = [
+        // Deduct balance logic would go here if you're handling wallet balances
+
+        $data = [
             'plan' => $rank,
-            'transaction_id' =>md5(time() . rand()),
+            'transaction_id' => md5(time() . rand()),
             'user_id' => $user->id,
             'user_id_fk' => $user->username,
-            'amount' => $request->amount,
-            'payment_mode' =>'USDT',
+            'amount' => $targetAmount,
+            'payment_mode' => 'USDT',
             'status' => 'Active',
-            'sdate' => Date("Y-m-d"),
+            'sdate' => date("Y-m-d"),
             'active_from' => $user->username,
         ];
-        $payment =  Investment::insert($data);
-        
-
+        Investment::insert($data);
 
         $user->rank = $rank;
         $user->save();
 
-        $users = User::where('id',$user->id)->first();
-        if ($users->active_status=="Pending")
-         {
-          first_deposit_bonus($users->id,$request->amount);
-          $user_update=array('active_status'=>'Active','adate'=>Date("Y-m-d H:i:s"),'package'=>$request->amount);
-          User::where('id',$user->id)->update($user_update);
-          \DB::table('general_settings')->where('id',1)->update(['people_online'=> generalDetail()->people_online+1]);
-          \DB::table('general_settings')->where('id',1)->update(['our_investors'=> generalDetail()->our_investors+1]);
+        $users = User::where('id', $user->id)->first();
+
+        if ($users->active_status == "Pending") {
+          add_level_income($users->id, $amount);
+
+            $user_update = [
+                'active_status' => 'Active',
+                'adate' => date("Y-m-d H:i:s"),
+                'package' => $targetAmount
+            ];
+            User::where('id', $user->id)->update($user_update);
+
+            \DB::table('general_settings')->where('id', 1)->update([
+                'people_online' => generalDetail()->people_online + 1,
+                'our_investors' => generalDetail()->our_investors + 1,
+            ]);
+        } else {
+            $user_update = [
+                'package' => $targetAmount,
+                'active_status' => 'Active',
+            ];
+            User::where('id', $user->id)->update($user_update);
         }
-         else
-       {
-        $total = $users->package+$request->amount;
-        $user_update=array('package'=>$total,'active_status'=>'Active',);
-        User::where('id',$user->id)->update($user_update); 
-       }
-
-
-        // Log upgrade (optional, or store in a separate upgrade history table)
 
         $notify[] = ['success', "Successfully upgraded to VIP {$rank}."];
         return redirect()->back()->withNotify($notify);
@@ -878,6 +877,7 @@ public function viewdetail($txnId)
           }
 
         // dd($this->data);
+            $this->data['user'] = $user;
             $this->data['myRank'] = $user->rank;
             $this->data['page'] = 'user.invest.vip';
             return $this->dashboard_layout();

@@ -1,27 +1,4 @@
-<style>
 
-.card {
-    margin-bottom: 1.875rem;
-    background-color: #0f0e11;
-    transition: all .5s ease-in-out;
-    position: relative;
-    border: 0rem solid transparent;
-    border-radius: 0.75rem;
-    box-shadow: 0.4rem 0.5rem 0.5rem rgb(0 0 0 / 10%);
-    height: calc(100% - 30px);
-}
-.fs-16 {
-    font-size: 1.1rem !important;
-    line-height: 1.6;
-    text-shadow: 0.5px 0.6px #b6b6b6;
-    color: #000;
-}
-.menu h2, .menu .h2 {
-    font-size: 1.3rem;
-    font-weight: 600;
-}
-
-</style>
 		<!--**********************************
             Content body start
         ***********************************-->

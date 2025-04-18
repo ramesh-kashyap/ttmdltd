@@ -40,10 +40,7 @@
 .at-expanding-share-button[data-position=bottom-left] {
     display: none;
 }
-.hamburger .line {
-    background: #0f0e11;
 
-}
 .form-control {
     border: 0.0625rem solid #d2d2d2;
 }
@@ -59,28 +56,7 @@ display: none;
 }
 
 
-:root
-{
-	--font-family-title: revert;
-}
-table#example {
-    padding: 0rem 0 2rem 0;
-    color: #000;
-    font-weight: 900 !important;
-    font-family: sans-serif;
-}
-.form-control {
-    border: 0.0625rem solid #d2d2d2;
-}
 
-.form-control {
-    background: #0f0e11;
-    border: 0.0625rem solid #f5f5f5;
-    padding: 0.3125rem 1.25rem;
-    color: #000000;
-    height: 3.5rem;
-    border-radius: 1rem;
-}
 </style>
 <body>
 

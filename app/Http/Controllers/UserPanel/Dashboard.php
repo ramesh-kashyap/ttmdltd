@@ -326,7 +326,34 @@ class Dashboard extends Controller
       
           $quantifiable_count = 6;
       
-          $todaysRoi = \DB::table('orders')->where('user_id', $user->id)->where('ttime', date('Y-m-d'))->count();
+          $roiMap = [
+              60     => ['weekday' => 2,   'weekend' => 1],
+              120    => ['weekday' => 4,   'weekend' => 2],
+              360    => ['weekday' => 12,  'weekend' => 6],
+              840    => ['weekday' => 28,  'weekend' => 14],
+              1680   => ['weekday' => 60,  'weekend' => 30],
+              3600   => ['weekday' => 120, 'weekend' => 60],
+              7560   => ['weekday' => 240, 'weekend' => 120],
+              15000  => ['weekday' => 480, 'weekend' => 240],
+          ];
+      
+          $today = date('Y-m-d');
+          $day = date('N'); // 1 = Monday, 7 = Sunday
+          $isWeekend = in_array($day, [6, 7]);
+      
+          $package = round($user->package, 2);
+          if (!isset($roiMap[$package])) {
+              return response()->json([
+                  'status' => false,
+                  'message' => 'Invalid package for ROI trade.',
+              ], 400);
+          }
+      
+          $todaysRoi = \DB::table('orders')
+              ->where('user_id', $user->id)
+              ->where('ttime', $today)
+              ->count();
+      
           if ($todaysRoi >= $quantifiable_count) {
               return response()->json([
                   'status' => false,
@@ -334,22 +361,41 @@ class Dashboard extends Controller
               ], 200);
           }
       
-          $balance = round($user->available_balance(), 2);
-          $todaysRoiSum = \DB::table('orders')->where('user_id', $user->id)->where('ttime', date('Y-m-d'))->sum('roi');
-          $balance2 = $balance - ($todaysRoiSum ?: 0);
+          $roiSoFar = \DB::table('orders')
+              ->where('user_id', $user->id)
+              ->where('ttime', $today)
+              ->sum('roi');
+      
+          $totalRoiAmount = $isWeekend ? $roiMap[$package]['weekend'] : $roiMap[$package]['weekday'];
+          $remainingTrades = $quantifiable_count - $todaysRoi;
+          $remainingRoi = $totalRoiAmount - $roiSoFar;
+      
+          // Ensure at least 0.01 for each trade left
+          if ($remainingTrades === 1) {
+              $roiAmount = number_format($remainingRoi, 2, '.', '');
+          } else {
+              $maxPerTrade = $remainingRoi - ($remainingTrades - 1) * 0.01;
+              $roiAmount = number_format(mt_rand(1, (int)($maxPerTrade * 100)) / 100, 2, '.', '');
+          }
+      
+          // Update tradeAmt
+          $todaysRoiSum = $roiSoFar;
+          $balance2 = $package - $todaysRoiSum;
           $forthhalf = $balance2 / $quantifiable_count;
           $minQuan = $quantifiable_count - ($todaysRoi + 1);
           $updateBalance = $forthhalf * $minQuan;
       
           \DB::table('users')->where('id', $user->id)->update(['tradeAmt' => $updateBalance]);
+      
+          // Pick unused company for today
           $usedCompanies = \DB::table('orders')
-          ->where('user_id', $user->id)
-          ->where('ttime', date('Y-m-d'))
-          ->pluck('company_name')
-          ->toArray();
-
+              ->where('user_id', $user->id)
+              ->where('ttime', $today)
+              ->pluck('company_name')
+              ->toArray();
+      
           $company = Company::whereNotIn('company_name', $usedCompanies)->inRandomOrder()->first();
-
+      
           if (!$company) {
               return response()->json([
                   'status' => false,
@@ -357,31 +403,47 @@ class Dashboard extends Controller
               ], 404);
           }
       
-          $roiPercent = rand(1, 10);
-          $roiAmount = number_format($balance * ($roiPercent / 100), 2, '.', '');
           $orderNo = 'ORD' . strtoupper(uniqid());
-          $order = Order::create([
+      
+          Order::create([
               'user_id' => $user->id,
               'company_name' => $company->company_name,
               'company_logo' => $company->company_logo,
               'order_no' => $orderNo,
               'roi' => $roiAmount,
-              'ttime' => date('Y-m-d') // Add this if you use it for filtering
+              'ttime' => $today
           ]);
+      
+          // Add income on final trade
+          if (($todaysRoi + 1) === $quantifiable_count) {
+              \DB::table('incomes')->insert([
+                  'user_id' => $user->id,
+                  'user_id_fk' => $user->username,
+                  'amt' => $totalRoiAmount,
+                  'comm' => $totalRoiAmount,
+                  'ttime' => $today,
+                  'level' => 1,
+                  'remarks' => 'Daily Reward',
+                  'created_at' => now(),
+                  'updated_at' => now(),
+              ]);
+
+              \DB::table('users')->where('id',$user->id)->update(['last_trade' => date("Y-m-d H:i:s")]);  
+          }
       
           return response()->json([
               'status' => true,
               'message' => 'Order created successfully.',
               'data' => [
-                  'totalTask' =>$todaysRoi+1,
+                  'totalTask' => $todaysRoi + 1,
                   'walletBalance' => round($user->available_balance(), 2),
-                  'todaysEarning' => $todaysRoiSum+$roiAmount,
+                  'todaysEarning' => $roiSoFar + $roiAmount,
                   'company' => $company->company_name,
                   'logo' => $company->company_logo,
                   'roi_amount' => $roiAmount,
                   'tradeAmt' => $updateBalance,
                   'orderNo' => $orderNo,
-                  'dateTime' => Date("Y-m-d H:i:s")
+                  'dateTime' => date("Y-m-d H:i:s")
               ]
           ]);
       }

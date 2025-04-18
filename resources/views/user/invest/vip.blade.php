@@ -304,6 +304,20 @@
                                 $balance = round(Auth::user()->available_balance(), 2);
                                 
                                 ?>
+
+                            @php
+                            $vipRules = [
+                                1 => ['amount' => 60,   'requires' => 0],
+                                2 => ['amount' => 120,  'requires' => 1],
+                                3 => ['amount' => 360,  'requires' => 2],
+                                4 => ['amount' => 840,  'requires' => 3],
+                                5 => ['amount' => 1680, 'requires' => 4],
+                                6 => ['amount' => 3600, 'requires' => 5],
+                                7 => ['amount' => 7560, 'requires' => 6],
+                                8 => ['amount' => 15000,'requires' => 7],
+                            ];
+                            @endphp
+
                                 <div class="bann">
                                     <div class="swiper-container">
                                         <div class="swiper-wrapper" style="">
@@ -382,25 +396,38 @@
                                                         </div>
 
                                                         <div class="card-footer">
-                                                            @if ($balance >= 60)
-                                                                @if ($myRank >= 1)
-                                                                    <button class="cta-button" disabled
-                                                                        style="background: #888; cursor: not-allowed;">Completed</button>
-                                                                @else
-                                                                    <form method="POST"
-                                                                        action="{{ route('user.fundActivation') }}">
-                                                                        @csrf
-                                                                        <input type="hidden" name="rank"
-                                                                            value="1">
-                                                                        <input type="hidden" name="amount"
-                                                                            value="60">
-                                                                        <button type="submit"
-                                                                            class="cta-button">Upgrade VIP 1</button>
-                                                                    </form>
-                                                                @endif
+                                                        
+                                                            @php
+                                                                $vipLevel = 1; // ← Change this dynamically in each card (e.g. 1 for VIP1, 2 for VIP2...)
+                                                                $rule = $vipRules[$vipLevel];
+                                                                $requiredAmount = $rule['amount'];
+                                                                $currentPackage = $user->package ?? 0;
+                                                                $amountToPay = max(0, $requiredAmount - $currentPackage);
+                                                            @endphp
+
+                                                            @if ($myRank >= $vipLevel)
+                                                                <button class="cta-button" disabled style="background: #888; cursor: not-allowed;">
+                                                                    Completed
+                                                                </button>
+                                                            @elseif ($myRank < $rule['requires'])
+                                                                <button class="cta-button" disabled style="background: #888; cursor: not-allowed;"
+                                                                    title="Requires VIP {{ $rule['requires'] }} to unlock this">
+                                                                    Locked
+                                                                </button>
+                                                            @elseif ($balance >= $amountToPay && $amountToPay > 0)
+                                                                <form method="POST" action="{{ route('user.fundActivation') }}">
+                                                                    @csrf
+                                                                    <input type="hidden" name="rank" value="{{ $vipLevel }}">
+                                                                    <input type="hidden" name="amount" value="{{ $amountToPay }}">
+                                                                    <button type="submit" class="cta-button">
+                                                                        Upgrade VIP {{ $vipLevel }} (${{ number_format($amountToPay, 2) }})
+                                                                    </button>
+                                                                </form>
                                                             @else
-                                                                <button class="cta-button" disabled
-                                                                    style="background: #888; cursor: not-allowed;">Upgrade</button>
+                                                                <button class="cta-button" disabled style="background: #888; cursor: not-allowed;"
+                                                                    title="You need ${{ number_format($amountToPay, 2) }} to upgrade">
+                                                                    Insufficient Balance
+                                                                </button>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -485,31 +512,38 @@
 
 
                                                         <div class="card-footer">
-                                                            @if ($balance >= 120)
-                                                                @if ($myRank == 2)
-                                                                    <button class="cta-button" disabled
-                                                                        style="background: #888; cursor: not-allowed;"
-                                                                        disabled>Completed</button>
-                                                                @elseif($myRank == 1)
-                                                                    <form method="POST"
-                                                                        action="{{ route('user.fundActivation') }}">
-                                                                        @csrf
-                                                                        <input type="hidden" name="rank"
-                                                                            value="2">
-                                                                        <input type="hidden" name="amount"
-                                                                            value="120">
-                                                                        <button type="submit"
-                                                                            class="cta-button">Upgrade VIP 2</button>
-                                                                    </form>
-                                                                @else
-                                                                    <button class="cta-button" disabled
-                                                                        title="Upgrade to VIP 2 (Need VIP 1)"
-                                                                        style="background: #888; cursor: not-allowed;">Upgrade</button>
-                                                                @endif
+                                                            
+                                                            @php
+                                                                $vipLevel =2; // ← Change this dynamically in each card (e.g. 1 for VIP1, 2 for VIP2...)
+                                                                $rule = $vipRules[$vipLevel];
+                                                                $requiredAmount = $rule['amount'];
+                                                                $currentPackage = $user->package ?? 0;
+                                                                $amountToPay = max(0, $requiredAmount - $currentPackage);
+                                                            @endphp
+
+                                                            @if ($myRank >= $vipLevel)
+                                                                <button class="cta-button" disabled style="background: #888; cursor: not-allowed;">
+                                                                    Completed
+                                                                </button>
+                                                            @elseif ($myRank < $rule['requires'])
+                                                                <button class="cta-button" disabled style="background: #888; cursor: not-allowed;"
+                                                                    title="Requires VIP {{ $rule['requires'] }} to unlock this">
+                                                                    Locked
+                                                                </button>
+                                                            @elseif ($balance >= $amountToPay && $amountToPay > 0)
+                                                                <form method="POST" action="{{ route('user.fundActivation') }}">
+                                                                    @csrf
+                                                                    <input type="hidden" name="rank" value="{{ $vipLevel }}">
+                                                                    <input type="hidden" name="amount" value="{{ $amountToPay }}">
+                                                                    <button type="submit" class="cta-button">
+                                                                        Upgrade VIP {{ $vipLevel }} (${{ number_format($amountToPay, 2) }})
+                                                                    </button>
+                                                                </form>
                                                             @else
-                                                                <button class="cta-button" disabled
-                                                                    style="background: #888; cursor: not-allowed;"
-                                                                    title="Upgrade to VIP 2 ($120 needed)">Upgrade</button>
+                                                                <button class="cta-button" disabled style="background: #888; cursor: not-allowed;"
+                                                                    title="You need ${{ number_format($amountToPay, 2) }} to upgrade">
+                                                                    Insufficient Balance
+                                                                </button>
                                                             @endif
                                                         </div>
 
@@ -587,30 +621,37 @@
                                                         </div>
 
                                                         <div class="card-footer">
-                                                            @if ($balance >= 360)
-                                                                @if ($myRank == 3)
-                                                                    <button class="cta-button" disabled
-                                                                        style="background: #888; cursor: not-allowed;">Completed</button>
-                                                                @elseif($myRank == 2)
-                                                                    <form method="POST"
-                                                                        action="{{ route('user.fundActivation') }}">
-                                                                        @csrf
-                                                                        <input type="hidden" name="rank"
-                                                                            value="3">
-                                                                        <input type="hidden" name="amount"
-                                                                            value="360">
-                                                                        <button type="submit"
-                                                                            class="cta-button">Upgrade VIP 3</button>
-                                                                    </form>
-                                                                @else
-                                                                    <button class="cta-button" disabled
-                                                                        title="Upgrade to VIP 3 (Need VIP 2)"
-                                                                        style="background: #888; cursor: not-allowed;">Upgrade</button>
-                                                                @endif
+                                                            @php
+                                                                $vipLevel =3; // ← Change this dynamically in each card (e.g. 1 for VIP1, 2 for VIP2...)
+                                                                $rule = $vipRules[$vipLevel];
+                                                                $requiredAmount = $rule['amount'];
+                                                                $currentPackage = $user->package ?? 0;
+                                                                $amountToPay = max(0, $requiredAmount - $currentPackage);
+                                                            @endphp
+
+                                                            @if ($myRank >= $vipLevel)
+                                                                <button class="cta-button" disabled style="background: #888; cursor: not-allowed;">
+                                                                    Completed
+                                                                </button>
+                                                            @elseif ($myRank < $rule['requires'])
+                                                                <button class="cta-button" disabled style="background: #888; cursor: not-allowed;"
+                                                                    title="Requires VIP {{ $rule['requires'] }} to unlock this">
+                                                                    Locked
+                                                                </button>
+                                                            @elseif ($balance >= $amountToPay && $amountToPay > 0)
+                                                                <form method="POST" action="{{ route('user.fundActivation') }}">
+                                                                    @csrf
+                                                                    <input type="hidden" name="rank" value="{{ $vipLevel }}">
+                                                                    <input type="hidden" name="amount" value="{{ $amountToPay }}">
+                                                                    <button type="submit" class="cta-button">
+                                                                        Upgrade VIP {{ $vipLevel }} (${{ number_format($amountToPay, 2) }})
+                                                                    </button>
+                                                                </form>
                                                             @else
-                                                                <button class="cta-button" disabled
-                                                                    style="background: #888; cursor: not-allowed;"
-                                                                    title="Upgrade to VIP 3 ($360 needed)">Upgrade</button>
+                                                                <button class="cta-button" disabled style="background: #888; cursor: not-allowed;"
+                                                                    title="You need ${{ number_format($amountToPay, 2) }} to upgrade">
+                                                                    Insufficient Balance
+                                                                </button>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -677,7 +718,7 @@
                                                             <div class="stats-row"><span>Daily
                                                                     Orders:</span><span>6</span></div>
                                                             <div class="stats-row"><span>Saturday/Sunday Profit:
-                                                                </span><span>10
+                                                                </span><span>14
                                                                     USDT</span></div>
                                                             <div class="stats-row"><span>Contract for
                                                                     Days:</span><span>365</span></div>
@@ -686,34 +727,31 @@
                                                         </div>
                                                         <div class="card-footer">
                                                             @php
-                                                                $totalTeam23 = $gen_team2_VIP3 + $gen_team3_VIP3;
-                                                            @endphp
-
-                                                            @if ($balance >= 840)
-                                                                @if ($myRank == 4)
-                                                                    <button class="cta-button" disabled
-                                                                        style="background: #888; cursor: not-allowed;">Completed</button>
-                                                                @elseif($myRank == 3 && $gen_team1_VIP3 >= 3 && $totalTeam23 >= 12)
-                                                                    <form method="POST"
-                                                                        action="{{ route('user.fundActivation') }}">
-                                                                        @csrf
-                                                                        <input type="hidden" name="rank"
-                                                                            value="4">
-                                                                        <input type="hidden" name="amount"
-                                                                            value="840">
-                                                                        <button type="submit"
-                                                                            class="cta-button">Upgrade VIP 4</button>
-                                                                    </form>
-                                                                @else
-                                                                    <button class="cta-button" disabled
-                                                                        title="Need VIP 3 + 3 Gen1 VIP3 + 12 Gen2/3 VIP3"
-                                                                        style="background: #888; cursor: not-allowed;">Upgrade</button>
-                                                                @endif
-                                                            @else
-                                                                <button class="cta-button" disabled
-                                                                    style="background: #888; cursor: not-allowed;"
-                                                                    title="Upgrade to VIP 4 ($840 needed)">Upgrade</button>
-                                                            @endif
+                                                            $vipLevel = 4;
+                                                            $rule = $vipRules[$vipLevel];
+                                                            $amountToPay = max(0, $rule['amount'] - $currentPackage);
+                                                            $totalTeam23 = $gen_team2_VIP3 + $gen_team3_VIP3;
+                                                            $canUpgrade = $myRank == 3 && $gen_team1_VIP3 >= 3 && $totalTeam23 >= 12;
+                                                        @endphp
+                                                        
+                                                        @if ($myRank >= $vipLevel)
+                                                            <button class="cta-button" disabled style="background: #888;">Completed</button>
+                                                        @elseif ($myRank < $rule['requires'])
+                                                            <button class="cta-button" disabled style="background: #888;" title="Requires VIP {{ $rule['requires'] }}">Locked</button>
+                                                        @elseif ($balance >= $amountToPay && $amountToPay > 0 && $canUpgrade)
+                                                            <form method="POST" action="{{ route('user.fundActivation') }}">
+                                                                @csrf
+                                                                <input type="hidden" name="rank" value="{{ $vipLevel }}">
+                                                                <input type="hidden" name="amount" value="{{ $amountToPay }}">
+                                                                <button type="submit" class="cta-button">
+                                                                    Upgrade VIP 4 (${{ number_format($amountToPay, 2) }})
+                                                                </button>
+                                                            </form>
+                                                        @elseif (!$canUpgrade)
+                                                            <button class="cta-button" disabled style="background: #888;" title="Need VIP 3 + 3 Gen1 VIP3 + 12 Gen2/3 VIP3">Team Requirements Not Met</button>
+                                                        @else
+                                                            <button class="cta-button" disabled style="background: #888;" title="Need ${{ number_format($amountToPay, 2) }} to upgrade">Insufficient Balance</button>
+                                                        @endif
                                                         </div>
                                                     </div>
                                                 </div>
@@ -787,31 +825,37 @@
                                                                     3% | 2%</span></div>
                                                         </div>
                                                         <div class="card-footer">
-                                                            @if ($balance >= 1680)
-                                                                @if ($myRank == 5)
-                                                                    <button class="cta-button" disabled
-                                                                        style="background: #888; cursor: not-allowed;">Completed</button>
-                                                                @elseif($myRank == 4 && $gen_team1_VIP4 >= 3 && $gen_team2_VIP4 + $gen_team3_VIP4 >= 25)
-                                                                    <form method="POST"
-                                                                        action="{{ route('user.fundActivation') }}">
-                                                                        @csrf
-                                                                        <input type="hidden" name="rank"
-                                                                            value="5">
-                                                                        <input type="hidden" name="amount"
-                                                                            value="1680">
-                                                                        <button type="submit"
-                                                                            class="cta-button">Upgrade VIP 5</button>
-                                                                    </form>
-                                                                @else
-                                                                    <button class="cta-button" disabled
-                                                                        title="Require: VIP 4 + 3 Gen1 VIP4 + 25 Gen2/3 VIP4"
-                                                                        style="background: #888; cursor: not-allowed;">Upgrade</button>
-                                                                @endif
-                                                            @else
-                                                                <button class="cta-button" disabled
-                                                                    style="background: #888; cursor: not-allowed;"
-                                                                    title="Upgrade to VIP 5 ($1680 needed)">Upgrade</button>
-                                                            @endif
+                                                            @php
+                                                            $vipLevel = 5;
+                                                            $requiredAmount = 1680;
+                                                            $requiredRank = 4;
+                                                            $amountToPay = max(0, $requiredAmount - ($user->package ?? 0));
+                                                            $canUpgrade = $myRank == $requiredRank && $gen_team1_VIP4 >= 3 && ($gen_team2_VIP4 + $gen_team3_VIP4) >= 25;
+                                                        @endphp
+                                                        
+                                                        @if ($myRank >= $vipLevel)
+                                                            <button class="cta-button" disabled style="background: #888; cursor: not-allowed;">Completed</button>
+                                                        
+                                                        @elseif ($myRank < $requiredRank)
+                                                            <button class="cta-button" disabled style="background: #888; cursor: not-allowed;"
+                                                                title="Requires VIP {{ $requiredRank }}">Locked</button>
+                                                        
+                                                        @elseif ($balance >= $amountToPay && $canUpgrade)
+                                                            <form method="POST" action="{{ route('user.fundActivation') }}">
+                                                                @csrf
+                                                                <input type="hidden" name="rank" value="{{ $vipLevel }}">
+                                                                <input type="hidden" name="amount" value="{{ $amountToPay }}">
+                                                                <button type="submit" class="cta-button">Upgrade VIP 5 (${{ number_format($amountToPay, 2) }})</button>
+                                                            </form>
+                                                        
+                                                        @elseif (!$canUpgrade)
+                                                            <button class="cta-button" disabled style="background: #888; cursor: not-allowed;"
+                                                                title="Requires: VIP 4 + 3 Gen1 VIP4 + 25 Gen2/3 VIP4">Team Requirements Not Met</button>
+                                                        
+                                                        @else
+                                                            <button class="cta-button" disabled style="background: #888; cursor: not-allowed;"
+                                                                title="You need ${{ number_format($amountToPay, 2) }} to upgrade">Insufficient Balance</button>
+                                                        @endif
                                                         </div>
                                                     </div>
                                                 </div>
@@ -885,31 +929,37 @@
                                                                     3% | 2%</span></div>
                                                         </div>
                                                         <div class="card-footer">
-                                                            @if ($balance >= 3600)
-                                                                @if ($myRank == 6)
-                                                                    <button class="cta-button" disabled
-                                                                        style="background: #888; cursor: not-allowed;">Completed</button>
-                                                                @elseif($myRank == 5 && $gen_team1_VIP5 >= 3 && $gen_team2_VIP5 + $gen_team3_VIP5 >= 50)
-                                                                    <form method="POST"
-                                                                        action="{{ route('user.fundActivation') }}">
-                                                                        @csrf
-                                                                        <input type="hidden" name="rank"
-                                                                            value="6">
-                                                                        <input type="hidden" name="amount"
-                                                                            value="3600">
-                                                                        <button type="submit"
-                                                                            class="cta-button">Upgrade VIP 6</button>
-                                                                    </form>
-                                                                @else
-                                                                    <button class="cta-button" disabled
-                                                                        title="Require: VIP 5 + 3 Gen1 VIP5 + 50 Gen2/3 VIP4"
-                                                                        style="background: #888; cursor: not-allowed;">Upgrade</button>
-                                                                @endif
-                                                            @else
-                                                                <button class="cta-button" disabled
-                                                                    style="background: #888; cursor: not-allowed;"
-                                                                    title="Upgrade to VIP 6 ($3600 needed)">Upgrade</button>
-                                                            @endif
+                                                            @php
+                                                            $vipLevel = 6;
+                                                            $requiredAmount = 3600;
+                                                            $requiredRank = 5;
+                                                            $amountToPay = max(0, $requiredAmount - ($user->package ?? 0));
+                                                            $canUpgrade = $myRank == $requiredRank && $gen_team1_VIP5 >= 3 && ($gen_team2_VIP5 + $gen_team3_VIP5) >= 50;
+                                                        @endphp
+                                                        
+                                                        @if ($myRank >= $vipLevel)
+                                                            <button class="cta-button" disabled style="background: #888; cursor: not-allowed;">Completed</button>
+                                                        
+                                                        @elseif ($myRank < $requiredRank)
+                                                            <button class="cta-button" disabled style="background: #888; cursor: not-allowed;"
+                                                                title="Requires VIP {{ $requiredRank }}">Locked</button>
+                                                        
+                                                        @elseif ($balance >= $amountToPay && $canUpgrade)
+                                                            <form method="POST" action="{{ route('user.fundActivation') }}">
+                                                                @csrf
+                                                                <input type="hidden" name="rank" value="{{ $vipLevel }}">
+                                                                <input type="hidden" name="amount" value="{{ $amountToPay }}">
+                                                                <button type="submit" class="cta-button">Upgrade VIP 6 (${{ number_format($amountToPay, 2) }})</button>
+                                                            </form>
+                                                        
+                                                        @elseif (!$canUpgrade)
+                                                            <button class="cta-button" disabled style="background: #888; cursor: not-allowed;"
+                                                                title="Requires: VIP 5 + 3 Gen1 VIP5 + 50 Gen2/3 VIP5">Team Requirements Not Met</button>
+                                                        
+                                                        @else
+                                                            <button class="cta-button" disabled style="background: #888; cursor: not-allowed;"
+                                                                title="You need ${{ number_format($amountToPay, 2) }} to upgrade">Insufficient Balance</button>
+                                                        @endif
                                                         </div>
                                                     </div>
 
@@ -985,32 +1035,34 @@
                                                                     4% | 3%</span></div>
 
                                                             <div class="card-footer">
-                                                                @if ($balance >= 7560)
-                                                                    @if ($myRank == 7)
-                                                                        <button class="cta-button" disabled
-                                                                            style="background: #888; cursor: not-allowed;">Completed</button>
-                                                                    @elseif($myRank == 6 && $gen_team1_VIP6 >= 3 && $gen_team2_VIP6 + $gen_team3_VIP6 >= 100)
-                                                                        <form method="POST"
-                                                                            action="{{ route('user.fundActivation') }}">
-                                                                            @csrf
-                                                                            <input type="hidden" name="rank"
-                                                                                value="7">
-                                                                            <input type="hidden" name="amount"
-                                                                                value="7560">
-                                                                            <button type="submit"
-                                                                                class="cta-button">Upgrade VIP
-                                                                                7</button>
-                                                                        </form>
-                                                                    @else
-                                                                        <button class="cta-button" disabled
-                                                                            title="Require: VIP 6 + 3 Gen1 VIP6 + 100 Gen2/3 VIP6"
-                                                                            style="background: #888; cursor: not-allowed;">Upgrade</button>
-                                                                    @endif
-                                                                @else
-                                                                    <button class="cta-button" disabled
-                                                                        style="background: #888; cursor: not-allowed;"
-                                                                        title="Upgrade to VIP 7 ($7560 needed)">Upgrade</button>
-                                                                @endif
+                                                                @php
+                                                                $vipLevel = 7;
+                                                                $requiredAmount = 7560;
+                                                                $requiredRank = 6;
+                                                                $amountToPay = max(0, $requiredAmount - ($user->package ?? 0));
+                                                                $canUpgrade = $myRank == $requiredRank && $gen_team1_VIP6 >= 3 && ($gen_team2_VIP6 + $gen_team3_VIP6) >= 100;
+                                                            @endphp
+                                                            
+                                                            @if ($myRank >= $vipLevel)
+                                                                <button class="cta-button" disabled style="background: #888; cursor: not-allowed;">Completed</button>
+                                                            
+                                                            @elseif ($myRank < $requiredRank)
+                                                                <button class="cta-button" disabled style="background: #888; cursor: not-allowed;" title="Requires VIP {{ $requiredRank }}">Locked</button>
+                                                            
+                                                            @elseif ($balance >= $amountToPay && $canUpgrade)
+                                                                <form method="POST" action="{{ route('user.fundActivation') }}">
+                                                                    @csrf
+                                                                    <input type="hidden" name="rank" value="{{ $vipLevel }}">
+                                                                    <input type="hidden" name="amount" value="{{ $amountToPay }}">
+                                                                    <button type="submit" class="cta-button">Upgrade VIP 7 (${{ number_format($amountToPay, 2) }})</button>
+                                                                </form>
+                                                            
+                                                            @elseif (!$canUpgrade)
+                                                                <button class="cta-button" disabled style="background: #888; cursor: not-allowed;" title="Requires: VIP 6 + 3 Gen1 VIP6 + 100 Gen2/3 VIP6">Team Requirements Not Met</button>
+                                                            
+                                                            @else
+                                                                <button class="cta-button" disabled style="background: #888; cursor: not-allowed;" title="You need ${{ number_format($amountToPay, 2) }} to upgrade">Insufficient Balance</button>
+                                                            @endif
                                                             </div>
                                                         </div>
 
@@ -1088,32 +1140,37 @@
                                                                     4% | 3%</span></div>
 
                                                             <div class="card-footer">
-                                                                @if ($balance >= 15000)
-                                                                    @if ($myRank == 8)
-                                                                        <button class="cta-button" disabled
-                                                                            style="background: #888; cursor: not-allowed;">Completed</button>
-                                                                    @elseif($myRank == 7 && $gen_team1_VIP7 >= 3 && $gen_team2_VIP7 + $gen_team3_VIP7 >= 250)
-                                                                        <form method="POST"
-                                                                            action="{{ route('user.fundActivation') }}">
-                                                                            @csrf
-                                                                            <input type="hidden" name="rank"
-                                                                                value="8">
-                                                                            <input type="hidden" name="amount"
-                                                                                value="15000">
-                                                                            <button type="submit"
-                                                                                class="cta-button">Upgrade to VIP
-                                                                                8</button>
-                                                                        </form>
-                                                                    @else
-                                                                        <button class="cta-button" disabled
-                                                                            title="Require: VIP 7 + 3 Gen1 VIP7 + 250 Gen2/3 VIP7"
-                                                                            style="background: #888; cursor: not-allowed;">Upgrade</button>
-                                                                    @endif
-                                                                @else
-                                                                    <button class="cta-button" disabled
-                                                                        style="background: #888; cursor: not-allowed;"
-                                                                        title="Upgrade to VIP 8 ($15000 needed)">Upgrade</button>
-                                                                @endif
+                                                                @php
+                                                                $vipLevel = 8;
+                                                                $requiredAmount = 15000;
+                                                                $requiredRank = 7;
+                                                                $amountToPay = max(0, $requiredAmount - ($user->package ?? 0));
+                                                                $canUpgrade = $myRank == $requiredRank && $gen_team1_VIP7 >= 3 && ($gen_team2_VIP7 + $gen_team3_VIP7) >= 250;
+                                                            @endphp
+                                                            
+                                                            @if ($myRank >= $vipLevel)
+                                                                <button class="cta-button" disabled style="background: #888; cursor: not-allowed;">Completed</button>
+                                                            
+                                                            @elseif ($myRank < $requiredRank)
+                                                                <button class="cta-button" disabled style="background: #888; cursor: not-allowed;"
+                                                                    title="Requires VIP {{ $requiredRank }}">Locked</button>
+                                                            
+                                                            @elseif ($balance >= $amountToPay && $canUpgrade)
+                                                                <form method="POST" action="{{ route('user.fundActivation') }}">
+                                                                    @csrf
+                                                                    <input type="hidden" name="rank" value="{{ $vipLevel }}">
+                                                                    <input type="hidden" name="amount" value="{{ $amountToPay }}">
+                                                                    <button type="submit" class="cta-button">Upgrade VIP 8 (${{ number_format($amountToPay, 2) }})</button>
+                                                                </form>
+                                                            
+                                                            @elseif (!$canUpgrade)
+                                                                <button class="cta-button" disabled style="background: #888; cursor: not-allowed;"
+                                                                    title="Requires: VIP 7 + 3 Gen1 VIP7 + 250 Gen2/3 VIP7">Team Requirements Not Met</button>
+                                                            
+                                                            @else
+                                                                <button class="cta-button" disabled style="background: #888; cursor: not-allowed;"
+                                                                    title="You need ${{ number_format($amountToPay, 2) }} to upgrade">Insufficient Balance</button>
+                                                            @endif
                                                             </div>
 
                                                         </div>

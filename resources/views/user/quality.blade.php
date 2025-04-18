@@ -269,7 +269,7 @@
         }
     }
 
-  
+
     /* From Uiverse.io by ZacharyCrespin */
     @keyframes square-animation {
         0% {
@@ -526,176 +526,178 @@
     }
 
     .button {
-    --black-700: hsla(0 0% 12% / 1);
-    /* --border_radius: 9999px; */
-    --transtion: 0.3s ease-in-out;
-    --offset: 2px;
-    cursor: pointer;
-    position: relative;
-    display: flex
-;
-    align-items: center;
-    gap: 0px;
-    transform-origin: center;
-    padding: 15px;
-    background-color: transparent;
-    border: none;
-    border-radius: var(--border_radius);
-    transform: scale(calc(1 + (var(--active, 0) * 0.1)));
-    transition: transform var(--transtion);
-}
+        --black-700: hsla(0 0% 12% / 1);
+        /* --border_radius: 9999px; */
+        --transtion: 0.3s ease-in-out;
+        --offset: 2px;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 0px;
+        transform-origin: center;
+        padding: 15px;
+        background-color: transparent;
+        border: none;
+        border-radius: var(--border_radius);
+        transform: scale(calc(1 + (var(--active, 0) * 0.1)));
+        transition: transform var(--transtion);
+    }
 
-.button::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    .button::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 
-  width: 100%;
-  height: 100%;
-  background-color: var(--black-700);
+        width: 100%;
+        height: 100%;
+        background-color: var(--black-700);
 
-  border-radius: var(--border_radius);
-  box-shadow: inset 0 0.5px hsl(0, 0%, 100%), inset 0 -1px 2px 0 hsl(0, 0%, 0%),
-    0px 4px 10px -4px hsla(0 0% 0% / calc(1 - var(--active, 0))),
-    0 0 0 calc(var(--active, 0) * 0.375rem) hsl(260 97% 50% / 0.75);
+        border-radius: var(--border_radius);
+        box-shadow: inset 0 0.5px hsl(0, 0%, 100%), inset 0 -1px 2px 0 hsl(0, 0%, 0%),
+            0px 4px 10px -4px hsla(0 0% 0% / calc(1 - var(--active, 0))),
+            0 0 0 calc(var(--active, 0) * 0.375rem) hsl(260 97% 50% / 0.75);
 
-  transition: all var(--transtion);
-  z-index: 0;
-}
+        transition: all var(--transtion);
+        z-index: 0;
+    }
 
-.button::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    .button::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 
-  width: 100%;
-  height: 100%;
-  background-color: hsla(260 97% 61% / 0.75);
-  background-image: radial-gradient(
-      at 51% 89%,
-      hsla(266, 45%, 74%, 1) 0px,
-      transparent 50%
-    ),
-    radial-gradient(at 100% 100%, hsla(266, 36%, 60%, 1) 0px, transparent 50%),
-    radial-gradient(at 22% 91%, hsla(266, 36%, 60%, 1) 0px, transparent 50%);
-  background-position: top;
+        width: 100%;
+        height: 100%;
+        background-color: hsla(260 97% 61% / 0.75);
+        background-image: radial-gradient(at 51% 89%,
+                hsla(266, 45%, 74%, 1) 0px,
+                transparent 50%),
+            radial-gradient(at 100% 100%, hsla(266, 36%, 60%, 1) 0px, transparent 50%),
+            radial-gradient(at 22% 91%, hsla(266, 36%, 60%, 1) 0px, transparent 50%);
+        background-position: top;
 
-  opacity: var(--active, 0);
-  border-radius: var(--border_radius);
-  transition: opacity var(--transtion);
-  z-index: 2;
-}
+        opacity: var(--active, 0);
+        border-radius: var(--border_radius);
+        transition: opacity var(--transtion);
+        z-index: 2;
+    }
 
-/* .button:is(:hover, :focus-visible) {
+    /* .button:is(:hover, :focus-visible) {
   --active: 1;
 } */
-.button:active {
-  transform: scale(1);
-}
+    .button:active {
+        transform: scale(1);
+    }
 
-.button .dots_border {
-  --size_border: calc(100% + 2px);
+    .button .dots_border {
+        --size_border: calc(100% + 2px);
 
-  overflow: hidden;
+        overflow: hidden;
 
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 
-  width: var(--size_border);
-  height: var(--size_border);
-  background-color: transparent;
+        width: var(--size_border);
+        height: var(--size_border);
+        background-color: transparent;
 
-  border-radius: var(--border_radius);
-  z-index: -10;
-}
+        border-radius: var(--border_radius);
+        z-index: -10;
+    }
 
-.button .dots_border::before {
-  content: "";
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transform-origin: left;
-  transform: rotate(0deg);
+    .button .dots_border::before {
+        content: "";
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transform-origin: left;
+        transform: rotate(0deg);
 
-  width: 100%;
-  height: 2rem;
-  background-color: white;
+        width: 100%;
+        height: 2rem;
+        background-color: white;
 
-  mask: linear-gradient(transparent 0%, white 120%);
-  animation: rotate 2s linear infinite;
-}
+        mask: linear-gradient(transparent 0%, white 120%);
+        animation: rotate 2s linear infinite;
+    }
 
-@keyframes rotate {
-  to {
-    transform: rotate(360deg);
-  }
-}
+    @keyframes rotate {
+        to {
+            transform: rotate(360deg);
+        }
+    }
 
-.button .sparkle {
-    position: relative;
-    z-index: 10;
-    margin: -8px auto;
-    width: 0.75rem;
-}
+    .button .sparkle {
+        position: relative;
+        z-index: 10;
+        margin: -8px auto;
+        width: 0.75rem;
+    }
 
-.button .sparkle .path {
-  fill: currentColor;
-  stroke: currentColor;
+    .button .sparkle .path {
+        fill: currentColor;
+        stroke: currentColor;
 
-  transform-origin: center;
+        transform-origin: center;
 
-  color: hsl(0, 0%, 100%);
-}
+        color: hsl(0, 0%, 100%);
+    }
 
-.button:is(:hover, :focus) .sparkle .path {
-  animation: path 1.5s linear 0.5s infinite;
-}
+    .button:is(:hover, :focus) .sparkle .path {
+        animation: path 1.5s linear 0.5s infinite;
+    }
 
-.button .sparkle .path:nth-child(1) {
-  --scale_path_1: 1.2;
-}
-.button .sparkle .path:nth-child(2) {
-  --scale_path_2: 1.2;
-}
-.button .sparkle .path:nth-child(3) {
-  --scale_path_3: 1.2;
-}
+    .button .sparkle .path:nth-child(1) {
+        --scale_path_1: 1.2;
+    }
 
-@keyframes path {
-  0%,
-  34%,
-  71%,
-  100% {
-    transform: scale(1);
-  }
-  17% {
-    transform: scale(var(--scale_path_1, 1));
-  }
-  49% {
-    transform: scale(var(--scale_path_2, 1));
-  }
-  83% {
-    transform: scale(var(--scale_path_3, 1));
-  }
-}
+    .button .sparkle .path:nth-child(2) {
+        --scale_path_2: 1.2;
+    }
 
-.button .text_button {
-    position: relative;
-    z-index: 10;
-    background-image: linear-gradient(90deg, hsla(0 0% 100% / 1) 0%, hsla(0 0% 100% / var(--active, 0)) 120%);
-    background-clip: text;
-    font-size: 20px;
-    color: transparent;
-    margin: 0px auto;
-}
+    .button .sparkle .path:nth-child(3) {
+        --scale_path_3: 1.2;
+    }
 
+    @keyframes path {
+
+        0%,
+        34%,
+        71%,
+        100% {
+            transform: scale(1);
+        }
+
+        17% {
+            transform: scale(var(--scale_path_1, 1));
+        }
+
+        49% {
+            transform: scale(var(--scale_path_2, 1));
+        }
+
+        83% {
+            transform: scale(var(--scale_path_3, 1));
+        }
+    }
+
+    .button .text_button {
+        position: relative;
+        z-index: 10;
+        background-image: linear-gradient(90deg, hsla(0 0% 100% / 1) 0%, hsla(0 0% 100% / var(--active, 0)) 120%);
+        background-clip: text;
+        font-size: 20px;
+        color: transparent;
+        margin: 0px auto;
+    }
 </style>
 
 <body class="mein_cn">
@@ -754,8 +756,7 @@
                                 <li data-v-73226123="">
                                     <div data-v-73226123="" class="title">My level</div>
                                     <div data-v-73226123="" class="val"><img data-v-73226123=""
-                                            src="{{ asset('') }}static/img/V0_icon.69de7dcc.png"
-                                            alt="">G0 </div>
+                                            src="{{ asset('') }}static/img/V0_icon.69de7dcc.png" alt="">G0 </div>
                                 </li>
                                 <li data-v-73226123="">
                                     <div data-v-73226123="" class="title">Wallet balance(USDT)</div>
@@ -794,9 +795,9 @@
 
                             <div id="defaultContent" style="display: block;">
                                 <div data-v-427eef2e="" data-v-6e2d35de="" class="select-level-tab">
-                                    <div data-v-427eef2e="" data-v-6e2d35de="" class="ico"><img
-                                            data-v-427eef2e="" data-v-6e2d35de=""
-                                            src="{{ asset('') }}static/img/V0_icon.69de7dcc.png" alt="">
+                                    <div data-v-427eef2e="" data-v-6e2d35de="" class="ico"><img data-v-427eef2e=""
+                                            data-v-6e2d35de="" src="{{ asset('') }}static/img/V0_icon.69de7dcc.png"
+                                            alt="">
                                     </div>
                                     <div data-v-427eef2e="" data-v-6e2d35de="" class="flex1">
                                         <div data-v-427eef2e="" data-v-6e2d35de="" class="title">G0</div>
@@ -813,7 +814,7 @@
                                     </div>
                                 </div>
 
-                                {{-- loader  --}}
+                                {{-- loader --}}
 
                                 <div id="loader-overlay" class="van-overlay" style="z-index: 2001; display:none">
                                 </div>
@@ -842,7 +843,7 @@
 
 
 
-                                {{-- model popup  --}}
+                                {{-- model popup --}}
                                 <div id="modal-overlay" class="van-overlay" style="z-index: 2001; display:none;">
                                 </div>
                                 <div id="modal" data-v-a7d12cfc="" class="van-popup van-popup--round"
@@ -886,47 +887,104 @@
                                         <div class="progress-fill" id="progressFill" style="width: {{$process}}%"></div>
                                     </div>
 
+
+
+                                    @php
+                                    $hourdiff = round((strtotime(date('Y-m-d H:i:s')) -
+                                    strtotime(Auth::user()->last_trade)) / 3600);
+                                    @endphp
+
+                                    @if ($hourdiff >= 24)
                                     <button class="button" id="submitOrderBtn" onclick="submitOrder()">
                                         <div class="dots_border"></div>
-                                     
-                                        <p class="text_button">    <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            class="sparkle"
-                                          >
-                                            <path
-                                              class="path"
-                                              stroke-linejoin="round"
-                                              stroke-linecap="round"
-                                              stroke="black"
-                                              fill="black"
-                                              d="M14.187 8.096L15 5.25L15.813 8.096C16.0231 8.83114 16.4171 9.50062 16.9577 10.0413C17.4984 10.5819 18.1679 10.9759 18.903 11.186L21.75 12L18.904 12.813C18.1689 13.0231 17.4994 13.4171 16.9587 13.9577C16.4181 14.4984 16.0241 15.1679 15.814 15.903L15 18.75L14.187 15.904C13.9769 15.1689 13.5829 14.4994 13.0423 13.9587C12.5016 13.4181 11.8321 13.0241 11.097 12.814L8.25 12L11.096 11.187C11.8311 10.9769 12.5006 10.5829 13.0413 10.0423C13.5819 9.50162 13.9759 8.83214 14.186 8.097L14.187 8.096Z"
-                                            ></path>
-                                            <path
-                                              class="path"
-                                              stroke-linejoin="round"
-                                              stroke-linecap="round"
-                                              stroke="black"
-                                              fill="black"
-                                              d="M6 14.25L5.741 15.285C5.59267 15.8785 5.28579 16.4206 4.85319 16.8532C4.42059 17.2858 3.87853 17.5927 3.285 17.741L2.25 18L3.285 18.259C3.87853 18.4073 4.42059 18.7142 4.85319 19.1468C5.28579 19.5794 5.59267 20.1215 5.741 20.715L6 21.75L6.259 20.715C6.40725 20.1216 6.71398 19.5796 7.14639 19.147C7.5788 18.7144 8.12065 18.4075 8.714 18.259L9.75 18L8.714 17.741C8.12065 17.5925 7.5788 17.2856 7.14639 16.853C6.71398 16.4204 6.40725 15.8784 6.259 15.285L6 14.25Z"
-                                            ></path>
-                                            <path
-                                              class="path"
-                                              stroke-linejoin="round"
-                                              stroke-linecap="round"
-                                              stroke="black"
-                                              fill="black"
-                                              d="M6.5 4L6.303 4.5915C6.24777 4.75718 6.15472 4.90774 6.03123 5.03123C5.90774 5.15472 5.75718 5.24777 5.5915 5.303L5 5.5L5.5915 5.697C5.75718 5.75223 5.90774 5.84528 6.03123 5.96877C6.15472 6.09226 6.24777 6.24282 6.303 6.4085L6.5 7L6.697 6.4085C6.75223 6.24282 6.84528 6.09226 6.96877 5.96877C7.09226 5.84528 7.24282 5.75223 7.4085 5.697L8 5.5L7.4085 5.303C7.24282 5.24777 7.09226 5.15472 6.96877 5.03123C6.84528 4.90774 6.75223 4.75718 6.697 4.5915L6.5 4Z"
-                                            ></path>
-                                            
-                                          </svg> GET TO WORK</p>
-                                     
-                                      </button>
-                                    {{-- <button class="button" id="submitOrderBtn" onclick="submitOrder()">GET TO WORK</button> --}}
-                                 
 
-                                    
+                                        <p class="text_button"> <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" class="sparkle">
+                                                <path class="path" stroke-linejoin="round" stroke-linecap="round"
+                                                    stroke="black" fill="black"
+                                                    d="M14.187 8.096L15 5.25L15.813 8.096C16.0231 8.83114 16.4171 9.50062 16.9577 10.0413C17.4984 10.5819 18.1679 10.9759 18.903 11.186L21.75 12L18.904 12.813C18.1689 13.0231 17.4994 13.4171 16.9587 13.9577C16.4181 14.4984 16.0241 15.1679 15.814 15.903L15 18.75L14.187 15.904C13.9769 15.1689 13.5829 14.4994 13.0423 13.9587C12.5016 13.4181 11.8321 13.0241 11.097 12.814L8.25 12L11.096 11.187C11.8311 10.9769 12.5006 10.5829 13.0413 10.0423C13.5819 9.50162 13.9759 8.83214 14.186 8.097L14.187 8.096Z">
+                                                </path>
+                                                <path class="path" stroke-linejoin="round" stroke-linecap="round"
+                                                    stroke="black" fill="black"
+                                                    d="M6 14.25L5.741 15.285C5.59267 15.8785 5.28579 16.4206 4.85319 16.8532C4.42059 17.2858 3.87853 17.5927 3.285 17.741L2.25 18L3.285 18.259C3.87853 18.4073 4.42059 18.7142 4.85319 19.1468C5.28579 19.5794 5.59267 20.1215 5.741 20.715L6 21.75L6.259 20.715C6.40725 20.1216 6.71398 19.5796 7.14639 19.147C7.5788 18.7144 8.12065 18.4075 8.714 18.259L9.75 18L8.714 17.741C8.12065 17.5925 7.5788 17.2856 7.14639 16.853C6.71398 16.4204 6.40725 15.8784 6.259 15.285L6 14.25Z">
+                                                </path>
+                                                <path class="path" stroke-linejoin="round" stroke-linecap="round"
+                                                    stroke="black" fill="black"
+                                                    d="M6.5 4L6.303 4.5915C6.24777 4.75718 6.15472 4.90774 6.03123 5.03123C5.90774 5.15472 5.75718 5.24777 5.5915 5.303L5 5.5L5.5915 5.697C5.75718 5.75223 5.90774 5.84528 6.03123 5.96877C6.15472 6.09226 6.24777 6.24282 6.303 6.4085L6.5 7L6.697 6.4085C6.75223 6.24282 6.84528 6.09226 6.96877 5.96877C7.09226 5.84528 7.24282 5.75223 7.4085 5.697L8 5.5L7.4085 5.303C7.24282 5.24777 7.09226 5.15472 6.96877 5.03123C6.84528 4.90774 6.75223 4.75718 6.697 4.5915L6.5 4Z">
+                                                </path>
+
+                                            </svg> GET TO WORK</p>
+
+                                    </button>
+
+                                    @else
+                                    <script src="https://code.jquery.com//jquery-3.3.1.min.js"></script>
+
+
+                                    <?php
+                                        
+                                        $date1 = Auth::user()->last_trade;
+                                        $date1 = strtotime($date1);
+                                        $date1 = strtotime(' + 24 hours', $date1);
+                                        $new_date1 = date('Y-m-d H:i:s', $date1);
+                                        
+                                        //   echo $new_date1;
+                                        
+                                        ?>
+
+                                    <script>
+                                        // Set the date we're counting down to
+                                            timer = setInterval(function() {
+                                                countdownTimeStart();
+
+                                            }, 1000);
+
+
+                                            function countdownTimeStart() {
+
+                                                var countDownDate = new Date("{{ $new_date1 }}").getTime();
+
+                                                // Get todays date and time
+                                                // var now = new Date().getTime();
+                                                var now = new Date(new Date().toLocaleString('en-US', {
+                                                    timeZone: 'Asia/Kolkata'
+                                                }))
+
+                                                // Find the distance between now an the count down date
+                                                var distance = countDownDate - now;
+
+                                                // Time calculations for days, hours, minutes and seconds
+                                                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                                                // Output the result in an element with id="demo"
+
+
+
+                                                document.getElementById("tiles").innerHTML = "<span>" + hours + ":</span><span>" + minutes + ":</span><span>" +
+                                                    seconds + "</span>";
+                                                //   $('#left_time').html('Hello');
+
+                                                // If the count down is over, write some text 
+                                                if (distance < 0) {
+                                                    clearInterval(timer);
+                                                    document.getElementById("tiles").innerHTML = "EXPIRED";
+                                                }
+
+                                            }
+                                    </script>
+
+                                    <button class="button" >
+                                        <div class="dots_border"></div>
+
+                                      <p class="text_button" >   Next Task : <span  id='tiles'>---</span></p>
+
+                                    </button>
+                                    @endif
+
+
+
 
                                 </div>
                                 <br>
@@ -972,36 +1030,39 @@
 
 
                                 @if (is_array($level_income) || $level_income)
-                                    @foreach ($level_income as $value)
-                                    <div data-v-68c18260="" class="list-item">
-                                        <div data-v-68c18260="" class="com1">
-                                            <div data-v-68c18260="" class="left">
-                                                <div data-v-68c18260="" class="title"></div>
-                                                <div data-v-68c18260="" class="time">
-                                                    {{ date('D, d M Y', strtotime($value->created_at)) }}</div>
-                                            </div>
-                                            <div data-v-68c18260="" class="right">
-                                                <div data-v-68c18260=""></div>
-                                                <span data-v-68c18260="">Completed</span>
-                                                <i data-v-68c18260="" class="van-icon van-icon-arrow"></i>
-                                            </div>
+                                @foreach ($level_income as $value)
+                                <div data-v-68c18260="" class="list-item">
+                                    <div data-v-68c18260="" class="com1">
+                                        <div data-v-68c18260="" class="left">
+                                            <div data-v-68c18260="" class="title"></div>
+                                            <div data-v-68c18260="" class="time">
+                                                {{ date('D, d M Y', strtotime($value->created_at)) }}</div>
                                         </div>
-                                        <ul data-v-68c18260="" class="flex">
-                                            <li data-v-68c18260="">
-                                                <img style="    width: 40px;height: 40px;    margin-left: 41px;" src="{{ $value->company_logo }}" alt="Company Logo" class="w-12 h-12 rounded-xl object-cover" />
-                                                <div class="font-semibold" style="margin:10px">{{ $value->company_name }}</div>
-                                            </li>
-                                            
-                                            <li data-v-68c18260="" >
-                                                <div data-v-68c18260="" class="title">Commission</div>
-                                                <div data-v-68c18260="" class="val">
-                                                    {{ $value->roi ?? '0' }} USDT</div>
-                                            </li>
-                                        </ul>
+                                        <div data-v-68c18260="" class="right">
+                                            <div data-v-68c18260=""></div>
+                                            <span data-v-68c18260="">Completed</span>
+                                            <i data-v-68c18260="" class="van-icon van-icon-arrow"></i>
+                                        </div>
                                     </div>
-                                    @endforeach
+                                    <ul data-v-68c18260="" class="flex">
+                                        <li data-v-68c18260="">
+                                            <img style="    width: 40px;height: 40px;    margin-left: 41px;"
+                                                src="{{ $value->company_logo }}" alt="Company Logo"
+                                                class="w-12 h-12 rounded-xl object-cover" />
+                                            <div class="font-semibold" style="margin:10px">{{ $value->company_name }}
+                                            </div>
+                                        </li>
+
+                                        <li data-v-68c18260="">
+                                            <div data-v-68c18260="" class="title">Commission</div>
+                                            <div data-v-68c18260="" class="val">
+                                                {{ $value->roi ?? '0' }} USDT</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                @endforeach
                                 @else
-                                    <p style="color: #000;">No bill history available.</p>
+                                <p style="color: #000;">No bill history available.</p>
                                 @endif
                             </div>
 
@@ -1011,36 +1072,39 @@
                             <div data-v-68c18260="" class="list" id="todayContent" style="display: none;">
 
                                 @if (is_array($todaysTrade) || $todaysTrade)
-                                    @foreach ($todaysTrade as $value)
-                                        <div data-v-68c18260="" class="list-item">
-                                            <div data-v-68c18260="" class="com1">
-                                                <div data-v-68c18260="" class="left">
-                                                    <div data-v-68c18260="" class="title"></div>
-                                                    <div data-v-68c18260="" class="time">
-                                                        {{ date('D, d M Y', strtotime($value->created_at)) }}</div>
-                                                </div>
-                                                <div data-v-68c18260="" class="right">
-                                                    <div data-v-68c18260=""></div>
-                                                    <span data-v-68c18260="">Completed</span>
-                                                    <i data-v-68c18260="" class="van-icon van-icon-arrow"></i>
-                                                </div>
-                                            </div>
-                                            <ul data-v-68c18260="" class="flex">
-                                                <li data-v-68c18260="">
-                                                    <img style="    width: 40px;height: 40px;    margin-left: 41px;" src="{{ $value->company_logo }}" alt="Company Logo" class="w-12 h-12 rounded-xl object-cover" />
-                                                    <div class="font-semibold" style="margin:10px">{{ $value->company_name }}</div>
-                                                </li>
-                                                
-                                                <li data-v-68c18260="" >
-                                                    <div data-v-68c18260="" class="title">Commission</div>
-                                                    <div data-v-68c18260="" class="val">
-                                                        {{ $value->roi ?? '0' }} USDT</div>
-                                                </li>
-                                            </ul>
+                                @foreach ($todaysTrade as $value)
+                                <div data-v-68c18260="" class="list-item">
+                                    <div data-v-68c18260="" class="com1">
+                                        <div data-v-68c18260="" class="left">
+                                            <div data-v-68c18260="" class="title"></div>
+                                            <div data-v-68c18260="" class="time">
+                                                {{ date('D, d M Y', strtotime($value->created_at)) }}</div>
                                         </div>
-                                    @endforeach
+                                        <div data-v-68c18260="" class="right">
+                                            <div data-v-68c18260=""></div>
+                                            <span data-v-68c18260="">Completed</span>
+                                            <i data-v-68c18260="" class="van-icon van-icon-arrow"></i>
+                                        </div>
+                                    </div>
+                                    <ul data-v-68c18260="" class="flex">
+                                        <li data-v-68c18260="">
+                                            <img style="    width: 40px;height: 40px;    margin-left: 41px;"
+                                                src="{{ $value->company_logo }}" alt="Company Logo"
+                                                class="w-12 h-12 rounded-xl object-cover" />
+                                            <div class="font-semibold" style="margin:10px">{{ $value->company_name }}
+                                            </div>
+                                        </li>
+
+                                        <li data-v-68c18260="">
+                                            <div data-v-68c18260="" class="title">Commission</div>
+                                            <div data-v-68c18260="" class="val">
+                                                {{ $value->roi ?? '0' }} USDT</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                @endforeach
                                 @else
-                                    <p style="color: #000;">No bill history available.</p>
+                                <p style="color: #000;">No bill history available.</p>
                                 @endif
 
                             </div>
@@ -1166,8 +1230,8 @@
                         style="z-index: 2010; display:none">
                         <div data-v-29a06c8f="" class="tw-w-32 tw-text-center tw-p-16px">
                             <div data-v-29a06c8f="" class="tw-mb-16px tw-text-16px">Strategy Complete</div><img
-                                data-v-29a06c8f="" src="{{ asset('') }}static/img/icon_13.bf296378.png"
-                                alt="" class="tw-mx-auto tw-w-140px">
+                                data-v-29a06c8f="" src="{{ asset('') }}static/img/icon_13.bf296378.png" alt=""
+                                class="tw-mx-auto tw-w-140px">
                             <div data-v-29a06c8f="" class="tw-mt-16px">Congratulations to get</div>
                             <div data-v-29a06c8f="" class="tw-mt-10px tw-mb-16px tw-text-14px">
                                 <div data-v-29a06c8f=""> 0.0951 USDT </div>
@@ -1242,6 +1306,8 @@
                                     submitBtn.innerText = "ALL TASKS COMPLETED";
                                     submitBtn.style.backgroundColor = "#999";
                                     submitBtn.style.cursor = "not-allowed";
+
+
                                 }
 
                                 document.getElementById('modal-overlay').style.display = 'block';
