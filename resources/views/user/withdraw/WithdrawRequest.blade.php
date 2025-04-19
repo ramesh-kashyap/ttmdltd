@@ -206,8 +206,8 @@
                                         alt=""></div>
                                 <div data-v-c0dba864="" data-v-7daccefc="" class="flex1">
                                 
-                                <input data-v-c0dba864=""
-                                        data-v-7daccefc="" type="text" readonly="readonly" ></div>
+                                <input data-v-c0dba864=""  value="USDT"
+                                        data-v-7daccefc="" type="text" readonly="readonly"  style="color:white;"></div>
                                 <div data-v-c0dba864="" data-v-7daccefc="" class="">
                              
                                         </div>
@@ -220,7 +220,9 @@
                                         data-v-7daccefc=""
                                         src="{{ asset('') }}static/img/wallet.png"
                                         alt=""></div>
-                                <div data-v-c0dba864="" data-v-7daccefc="" class="flex1"><input  style="color:white;" data-v-c0dba864=""
+                                <div data-v-c0dba864="" data-v-7daccefc="" class="flex1">
+                                
+                                <input    value="USDT" style="color:white;" data-v-c0dba864=""
                                         data-v-7daccefc="" type="text" readonly="readonly" style="color:white;"></div>
                                 <div data-v-c0dba864="" data-v-7daccefc="" class="arr">
                                 
