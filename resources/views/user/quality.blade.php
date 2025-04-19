@@ -180,7 +180,7 @@
         width: 50%;
         /* 3 out of 6 = 50% */
         height: 100%;
-        background-color: #96c907;
+        background: linear-gradient(90deg, var(--token-c56d9be0-ff1a-4142-9896-10e19a52f142, rgb(255, 91, 255)) 0%, var(--token-66f80229-774a-4cca-92cb-b110eff3766a, rgb(4, 182, 216)) 48.91786%, var(--token-f05fe42a-0284-4847-be0d-a2808346fd91, rgb(11, 229, 116)) 100%);
         border-radius: 10px 0 0 10px;
     }
 
