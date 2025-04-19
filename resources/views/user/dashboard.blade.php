@@ -385,13 +385,13 @@ style="width: 80px; height: 37px;" alt="">  -->
                                         <!-- Slide 2 -->
                                         <div class="swiper-slide">
                                             <div class="item">
-                                                <img src="{{ asset('') }}static/img/r7.png" alt="">
+                                                <img src="{{ asset('') }}static/img/12.png" alt="">
                                             </div>
                                         </div>
                                         <!-- Slide 3 -->
                                         <div class="swiper-slide">
                                             <div class="item">
-                                                <img src="{{ asset('') }}static/img/r8.png" alt="">
+                                                <img src="{{ asset('') }}static/img/12.png" alt="">
                                             </div>
                                         </div>
                                     </div>
