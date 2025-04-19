@@ -162,7 +162,7 @@
 
                         <div id="van-tabs-1-0" role="tab"
     class="van-tab van-tab--line van-tab--grow {{ Session::get('selected_level') == $l ? 'van-tab--active' : '' }}"
-    style="background: {{ Session::get('selected_level') == $l ? '#96c906' : '#2b2b3a' }};
+    style="background: {{ Session::get('selected_level') == $l ? 'linear-gradient(90deg, var(--token-c56d9be0-ff1a-4142-9896-10e19a52f142, rgb(255, 91, 255)) 0%, var(--token-66f80229-774a-4cca-92cb-b110eff3766a, rgb(4, 182, 216)) 48.91786%, var(--token-f05fe42a-0284-4847-be0d-a2808346fd91, rgb(11, 229, 116)) 100%)' : '#2b2b3a' }};
            border-radius: 5px; padding: 8px 15px; margin: 5px;">
     <a href="{{ route('user.referral-team') }}?selected_level={{ $l }}"
        style="color: {{ Session::get('selected_level') == $l ? '#000' : '#000' }};
