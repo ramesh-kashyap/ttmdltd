@@ -79,14 +79,7 @@
             object-fit: cover;
         }
     </style>
-    <link href="/js1743619988925/app.d968e27a.1743619988925.js?v=1743619988925" rel="preload" as="script">
-    <link href="/js1743619988925/axios.d968e27a.1743619988925.js?v=1743619988925" rel="preload" as="script">
-    <link href="/js1743619988925/compressorjs.d968e27a.1743619988925.js?v=1743619988925" rel="preload" as="script">
-    <link href="/js1743619988925/core-js.d968e27a.1743619988925.js?v=1743619988925" rel="preload" as="script">
-    <link href="/js1743619988925/crypto-js.d968e27a.1743619988925.js?v=1743619988925" rel="preload" as="script">
-    <link href="/js1743619988925/vant.d968e27a.1743619988925.js?v=1743619988925" rel="preload" as="script">
-    <link href="/js1743619988925/vendors~app.d968e27a.1743619988925.js?v=1743619988925" rel="preload" as="script">
-    <link href="/js1743619988925/vue.d968e27a.1743619988925.js?v=1743619988925" rel="preload" as="script">
+   
     <link href="{{asset('')}}static/css/app.6328f701.css" rel="preload" as="style">
     <link href="{{asset('')}}static/css/vant.d14f5539.css" rel="preload" as="style">
     <link href="{{asset('')}}static/css/vant.d14f5539.css" rel="stylesheet">
@@ -111,6 +104,8 @@
     <script charset="utf-8" src="/js1743619988925/chunk-6f896b4e.d968e27a.1743619988925.js?v=1743619988925"></script>
     <link rel="stylesheet" type="text/css" href="{{asset('')}}static/css/chunk-375cccc2.6ddcb41c.css">
     <script charset="utf-8" src="/js1743619988925/chunk-375cccc2.d968e27a.1743619988925.js?v=1743619988925"></script>
+    <link rel="icon" href="{{ asset('static/img/logo2.png') }}">
+
 </head>
 
 <body class="mein_cn">
@@ -137,61 +132,58 @@
             <div data-v-6e2d35de="" id="scroll" class="content-container">
                 <div data-v-6e2d35de="" id="content" class="content-scroll">
                     <div data-v-3aef8d5d="" data-v-6e2d35de="" class="container">
-                        <ul data-v-3aef8d5d="" data-v-6e2d35de="" class="setList">
-                            <li data-v-3aef8d5d="" data-v-6e2d35de=""><span data-v-3aef8d5d="" data-v-6e2d35de="">Date</span><img data-v-3aef8d5d="" data-v-6e2d35de="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAgCAYAAACcuBHKAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACQSURBVHgB7dPBEYMgFIThJRVYAqVQUkpIB0kHKcVSQgexg/U5cnB0RkUUL/vNcPHw+AcBEBGRE5H88rg3StkQz3J+bY/Hjo7OVsRx0TkXUSqdxp/5flunkBsSmC/gbDb0mRHwwlVs+OfWgElIuxLQogbbqOF46eaGbx61cPli6gZMQkIKGVbAXdKvaSAiIhX0NA2573NFoLgAAAAASUVORK5CYII=" alt=""></li>
-                        </ul>
+                       
+
+                      
+
                         <div data-v-3aef8d5d="" data-v-6e2d35de="" class="bott">
+                        @if (is_array($level_income) || $level_income)
+                        @foreach ($level_income as $value)
+                       
+
                             <div data-v-3aef8d5d="" role="feed" class="van-list" data-v-6e2d35de="">
+
+
                                 <div data-v-3aef8d5d="" class="list-item">
-                                    <div data-v-3aef8d5d="" class="abs level"><img data-v-3aef8d5d="" src="{{asset('')}}static/img/V0_icon.69de7dcc.png" alt=""> G0 </div>
+                               
                                     <div data-v-3aef8d5d="" class="cname">
-                                        <div data-v-3aef8d5d="" class="ico"><img data-v-3aef8d5d="" src="https://lumex-all.s3.ap-southeast-1.amazonaws.com/upload/20250314/10fe269767ca7ce52db7e712a2594139.png" alt=""><img data-v-3aef8d5d="" src="https://lumex-all.s3.ap-southeast-1.amazonaws.com/upload/20250314/786be6bda5165fd7d883eb3eefde3a42.png" alt=""></div>
-                                        <div data-v-3aef8d5d="" class="title">ETH-BNB</div>
+                                        <div data-v-3aef8d5d="" class="ico">
+                                            <img data-v-3aef8d5d="" src="{{ $value->company_logo }}" alt="" style="
+    margin-left: 5px;
+">
+                                        <!-- <img data-v-3aef8d5d="" src="{ $value->company_logo }}" alt=""> -->
+                                    </div>
+                                        <div data-v-3aef8d5d="" class="title">{{ $value->company_name }}</div>
                                     </div>
                                     <ul data-v-3aef8d5d="">
                                         <li data-v-3aef8d5d="" class="flex">
-                                            <div data-v-3aef8d5d="" class="title">Order number</div>
-                                            <div data-v-3aef8d5d="" class="val">QR20250404011926826RW7LYSN5OH5 <img data-v-3aef8d5d="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAExSURBVHgB7ZYhT8NAFMf/73qXIBcS/CS49VtMIrH9BuOTVCKLhGA2RxCkDjkEhMmqCQRpMEu4tY++OhC7ZuulE/cTp17f/5fXe8kROnD+cTOG1RkBEwZGOBACz9mY69VFUpCrWMLJ6mUfwX8lULLRsXIVsjVp3+FtX+lpt5lToBnXJTwhv9Qp4BOZwqACQhDQckynV2PLVcaMCf7d+DX8oiX8p66W8LBqXVC2rtOhwlsB9rjnnQQwMEEgCASB4xdQmy184hQw62/4gpgXToHR/buXKbSP0trMnALR1wZn6QtO3j7RBxLcnDlXOl7FSaG7fCQSp7ev2Ifnp4edT/+whkchUGJAFBH2u10dYMLCVaMqihL4mULJFM1cRSp/vCtqFcXNbs7RD2Uz1Vx6Sm9X8S+Ihl6Gr4U3ogAAAABJRU5ErkJggg==" alt=""></div>
+                                            <div data-v-3aef8d5d="" class="title">Date</div>
+                                            <div data-v-3aef8d5d="" class="val">{{ date('D, d M Y', strtotime($value->created_at)) }} </div>
                                         </li>
+                                        <!-- <li data-v-3aef8d5d="" class="flex">
+                                            <div data-v-3aef8d5d="" class="title">Country Name</div>
+                                            <div data-v-3aef8d5d="" class="val"> {{ $value->country_name }}</div>
+                                        </li> -->
                                         <li data-v-3aef8d5d="" class="flex">
-                                            <div data-v-3aef8d5d="" class="title">Trading Type</div>
-                                            <div data-v-3aef8d5d="" class="val">OTC market maker</div>
+                                            <div data-v-3aef8d5d="" class="title">commission</div>
+                                            <div data-v-3aef8d5d="" class="val"> {{ $value->roi ?? '0' }} USDT</div>
                                         </li>
-                                        <li data-v-3aef8d5d="" class="flex">
-                                            <div data-v-3aef8d5d="" class="title">Trading currency</div>
-                                            <div data-v-3aef8d5d="" class="val">ETH-BNB</div>
-                                        </li>
-                                        <li data-v-3aef8d5d="" class="flex">
-                                            <div data-v-3aef8d5d="" class="title">Trading three parties</div>
-                                            <div data-v-3aef8d5d="" class="val">LumeX Algo Vault v2.1</div>
-                                        </li>
-                                        <li data-v-3aef8d5d="" class="flex">
-                                            <div data-v-3aef8d5d="" class="title">Investment Amount </div>
-                                            <div data-v-3aef8d5d="" class="val">200<img data-v-3aef8d5d="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAL+SURBVHgBxZc9TBRBFMf/s7e7nkHgoBEUzGJslMLD2FAhjSQ2SqGJFZDYS2mkYOmsCPQmQIwxkUIaExs/aKQxAiYQG3UTSMDGg1Mi3LI7zpu747539877+CULezOTeR/z5r23DAExXpkR+3fiDsAGwHiUcWZw8AjNMbA9zrgFxtbg8mWtWV+yhs29IPsyX8EvTMN27IfMxWhaYCAUNq+FtCnrvmmhEgWSFtuTAB/H/6CwGa1JKFLCI0UVkFbbiff0iupgaZo+WMwbSv7A+eePo1UWTkiDaO/8iRwP1MDyfAo8caJAKspXayg8o0Sz3peOiZMjSAZczYUThn0gZUmkB1Ku/4E6Io6ih45CpR/ink96LV68+QD9Z3tQDtPrbzH95V3Jefs4Qdd7XDHmzIjIXqOoNxwjFHeKHaL02hAijkjtqshUA8IDnivNT6/RooVzx67fQm/7Ofn+8ttnLIonm+0D/1LgAgMq44hyn4Ubv3YKxuL2UUbYnxhWflYQwwxRVahh+JUksr77TBtaToURPzosnNfD6G3rTG9K54uN2A584TBUUUZLVrjupjbcvXQNK7vfPS2MJw4LBPa2d2Ko6zKefv0o50sQUeBBf0cP7l3skxbmx8CWcPt26onbuQJoLV3boQtX0KqHvUSAdS1MxDy9IFwvNxPW7KcEteqnsZ/4m7OOxqTvU8ptxnbxZmvTy3pij3U9m1jlnEdRJtnJyS/plIRhTeGuu45GwYUCoo/7gMaxrGiOviQazEANZLWh5lWxxqgu8wXUn3nqCeQ1PHbdGdQZx3Gn6L9UYHfsiSVS8mw5G1B6lglKPEHyfg4MsySTXtX0mOrqpqiMtxGwK6ICVSGWdqybGV2y6Jh7ZIRCSk2bUuH6wbT1RE4qlhMOhmkhqo/cO1s4UbQO1sATBZanKVqMaKHID33lBmZRRMDRXsWEJ6d9kN5QmCky5ggCIr+WOV9wxPUuJTizNiDUvMr+kfMbTFGuUjOR/Xku/tBVXnMhPs9Fdk0mOH/+AWc9XkXOlIh6AAAAAElFTkSuQmCC" alt=""></div>
-                                        </li>
-                                        <li data-v-3aef8d5d="" class="flex">
-                                            <div data-v-3aef8d5d="" class="title">Order income</div>
-                                            <div data-v-3aef8d5d="" class="val">2.72313538 <img data-v-3aef8d5d="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAL+SURBVHgBxZc9TBRBFMf/s7e7nkHgoBEUzGJslMLD2FAhjSQ2SqGJFZDYS2mkYOmsCPQmQIwxkUIaExs/aKQxAiYQG3UTSMDGg1Mi3LI7zpu747539877+CULezOTeR/z5r23DAExXpkR+3fiDsAGwHiUcWZw8AjNMbA9zrgFxtbg8mWtWV+yhs29IPsyX8EvTMN27IfMxWhaYCAUNq+FtCnrvmmhEgWSFtuTAB/H/6CwGa1JKFLCI0UVkFbbiff0iupgaZo+WMwbSv7A+eePo1UWTkiDaO/8iRwP1MDyfAo8caJAKspXayg8o0Sz3peOiZMjSAZczYUThn0gZUmkB1Ku/4E6Io6ih45CpR/ink96LV68+QD9Z3tQDtPrbzH95V3Jefs4Qdd7XDHmzIjIXqOoNxwjFHeKHaL02hAijkjtqshUA8IDnivNT6/RooVzx67fQm/7Ofn+8ttnLIonm+0D/1LgAgMq44hyn4Ubv3YKxuL2UUbYnxhWflYQwwxRVahh+JUksr77TBtaToURPzosnNfD6G3rTG9K54uN2A584TBUUUZLVrjupjbcvXQNK7vfPS2MJw4LBPa2d2Ko6zKefv0o50sQUeBBf0cP7l3skxbmx8CWcPt26onbuQJoLV3boQtX0KqHvUSAdS1MxDy9IFwvNxPW7KcEteqnsZ/4m7OOxqTvU8ptxnbxZmvTy3pij3U9m1jlnEdRJtnJyS/plIRhTeGuu45GwYUCoo/7gMaxrGiOviQazEANZLWh5lWxxqgu8wXUn3nqCeQ1PHbdGdQZx3Gn6L9UYHfsiSVS8mw5G1B6lglKPEHyfg4MsySTXtX0mOrqpqiMtxGwK6ICVSGWdqybGV2y6Jh7ZIRCSk2bUuH6wbT1RE4qlhMOhmkhqo/cO1s4UbQO1sATBZanKVqMaKHID33lBmZRRMDRXsWEJ6d9kN5QmCky5ggCIr+WOV9wxPUuJTizNiDUvMr+kfMbTFGuUjOR/Xku/tBVXnMhPs9Fdk0mOH/+AWc9XkXOlIh6AAAAAElFTkSuQmCC" alt=""></div>
-                                        </li>
-                                        <li data-v-3aef8d5d="" class="flex">
-                                            <div data-v-3aef8d5d="" class="title">Appointment price</div>
-                                            <div data-v-3aef8d5d="" class="val">200 <img data-v-3aef8d5d="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAL+SURBVHgBxZc9TBRBFMf/s7e7nkHgoBEUzGJslMLD2FAhjSQ2SqGJFZDYS2mkYOmsCPQmQIwxkUIaExs/aKQxAiYQG3UTSMDGg1Mi3LI7zpu747539877+CULezOTeR/z5r23DAExXpkR+3fiDsAGwHiUcWZw8AjNMbA9zrgFxtbg8mWtWV+yhs29IPsyX8EvTMN27IfMxWhaYCAUNq+FtCnrvmmhEgWSFtuTAB/H/6CwGa1JKFLCI0UVkFbbiff0iupgaZo+WMwbSv7A+eePo1UWTkiDaO/8iRwP1MDyfAo8caJAKspXayg8o0Sz3peOiZMjSAZczYUThn0gZUmkB1Ku/4E6Io6ih45CpR/ink96LV68+QD9Z3tQDtPrbzH95V3Jefs4Qdd7XDHmzIjIXqOoNxwjFHeKHaL02hAijkjtqshUA8IDnivNT6/RooVzx67fQm/7Ofn+8ttnLIonm+0D/1LgAgMq44hyn4Ubv3YKxuL2UUbYnxhWflYQwwxRVahh+JUksr77TBtaToURPzosnNfD6G3rTG9K54uN2A584TBUUUZLVrjupjbcvXQNK7vfPS2MJw4LBPa2d2Ko6zKefv0o50sQUeBBf0cP7l3skxbmx8CWcPt26onbuQJoLV3boQtX0KqHvUSAdS1MxDy9IFwvNxPW7KcEteqnsZ/4m7OOxqTvU8ptxnbxZmvTy3pij3U9m1jlnEdRJtnJyS/plIRhTeGuu45GwYUCoo/7gMaxrGiOviQazEANZLWh5lWxxqgu8wXUn3nqCeQ1PHbdGdQZx3Gn6L9UYHfsiSVS8mw5G1B6lglKPEHyfg4MsySTXtX0mOrqpqiMtxGwK6ICVSGWdqybGV2y6Jh7ZIRCSk2bUuH6wbT1RE4qlhMOhmkhqo/cO1s4UbQO1sATBZanKVqMaKHID33lBmZRRMDRXsWEJ6d9kN5QmCky5ggCIr+WOV9wxPUuJTizNiDUvMr+kfMbTFGuUjOR/Xku/tBVXnMhPs9Fdk0mOH/+AWc9XkXOlIh6AAAAAElFTkSuQmCC" alt=""></div>
-                                        </li>
-                                        <li data-v-3aef8d5d="" class="flex">
-                                            <div data-v-3aef8d5d="" class="title">Transaction price</div>
-                                            <div data-v-3aef8d5d="" class="val">198.0982512 <img data-v-3aef8d5d="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAL+SURBVHgBxZc9TBRBFMf/s7e7nkHgoBEUzGJslMLD2FAhjSQ2SqGJFZDYS2mkYOmsCPQmQIwxkUIaExs/aKQxAiYQG3UTSMDGg1Mi3LI7zpu747539877+CULezOTeR/z5r23DAExXpkR+3fiDsAGwHiUcWZw8AjNMbA9zrgFxtbg8mWtWV+yhs29IPsyX8EvTMN27IfMxWhaYCAUNq+FtCnrvmmhEgWSFtuTAB/H/6CwGa1JKFLCI0UVkFbbiff0iupgaZo+WMwbSv7A+eePo1UWTkiDaO/8iRwP1MDyfAo8caJAKspXayg8o0Sz3peOiZMjSAZczYUThn0gZUmkB1Ku/4E6Io6ih45CpR/ink96LV68+QD9Z3tQDtPrbzH95V3Jefs4Qdd7XDHmzIjIXqOoNxwjFHeKHaL02hAijkjtqshUA8IDnivNT6/RooVzx67fQm/7Ofn+8ttnLIonm+0D/1LgAgMq44hyn4Ubv3YKxuL2UUbYnxhWflYQwwxRVahh+JUksr77TBtaToURPzosnNfD6G3rTG9K54uN2A584TBUUUZLVrjupjbcvXQNK7vfPS2MJw4LBPa2d2Ko6zKefv0o50sQUeBBf0cP7l3skxbmx8CWcPt26onbuQJoLV3boQtX0KqHvUSAdS1MxDy9IFwvNxPW7KcEteqnsZ/4m7OOxqTvU8ptxnbxZmvTy3pij3U9m1jlnEdRJtnJyS/plIRhTeGuu45GwYUCoo/7gMaxrGiOviQazEANZLWh5lWxxqgu8wXUn3nqCeQ1PHbdGdQZx3Gn6L9UYHfsiSVS8mw5G1B6lglKPEHyfg4MsySTXtX0mOrqpqiMtxGwK6ICVSGWdqybGV2y6Jh7ZIRCSk2bUuH6wbT1RE4qlhMOhmkhqo/cO1s4UbQO1sATBZanKVqMaKHID33lBmZRRMDRXsWEJ6d9kN5QmCky5ggCIr+WOV9wxPUuJTizNiDUvMr+kfMbTFGuUjOR/Xku/tBVXnMhPs9Fdk0mOH/+AWc9XkXOlIh6AAAAAElFTkSuQmCC" alt=""></div>
-                                        </li>
-                                        <li data-v-3aef8d5d="" class="flex">
-                                            <div data-v-3aef8d5d="" class="title">Complete Time</div>
-                                            <div data-v-3aef8d5d="" class="val">04/04/2025 01:22:20</div>
-                                        </li>
+                                       
                                     </ul>
                                 </div>
                              
-                                <div class="van-list__finished-text">No more</div>
                                 <div class="van-list__placeholder"></div>
                             </div>
+
+
+                         
+                            @endforeach
+                                @else
+                                <p style="color: #000;">No bill history available.</p>
+                                @endif
+
                         </div>
+                      
                     </div>
                     <div data-v-554f6835="" data-v-3aef8d5d="" data-v-6e2d35de=""><!----></div><!---->
                 </div>

@@ -155,17 +155,29 @@
                         <div data-v-47636760="" data-v-6e2d35de="" class="item valMob">
                             <div data-v-47636760="" data-v-6e2d35de="" class="cname" style="color:white;">@lang('Mailbox')</div>
                             <div data-v-47636760="" data-v-6e2d35de="" class="inp val">
-                                <input data-v-47636760="" data-v-6e2d35de="" type="email" name="email" readonly=""  value="{{Auth::user()->email}}" style="color:white;"></div>
+                                <input data-v-47636760="" data-v-6e2d35de="" type="email" name="email" readonly=""   id="emailId" value="{{Auth::user()->email}}" style="color:white;"></div>
                         </div>
-                        <div data-v-47636760="" data-v-6e2d35de="" class="item valMob">
-                            <div data-v-47636760="" data-v-6e2d35de="" class="inp val flex">
-                                <input data-v-47636760="" data-v-6e2d35de="" name="code" type="text" placeholder="Please enter the verification code" class="flex1" style="color:white;" >
-                                <div data-v-47636760="" data-v-6e2d35de="" class="code-btn first-code-send">@lang('Send') </div>
-                                <div data-v-47636760="" data-v-6e2d35de="" class="sendCode" style="display: none;">
-                                    <div data-v-47636760="" class="van-count-down" data-v-6e2d35de=""><span data-v-47636760="" class="c-fff">49 <var data-v-47636760="">s</var></span></div>
+                        <div data-v-5745725e="" data-v-7daccefc="" class="item valMob">
+                                <div data-v-5745725e="" data-v-7daccefc="" class="cname" msttexthash="314899"
+                                    msthash="59" style="color:white;">Verification code</div>
+                                <div data-v-5745725e="" data-v-7daccefc="" class="inp val flex">
+                                    <div data-v-5745725e="" data-v-7daccefc="" class="flex1">
+
+
+                                        <input data-v-5745725e="" data-v-7daccefc="" type="text" name="code"
+                                            placeholder="Email Verification code" style="color:white;">
+                                        
+                                        </div>
+                                    <div data-v-5745725e="" data-v-7daccefc="" class="code-btn sendCode"
+                                        msttexthash="43927" msthash="61"> Send </div>
+                                    <div data-v-5745725e="" data-v-7daccefc="" class="resend-btn" _msthidden="1"
+                                        style="display: none;">
+                                        <div data-v-5745725e="" class="van-count-down" data-v-7daccefc="" msthidden="1">
+                                            <span data-v-5745725e="" msttexthash="16328" msthidden="1" msthash="62">0
+                                                <var data-v-5745725e="">s</var></span></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         <div data-v-47636760="" data-v-6e2d35de="" class="go">
                             <div data-v-d8bb9fe2="" data-v-47636760="" data-v-6e2d35de="" style="height: 1.4rem;">
                                 <div data-v-d8bb9fe2="" class="big_btn_box">
@@ -201,51 +213,90 @@
 
 
 
-    <script src="/js1743475952730/core-js.fe8857a9.1743475952730.js?v=1743475952730"></script>
-    <script src="/js1743475952730/vue.fe8857a9.1743475952730.js?v=1743475952730"></script>
-    <script src="/js1743475952730/vant.fe8857a9.1743475952730.js?v=1743475952730"></script>
-    <script src="/js1743475952730/crypto-js.fe8857a9.1743475952730.js?v=1743475952730"></script>
-    <script src="/js1743475952730/axios.fe8857a9.1743475952730.js?v=1743475952730"></script>
-    <script src="/js1743475952730/compressorjs.fe8857a9.1743475952730.js?v=1743475952730"></script>
-    <script src="/js1743475952730/vendors~app.fe8857a9.1743475952730.js?v=1743475952730"></script>
-    <script src="/js1743475952730/app.fe8857a9.1743475952730.js?v=1743475952730"></script>
+   
     <script src="https://code.jquery.com//jquery-3.3.1.min.js"></script>
 
 
-<script>
 
-        $('.code-btn').click(function(e) {
-            var ths = $(this);
+
+
+
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        var countdown;
+        var timer;
+
+        $('.code-btn').click(function (e) {
             var emailId = $('#emailId').val();
-       
-          
-            // alert(sponsor); 
+
+            if (!emailId) {
+                iziToast.error({
+                    message: 'Invalid Email!',
+                    position: "topRight"
+                });
+                return false;
+            }
+
+            startTimer(); // Start the timer after sending the code
+            $('.code-btn').hide();
+            $('.resend-btn').show();
             $.ajax({
-                type: "POST"
-                , url: "{{ route('user.send_code') }}"
-                , data: {
-                    "emailId": ""
-                    , "_token": "{{ csrf_token() }}"
-                , }
-                , success: function(response) {
-                    // alert(response);      
+                type: "POST",
+                url: "{{ route('send_forgot') }}",
+                data: {
+                    "emailId": emailId,
+                    "_token": "{{ csrf_token() }}"
+                },
+                success: function (response) {
                     if (response) {
-                        // alert("hh");
                         iziToast.success({
-                        message: 'Email send Successfully',
-                        position: "topRight"
-                    });
+                            message: 'Email sent Successfully',
+                            position: "topRight"
+                        });
+
+
+
                     } else {
-                        // alert("hi");
                         iziToast.error({
-                        message: 'Error!',
-                        position: "topRight"
-                    });
+                            message: 'Error!',
+                            position: "topRight"
+                        });
                     }
                 }
             });
         });
-            </script>
+
+        function startTimer() {
+            var resendButton = $('.resend-btn');
+            countdown = 60; // 60 seconds
+            resendButton.prop('disabled', true); // Disable the resend button
+            resendButton.text('Wait ' + countdown + 's');
+
+            timer = setInterval(function () {
+                countdown--;
+                resendButton.text('Wait ' + countdown + 's');
+
+                if (countdown <= 0) {
+                    clearInterval(timer);
+                    resendButton.prop('disabled',
+                    false); // Enable the resend button after the timer ends
+                    resendButton.text('Resend Code'); // Reset button text
+                }
+            }, 1000);
+        }
+
+        // Optional: Handle Resend Button Click
+        $('.resend-btn').click(function (e) {
+            $('.code-btn').trigger('click'); // Simulate a click on the original send button
+        });
+    });
+
+</script>
 
 
 </body>
