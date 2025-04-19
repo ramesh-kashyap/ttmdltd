@@ -17,7 +17,7 @@
     <meta name="robots" content="noindex, nofollow">
     <link rel="manifest" href="/manifest.json">
     <script>
-        window.addEventListener("error", function(event) {
+        window.addEventListener("error", function (event) {
             if (event.message.indexOf("Unexpected token '<'") > -1) {
                 location.reload();
             }
@@ -27,7 +27,7 @@
                 remotes = false;
             document.addEventListener(
                 "click",
-                function(event) {
+                function (event) {
                     noddy = event.target;
                     while (noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
                         noddy = noddy.parentNode;
@@ -44,6 +44,7 @@
                 false
             );
         }
+
     </script>
     <style>
         * {
@@ -79,6 +80,7 @@
             height: 100vh;
             object-fit: cover;
         }
+
     </style>
     <link href="/js1743475952730/app.fe8857a9.1743475952730.js?v=1743475952730" rel="preload" as="script">
     <link href="/js1743475952730/axios.fe8857a9.1743475952730.js?v=1743475952730" rel="preload" as="script">
@@ -129,9 +131,9 @@
                 <div data-v-b73557e2="" data-v-39479e50="" class="head" data-v-6e2d35de="">
                     <div data-v-b73557e2="" class="safe"></div>
                     <div data-v-b73557e2="" class="container flex">
-                        <div data-v-b73557e2="" class="back"><a href="{{ route('user.profile') }}"><img
-                                    data-v-b73557e2="" src="{{ asset('') }}static/img/eroo.png" alt="">
-                            </a></div>
+                        <div data-v-b73557e2="" class="back"><a
+                                href="{{ route('user.profile') }}"><img data-v-b73557e2=""
+                                    src="{{ asset('') }}static/img/eroo.png" alt=""> </a></div>
                         <!---->
                         <!---->
                         <!---->
@@ -172,9 +174,8 @@
                                 <div data-v-39479e50="" data-v-6e2d35de="" class="cname" style="color:white;">
                                     @lang('Mailbox')</div>
                                 <div data-v-39479e50="" data-v-6e2d35de="" class="val inp"><input data-v-39479e50=""
-                                        data-v-6e2d35de="" type="email" name="email" readonly=""
-                                        id="emailId" value="{{ Auth::user()->email }}" disabled="disabled"
-                                        style="color:white;">
+                                        data-v-6e2d35de="" type="email" name="email" readonly="" id="emailId"
+                                        value="{{ Auth::user()->email }}" disabled="disabled" style="color:white;">
                                 </div>
                             </div>
                             <div data-v-5745725e="" data-v-7daccefc="" class="item valMob">
@@ -182,24 +183,19 @@
                                     msthash="59" style="color:white;">Verification code</div>
                                 <div data-v-5745725e="" data-v-7daccefc="" class="inp val flex">
                                     <div data-v-5745725e="" data-v-7daccefc="" class="flex1">
-                                        <input data-v-5745725e="" data-v-7daccefc="" type="text"
-                                            name="first_code" placeholder="Email Verification code"
-                                            style="color:white;">
-                                    </div>
+                                        <input data-v-5745725e="" data-v-7daccefc="" type="text" name="first_code"
+                                            placeholder="Email Verification code" style="color:white;"></div>
                                     <div data-v-5745725e="" data-v-7daccefc="" class="code-btn sendCode"
                                         msttexthash="43927" msthash="61"> Send </div>
                                     <div data-v-5745725e="" data-v-7daccefc="" class="resend-btn" _msthidden="1"
                                         style="display: none;">
-                                        <div data-v-5745725e="" class="van-count-down" data-v-7daccefc=""
-                                            msthidden="1">
-                                            <span data-v-5745725e="" msttexthash="16328" msthidden="1"
-                                                msthash="62">0
-                                                <var data-v-5745725e="">s</var></span>
-                                        </div>
+                                        <div data-v-5745725e="" class="van-count-down" data-v-7daccefc="" msthidden="1">
+                                            <span data-v-5745725e="" msttexthash="16328" msthidden="1" msthash="62">0
+                                                <var data-v-5745725e="">s</var></span></div>
                                     </div>
                                 </div>
                             </div>
-                            </br>
+    </br>
                             <div class="item valMob">
                                 <div class="cname" style="color:white;">@lang('New Email')</div>
                                 <div class="val inp">
@@ -207,14 +203,14 @@
                                         placeholder="Enter your new email" style="color:white;">
                                 </div>
                             </div>
-                            </br>
+    </br>
                             <!-- NEW EMAIL VERIFICATION -->
                             <div class="item valMob">
                                 <div class="cname" style="color:white;">Verification code</div>
                                 <div class="inp val flex">
                                     <div class="flex1">
-                                        <input type="text" name="second_code"
-                                            placeholder="Email Verification code" style="color:white;">
+                                        <input type="text" name="second_code" placeholder="Email Verification code"
+                                            style="color:white;">
                                     </div>
                                     <div class="code-btn-new sendCode">Send</div>
                                     <div class="resend-btn-new" style="display: none;"></div>
@@ -222,11 +218,12 @@
                             </div>
                             <div data-v-39479e50="" data-v-6e2d35de="" class="err" style="color: red;"> </div>
                             <div data-v-39479e50="" data-v-6e2d35de="" class="go">
-                                <div data-v-d8bb9fe2="" data-v-39479e50="" data-v-6e2d35de=""
-                                    style="height: 1.4rem;">
+                                <div data-v-d8bb9fe2="" data-v-39479e50="" data-v-6e2d35de="" style="height: 1.4rem;">
                                     <div data-v-d8bb9fe2="" class="big_btn_box">
-                                        <div data-v-d8bb9fe2="" class="btn_box"><button data-v-d8bb9fe2="" class="btn" type="submit"   style=" color:black;   background: linear-gradient(90deg, var(--token-c56d9be0-ff1a-4142-9896-10e19a52f142, rgb(255, 91, 255)) 0%, var(--token-66f80229-774a-4cca-92cb-b110eff3766a, rgb(4, 182, 216)) 48.91786%, var(--token-f05fe42a-0284-4847-be0d-a2808346fd91, rgb(11, 229, 116)) 100%);">@lang('Confirm')</button></div>
-                                    </div>
+                                        <div data-v-d8bb9fe2="" class="btn_box"><button data-v-d8bb9fe2="" class="btn"
+                                                type="submit"
+                                                style=" color:black;   background: linear-gradient(180deg, #96c906, #c6f04e);">@lang('Confirm')</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -252,9 +249,9 @@
 
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             // First Email Code
-            $('.code-btn').click(function() {
+            $('.code-btn').click(function () {
                 var emailId = $('#emailId').val();
                 if (!emailId) {
                     iziToast.error({
@@ -275,7 +272,7 @@
                         "emailId": emailId,
                         "_token": "{{ csrf_token() }}"
                     },
-                    success: function(response) {
+                    success: function (response) {
                         if (response) {
                             iziToast.success({
                                 message: 'Email sent Successfully',
@@ -292,7 +289,7 @@
             });
 
             // New Email Code
-            $('.code-btn-new').click(function() {
+            $('.code-btn-new').click(function () {
                 var newEmail = $('#newEmailId').val();
                 if (!newEmail) {
                     iziToast.error({
@@ -313,7 +310,7 @@
                         "emailId": newEmail, // Same parameter name if backend supports it
                         "_token": "{{ csrf_token() }}"
                     },
-                    success: function(response) {
+                    success: function (response) {
                         if (response) {
                             iziToast.success({
                                 message: 'New Email sent Successfully',
@@ -335,7 +332,7 @@
                 var countdown = 60;
                 resendButton.prop('disabled', true).text('Wait ' + countdown + 's');
 
-                var timer = setInterval(function() {
+                var timer = setInterval(function () {
                     countdown--;
                     resendButton.text('Wait ' + countdown + 's');
                     if (countdown <= 0) {
@@ -346,14 +343,15 @@
             }
 
             // Optional Resend Clicks
-            $('.resend-btn').click(function() {
+            $('.resend-btn').click(function () {
                 $('.code-btn').trigger('click');
             });
 
-            $('.resend-btn-new').click(function() {
+            $('.resend-btn-new').click(function () {
                 $('.code-btn-new').trigger('click');
             });
         });
+
     </script>
 
 </body>
