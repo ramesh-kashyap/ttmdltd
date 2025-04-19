@@ -74,6 +74,17 @@
     transform: rotate(360deg);
   }
 }
+.footers[data-v-2620cc76] {
+width: 100%;
+min-height: auto;
+border-radius: .32rem .32rem 0 0;
+padding: .12rem .1rem .12rem .1rem;
+display: flex;
+align-items: center;
+justify-content: center;
+background: #111015;
+border: .02rem solid hsla(0, 0%, 100%, .12);
+}
 </style>
 <div data-v-6e2d35de="" class="footer">
     <div data-v-2620cc76="" data-v-32fa28da="" class="footers" data-v-6e2d35de="">

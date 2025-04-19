@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="{{ asset('') }}assets/images/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="{{ asset('') }}static/img//favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="robots" content="noindex, nofollow">
     <title>{{siteName()}}</title>
@@ -132,7 +132,7 @@
                                         <div data-v-74600836="" class="item-top">                                        
                                             <div data-v-5f911827="" data-v-74600836="" class="com-image avatar">
                                                 <div data-v-5f911827="" class="van-image image">
-                                                <span><img src="{{asset('assets/images/logo.png')}}" class="van-image__img" style="object-fit: cover;">
+                                                <span><img src="{{asset('static/img//logo.png')}}" class="van-image__img" style="object-fit: cover;">
                                                     </span>
                                                 </div>
                                             </div>

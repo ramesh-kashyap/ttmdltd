@@ -447,7 +447,7 @@ background: #e7f1f8;
             </button>
           </div>
           <div class="modal-body">
-            <div id="userData"><span class="load-gif"><img style="width: 100%;" src="{{asset('assets/images/load.gif')}}"> System calculating reports</span></div>
+            <div id="userData"><span class="load-gif"><img style="width: 100%;" src="{{asset('static/img//load.gif')}}"> System calculating reports</span></div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

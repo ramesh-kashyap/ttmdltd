@@ -33,7 +33,7 @@
                               <td class=""
                                   style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; box-sizing: border-box; font-size:32px; vertical-align: top; color: #0f0e11; font-weight: 500; text-align: center; display: block; border-radius: 3px 3px 0 0; background-color: #2b282e; margin: 0;text-shadow: 2px 2px #0100c9;font-weight: 700;text-shadow: 3px 1px 0px #c78283;font-size: 40px;margin-top: -40px;"
                                   align="center" bgcolor="#71b6f9" valign="top">
-                                <p> <img style="width:200px" src="https://gstaiq.com/assets/images/logo-2.png" alt=""> </p>
+                                <p> <img style="width:200px" src="https://gstaiq.com/static/img//logo-2.png" alt=""> </p>
                               </td>
                           </tr>
                         <tr

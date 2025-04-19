@@ -1302,7 +1302,11 @@
                                     submitBtn.innerText = "ALL TASKS COMPLETED";
                                     submitBtn.style.backgroundColor = "#999";
                                     submitBtn.style.cursor = "not-allowed";
-
+                                    
+                                        // ✅ Reload page after 5 seconds
+                                        setTimeout(() => {
+                                            location.reload();
+                                        }, 5000);
 
                                 }
 

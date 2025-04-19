@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="{{ asset('') }}assets/images/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="{{ asset('') }}static/img//favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="robots" content="noindex, nofollow">
     <title>{{ siteName() }}</title>
@@ -81,7 +81,7 @@
 </head>
 <style>
     .verification-main {
-    background-image: url(assets/images/let-you-screen-main-imgs.jpg);
+    background-image: url(static/img//let-you-screen-main-imgs.jpg);
     background-position: top center;
     background-repeat: no-repeat;
     background-color: #85f;
@@ -273,7 +273,7 @@ a {
                                         <div class="amigo-home-header">
                                             <div class="back-btn back-btn2 p-0">
                                                 <a href="#">
-                                                    <img class="logo-home" src="{{asset('')}}assets/images/logo.png"
+                                                    <img class="logo-home" src="{{asset('')}}static/img//logo.png"
                                                         alt="Button-Back">
                                                 </a>
                                                 <h1>GSTAIQ</h1>
@@ -355,7 +355,7 @@ function googleTranslateElementInit() {
                                                 <p>Last 24 Hour Profit :  <span style="color: green">{{currency()}}{{number_format($todaysRoiSum,2)}}</span></p>
                                             </div>
                                             <div class="plus-robort-main">
-                                                <img class="plus-robort" src="{{asset('')}}assets/images/plus-robort.png"
+                                                <img class="plus-robort" src="{{asset('')}}static/img//plus-robort.png"
                                                     alt="plus-robort">
                                             </div>
                                         </div>
@@ -386,7 +386,7 @@ function googleTranslateElementInit() {
                                             <div data-v-9caaf3b1="" class="icon">
                                                 <div data-v-5f911827="" data-v-9caaf3b1="" class="com-image img">
                                                     <div data-v-5f911827="" class="van-image image"><img
-                                                            src="{{asset('')}}assets/images/charge1.png"
+                                                            src="{{asset('')}}static/img//charge1.png"
                                                             class="van-image__img" style="object-fit: cover;">
                                                         <!---->
                                                         <!---->
@@ -402,7 +402,7 @@ function googleTranslateElementInit() {
                                             <div data-v-9caaf3b1="" class="icon">
                                                 <div data-v-5f911827="" data-v-9caaf3b1="" class="com-image img">
                                                     <div data-v-5f911827="" class="van-image image"><img
-                                                            src="{{asset('')}}assets/images/iconsteam.png"
+                                                            src="{{asset('')}}static/img//iconsteam.png"
                                                             class="van-image__img" style="object-fit: cover;">
                                                         <!---->
                                                         <!---->
@@ -416,7 +416,7 @@ function googleTranslateElementInit() {
                                             <div data-v-9caaf3b1="" class="icon">
                                                 <div data-v-5f911827="" data-v-9caaf3b1="" class="com-image img">
                                                     <div data-v-5f911827="" class="van-image image"><img
-                                                            src="{{asset('')}}assets/images/activity.png"
+                                                            src="{{asset('')}}static/img//activity.png"
                                                             class="van-image__img" style="object-fit: cover;">
                                                         <!---->
                                                         <!---->
@@ -430,7 +430,7 @@ function googleTranslateElementInit() {
                                             <div data-v-9caaf3b1="" class="icon">
                                                 <div data-v-5f911827="" data-v-9caaf3b1="" class="com-image img">
                                                     <div data-v-5f911827="" class="van-image image"><img
-                                                            src="{{asset('')}}assets/images/telegram.png"
+                                                            src="{{asset('')}}static/img//telegram.png"
                                                             class="van-image__img" style="object-fit: cover;">
                                                         <!---->
                                                         <!---->
@@ -445,7 +445,7 @@ function googleTranslateElementInit() {
 
                                     <div data-v-524186f8="" data-v-5ecfac1a="" class="home-router"><img
                                             data-v-524186f8="" class="home_img"
-                                            src="{{ asset('') }}assets/images/icon0.png" alt="">
+                                            src="{{ asset('') }}static/img//icon0.png" alt="">
 
                                         <div data-v-524186f8="" class="box invite">
                                             <a href="{{ route('user.share') }}">
@@ -603,7 +603,7 @@ function googleTranslateElementInit() {
                 <div data-v-8b363259="" data-v-e85f0186="" class="touch-move-con"
                     style="top: 1.88rem; right: 0.2rem;">
                     <div data-v-a1dcde29="" data-v-e85f0186="" class="customer-service"><a href="https://t.me/bernila_vious" target="_blank"> <img data-v-a1dcde29=""
-                            src="{{ asset('') }}assets/images/2003266.png"></a></div>
+                            src="{{ asset('') }}static/img//2003266.png"></a></div>
                 </div>
             </div>
             <script src="https://code.jquery.com//jquery-3.3.1.min.js"></script>

@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="{{ asset('assets/iziToast.min.css') }}">
+<link rel="stylesheet" href="{{ asset('static/iziToast.min.css') }}">
 
-<script src="{{ asset('assets/iziToast.min.js') }}"></script>
+<script src="{{ asset('static/iziToast.min.js') }}"></script>
 <style>
     .iziToast {
     border-radius: 12px;
