@@ -252,7 +252,7 @@
                                 </div>
                             </div>
                             <div data-v-5745725e="" data-v-7daccefc="" class="err"> </div>
-                            <div data-v-5745725e="" data-v-7daccefc="" class="go butgo"><button style="background: #96c906;color: black;" data-v-5745725e="" type="submit" data-v-7daccefc="" class="btn2 on" msttexthash="94991" msthash="67"> Confirm
+                            <div data-v-5745725e="" data-v-7daccefc="" class="go butgo"><button style="background: linear-gradient(90deg, var(--token-c56d9be0-ff1a-4142-9896-10e19a52f142, rgb(62 179 209)) 0%, rgb(63 174 219) 48.91786%, var(--token-f05fe42a-0284-4847-be0d-a2808346fd91, rgb(11, 229, 116)) 100%);color: black;" data-v-5745725e="" type="submit" data-v-7daccefc="" class="btn2 on" msttexthash="94991" msthash="67"> Confirm
                                 </button></div>
                         </div>
                         <!---->

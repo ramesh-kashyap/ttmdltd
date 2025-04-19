@@ -261,16 +261,16 @@
     color: #f75555;
 }
 .bann .item .abs.css4[data-v-4dfcd54a] {
-    color: #e77e00;
+    color: #ffffff;
 }
 .bann .item .abs.css6[data-v-4dfcd54a] {
-    color: #b6c3d3;
+    color: #ffffff;
 }
 .bann .item .abs.css7[data-v-4dfcd54a] {
-    color: #f95707;
+    color: #ffffff;
 }
 .bann .item .abs.css8[data-v-4dfcd54a] {
-    color: #b6c3d3;
+    color: #ffffff;
 }
 </style>
 
