@@ -334,17 +334,17 @@ style="width: 80px; height: 37px;" alt="">  -->
                       
                         <div data-v-b73557e2="" class="notice" style="margin-left: 0rem; margin-right: 0.32rem;">
                             <a href="{{ route('user.notice') }}">
-                                <img data-v-b73557e2="" src="{{ asset('assets/images/bell.png') }}" alt="">
+                                <img data-v-b73557e2="" src="{{ asset('static/img//bell.png') }}" alt="">
                                 <span data-v-b73557e2=""> {{ $notificationCount ?? 0 }}</span>
                         </div>
                         </a>
                         <div data-v-b73557e2="" class="lang">
                             <a href="{{ route('user.lang') }}"> <img data-v-b73557e2=""
-                                    src="{{ asset('assets/images/globe.png') }}" alt="">
+                                    src="{{ asset('static/img//globe.png') }}" alt="">
                         </div>
                         </a>
                         <div data-v-b73557e2="" class="notice">
-                            <img data-v-b73557e2="" src="{{ asset('assets/images/headphone.png') }}" alt="">
+                            <img data-v-b73557e2="" src="{{ asset('static/img//headphone.png') }}" alt="">
                         </div>
                         <!---->
                         <div data-v-b73557e2="" class="head_right"></div>

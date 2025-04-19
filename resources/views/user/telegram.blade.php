@@ -153,27 +153,27 @@ if (window.matchMedia) {
     <div data-v-672149cf="" data-v-e85f0186="" class="main-footer">
     <a href="http://127.0.0.1:8000/user/dashboard">
         <div data-v-672149cf="" class="item"><img data-v-672149cf=""
-                src="http://127.0.0.1:8000/assets/images/home icon.png"><span
+                src="http://127.0.0.1:8000/static/img//home icon.png"><span
                 data-v-672149cf="">Home</span></div></a>
 
                 <a href="http://127.0.0.1:8000/user/quality">
         <div data-v-672149cf="" class="item"><img data-v-672149cf=""
-                src="http://127.0.0.1:8000/assets/images/qualityicon.png"><span
+                src="http://127.0.0.1:8000/static/img//qualityicon.png"><span
                 data-v-672149cf="">Quantify</span></div></a>
 
                 <a href="http://127.0.0.1:8000/user/level-team">
         <div data-v-672149cf="" class="item"><img data-v-672149cf=""
-                src="http://127.0.0.1:8000/assets/images/team.png"><span
+                src="http://127.0.0.1:8000/static/img//team.png"><span
                 data-v-672149cf="">Team</span></div></a>
 
                 <a href="http://127.0.0.1:8000/user/invest">
         <div data-v-672149cf="" class="item on"><img data-v-672149cf=""
-                src="http://127.0.0.1:8000/assets/images/assets.png"><span
+                src="http://127.0.0.1:8000/static/img//assets.png"><span
                 data-v-672149cf="">Assets</span></div></a>
 
                 <a href="http://127.0.0.1:8000/user/profile">
         <div data-v-672149cf="" class="item"><img data-v-672149cf=""
-                src="http://127.0.0.1:8000/assets/images/profile.png"><span
+                src="http://127.0.0.1:8000/static/img//profile.png"><span
                 data-v-672149cf="">Profile</span></div></a>
         </div>
   </div>

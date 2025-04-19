@@ -82,30 +82,17 @@
             object-fit: cover;
         }
     </style>
-    <link href="/js1743619988925/app.d968e27a.1743619988925.js?v=1743619988925" rel="preload" as="script">
-    <link href="/js1743619988925/axios.d968e27a.1743619988925.js?v=1743619988925" rel="preload" as="script">
-    <link href="/js1743619988925/compressorjs.d968e27a.1743619988925.js?v=1743619988925" rel="preload" as="script">
-    <link href="/js1743619988925/core-js.d968e27a.1743619988925.js?v=1743619988925" rel="preload" as="script">
-    <link href="/js1743619988925/crypto-js.d968e27a.1743619988925.js?v=1743619988925" rel="preload" as="script">
-    <link href="/js1743619988925/vant.d968e27a.1743619988925.js?v=1743619988925" rel="preload" as="script">
-    <link href="/js1743619988925/vendors~app.d968e27a.1743619988925.js?v=1743619988925" rel="preload" as="script">
-    <link href="/js1743619988925/vue.d968e27a.1743619988925.js?v=1743619988925" rel="preload" as="script">
-    <link href="/static/css/app.6328f701.css" rel="preload" as="style">
-    <link href="/static/css/vant.d14f5539.css" rel="preload" as="style">
-    <link href="/static/css/vant.d14f5539.css" rel="stylesheet">
-    <link href="/static/css/app.6328f701.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/static/css/chunk-6f896b4e.5bb66763.css">
-    <script charset="utf-8" src="/js1743619988925/chunk-6f896b4e.d968e27a.1743619988925.js?v=1743619988925"></script>
-    <link rel="stylesheet" type="text/css" href="/static/css/chunk-5576a184.9f52f39a.css">
-    <script charset="utf-8" src="/js1743619988925/chunk-5576a184.d968e27a.1743619988925.js?v=1743619988925"></script>
-    <link rel="stylesheet" type="text/css" href="/static/css/chunk-60c8a75a.d6f6b692.css">
-    <script charset="utf-8" src="/js1743619988925/chunk-60c8a75a.d968e27a.1743619988925.js?v=1743619988925"></script>
-    <link rel="stylesheet" type="text/css" href="/static/css/chunk-a7d8f170.c87a4291.css">
-    <script charset="utf-8" src="/js1743619988925/chunk-a7d8f170.d968e27a.1743619988925.js?v=1743619988925"></script>
-    <link rel="stylesheet" type="text/css" href="/static/css/chunk-67912ed2.ae8d438d.css">
-    <script charset="utf-8" src="/js1743619988925/chunk-67912ed2.d968e27a.1743619988925.js?v=1743619988925"></script>
-    <link rel="stylesheet" type="text/css" href="/static/css/chunk-41993a66.791df78f.css">
-    <script charset="utf-8" src="/js1743619988925/chunk-41993a66.d968e27a.1743619988925.js?v=1743619988925"></script>
+   
+    <link href="{{ asset('') }}static/css/app.6328f701.css" rel="preload" as="style">
+    <link href="{{ asset('') }}static/css/vant.d14f5539.css" rel="preload" as="style">
+    <link href="{{ asset('') }}static/css/vant.d14f5539.css" rel="stylesheet">
+    <link href="{{ asset('') }}static/css/app.6328f701.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('') }}static/css/chunk-6f896b4e.5bb66763.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('') }}static/css/chunk-5576a184.9f52f39a.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('') }}static/css/chunk-60c8a75a.d6f6b692.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('') }}static/css/chunk-a7d8f170.c87a4291.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('') }}static/css/chunk-67912ed2.ae8d438d.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('') }}static/css/chunk-41993a66.791df78f.css">
     <link rel="icon"  href="{{ asset('static/img/logo2.png') }}">
 
 </head>
@@ -115,6 +102,7 @@
         color: black !important;
     }
 
+    
     /* Optional: highlight color on hover */
     .iti__country:hover {
         background-color: #f0f0f0;
@@ -145,6 +133,10 @@
     .area_pop {
     color: #ffffff;
     background: #17181d;
+}
+.van-popup--bottom {
+    left: 0px !important;
+    max-width: 8.5rem;
 }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css">
@@ -177,7 +169,7 @@
                             {{ csrf_field() }}
                             <div data-v-792679aa="" data-v-6e2d35de="" class="logo flex">
                                 <div data-v-792679aa="" data-v-6e2d35de="" class="icon"><img data-v-792679aa=""
-                                        data-v-6e2d35de="" src="/static/img/logo.png" alt=""></div>
+                                        data-v-6e2d35de="" src="{{ asset('') }}static/img/logo.png" alt=""></div>
                                 <div data-v-792679aa="" data-v-6e2d35de="" class="flex1">
                                     <div data-v-792679aa="" data-v-6e2d35de="" class="n">Hello,</div>
                                     <div data-v-366decca="" data-v-6e2d35de="" class="s">Welcome ttmdltd.com</div>
@@ -208,7 +200,7 @@
                                                 value="CA">
                                             <span data-v-39429002="" style="display: none;"></span><span
                                                 data-v-39429002="">+1</span><!----><!----><!---->
-                                            <img data-v-afb5025a="" class="icon" style="filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(245deg) brightness(104%) contrast(104%)"
+                                            <img data-v-afb5025a="" class="icon" style="filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(245deg) brightness(104%) contrast(104%);padding-right: 10px;"
                                                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADwSURBVHgB3ZI9CsJAEIXfbC6glT9Y6A2iIFpqZ+sN9AjeQG/gDfQmWgaFuDcwjZIydoKw465RCSHBJDbiB4HJ7M7HwFvg16FX0en0VgyeoAAEXrrufhbWGtvuN0moI76AlWhJ6Xgi/L0GYHgoip41MlM+hFLKgFkMdRkgL1r2nMVbGEodj5UaIyfMavrazmBFD33/7FUrjQsRRsgAAwt52K+jPSt+yfdPTrVWLxOoj08ydzeP9yltoN3ubkA0SJQxb/Vmw6QzgbQN+DZOTN702JqmzaUKE5N/JhoNIbMwlL6T1++Ug3iihbHtQcl8+AvuSPhz6vUs/okAAAAASUVORK5CYII="
                                                 alt="">
                                         </div>
@@ -289,7 +281,7 @@
                             <div data-v-792679aa="" data-v-6e2d35de="" class="go">
                                 <div data-v-792679aa="" data-v-6e2d35de="" class="submit">
                                     <button data-v-366decca="" data-v-6e2d35de=""><img data-v-366decca=""
-                                            data-v-6e2d35de="" src="/static/img/icon-go-on.310400ce.png"
+                                            data-v-6e2d35de="" src="{{ asset('') }}static/img/icon-go-on.310400ce.png"
                                             alt=""></button>
                                 </div>
                             </div>

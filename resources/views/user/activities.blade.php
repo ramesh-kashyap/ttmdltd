@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="{{ asset('') }}assets/images/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="{{ asset('') }}static/img//favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="robots" content="noindex, nofollow">
     <title>Task Center</title>
@@ -162,7 +162,7 @@
                                                     <div data-v-e6d916d4="" class="van-empty custom-image">
                                                         <div class="van-empty__image"
                                                             style="width: 2.2rem; height: 2.2rem;"><img
-                                                                src="{{asset('')}}assets/images/empty-D_AeuTry.png"></div>
+                                                                src="{{asset('')}}static/img//empty-D_AeuTry.png"></div>
                                                         <p class="van-empty__description">No Data Available   </p>
                                                         <!---->
                                                     </div>
