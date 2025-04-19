@@ -149,7 +149,7 @@
 }
 .level-com .str[data-v-0e8d00e8] {
     border-radius: .86rem;
-    background: #96c906;
+    background: linear-gradient(90deg, var(--token-c56d9be0-ff1a-4142-9896-10e19a52f142, rgb(62 179 209)) 0%, rgb(63 174 219) 48.91786%, var(--token-f05fe42a-0284-4847-be0d-a2808346fd91, rgb(11, 229, 116)) 100%);
     display: flex
 ;
     height: .48rem;
@@ -446,7 +446,7 @@ href="{{ route('user.reward-bonus') }}">
                             <div data-v-184f5bd0="" data-v-6e2d35de="" class="btn_list">
                                 <div data-v-184f5bd0="" data-v-6e2d35de="" class="go"><button data-v-184f5bd0=""
                                         data-v-6e2d35de=""
-                                        style="  color:black;  background: linear-gradient(180deg, #96c906, #c6f04e);"
+                                        style="  color:black;  background: linear-gradient(90deg, var(--token-c56d9be0-ff1a-4142-9896-10e19a52f142, rgb(255, 91, 255)) 0%, var(--token-66f80229-774a-4cca-92cb-b110eff3766a, rgb(4, 182, 216)) 48.91786%, var(--token-f05fe42a-0284-4847-be0d-a2808346fd91, rgb(11, 229, 116)) 100%);"
                                         href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">@lang('Sign Out')</button>

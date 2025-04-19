@@ -37,7 +37,7 @@
   height: 50px;
   border-radius: 50%;
   border: 1px dashed#444;
-  box-shadow: inset -5px -5px 25px rgba(0, 0, 0, 0.25), inset 5px 5px 35px rgb(185 229 64);
+  box-shadow: inset -5px -5px 25px rgba(0, 0, 0, 0.25), inset 5px 5px 35px rgb(11, 229, 116);
 }
 
 .footer .loader span {

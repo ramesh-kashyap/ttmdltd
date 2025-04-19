@@ -173,7 +173,7 @@
                         <div data-v-39479e50="" data-v-6e2d35de="" class="go">
                             <div data-v-d8bb9fe2="" data-v-39479e50="" data-v-6e2d35de="" style="height: 1.4rem;">
                                 <div data-v-d8bb9fe2="" class="big_btn_box">
-                                    <div data-v-d8bb9fe2="" class="btn_box"><button data-v-d8bb9fe2="" class="btn" type="submit"   style=" color:black;   background: linear-gradient(180deg, #96c906, #c6f04e);">@lang('Confirm')</button></div>
+                                    <div data-v-d8bb9fe2="" class="btn_box"><button data-v-d8bb9fe2="" class="btn" type="submit"   style=" color:black;   background: linear-gradient(90deg, var(--token-c56d9be0-ff1a-4142-9896-10e19a52f142, rgb(255, 91, 255)) 0%, var(--token-66f80229-774a-4cca-92cb-b110eff3766a, rgb(4, 182, 216)) 48.91786%, var(--token-f05fe42a-0284-4847-be0d-a2808346fd91, rgb(11, 229, 116)) 100%);">@lang('Confirm')</button></div>
                                 </div>
                             </div>
                         </div>
