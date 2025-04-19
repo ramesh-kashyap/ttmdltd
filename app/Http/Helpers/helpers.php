@@ -47,6 +47,44 @@ function sendEmail($user, $type = null, $shortCodes = [])
   \Mail::to($user)->send(new Sendmail($mail_data));
 }
 
+if (!function_exists('addNotification')) {
+  function addNotification($user_id, $title, $message)
+  {
+      DB::table('notifications')->insert([
+          'user_id'     => $user_id,
+          'title'       => $title,
+          'message'     => $message,
+          'read_status' => 0,
+          'created_at'  => Carbon::now(),
+          'updated_at'  => Carbon::now(),
+      ]);
+  }
+}
+
+
+if (!function_exists('getPackageRoi')) {
+  function getPackageRoi($package)
+  {
+    $roiMap = [
+      60     => ['weekday' => 2,   'weekend' => 1],
+      120    => ['weekday' => 4,   'weekend' => 2],
+      360    => ['weekday' => 12,  'weekend' => 6],
+      840    => ['weekday' => 28,  'weekend' => 14],
+      1680   => ['weekday' => 60,  'weekend' => 30],
+      3600   => ['weekday' => 120, 'weekend' => 60],
+      7560   => ['weekday' => 240, 'weekend' => 120],
+      15000  => ['weekday' => 480, 'weekend' => 240],
+  ];
+
+  $today = date('Y-m-d');
+  $day = date('N'); // 1 = Monday, 7 = Sunday
+  $isWeekend = in_array($day, [6, 7]);
+  $package = round($package, 2);
+  $totalRoiAmount = $isWeekend ? $roiMap[$package]['weekend'] : $roiMap[$package]['weekday'];
+  return $package?$totalRoiAmount:0;
+  }
+}
+
 
 function isEven($number)
 {

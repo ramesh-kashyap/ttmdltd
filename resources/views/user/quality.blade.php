@@ -707,7 +707,7 @@
                         <!---->
                         <!---->
                         <!---->
-                        <div data-v-b73557e2="" class="name tac"> Strategic trading </div>
+                        <div data-v-b73557e2="" class="name tac"> Marketing traffic</div>
                         <!---->
                         <!---->
                         <!---->
@@ -752,7 +752,7 @@
                                 <li data-v-73226123="">
                                     <div data-v-73226123="" class="title">My level</div>
                                     <div data-v-73226123="" class="val"><img data-v-73226123=""
-                                            src="{{ asset('') }}static/img/V0_icon.69de7dcc.png" alt="">G0 </div>
+                                            src="{{ asset('static/img/' . (Auth::user()->rank > 0 ? 'rank' . Auth::user()->rank : 'V0_icon.69de7dcc') . '.png') }}" alt="">VIP{{Auth::user()->rank}} </div>
                                 </li>
                                 <li data-v-73226123="">
                                     <div data-v-73226123="" class="title">Wallet balance(USDT)</div>
@@ -760,8 +760,8 @@
                                         {{ number_format(Auth::user()->available_balance(), 2) }} USDT </div>
                                 </li>
                                 <li data-v-73226123="">
-                                    <div data-v-73226123="" class="title">Available funds</div>
-                                    <div data-v-73226123="" class="val">200</div>
+                                    <div data-v-73226123="" class="title">Current Package</div>
+                                    <div data-v-73226123="" class="val">{{number_format(Auth::user()->package,2)}} USDT</div>
                                 </li>
                                 <li data-v-73226123="" class="on">
                                     <div data-v-73226123="" class="title">Today's earnings</div>
@@ -792,23 +792,19 @@
                             <div id="defaultContent" style="display: block;">
                                 <div data-v-427eef2e="" data-v-6e2d35de="" class="select-level-tab">
                                     <div data-v-427eef2e="" data-v-6e2d35de="" class="ico"><img data-v-427eef2e=""
-                                            data-v-6e2d35de="" src="{{ asset('') }}static/img/V0_icon.69de7dcc.png"
+                                            data-v-6e2d35de="" src="{{ asset('static/img/' . (Auth::user()->rank > 0 ? 'rank' . Auth::user()->rank : 'V0_icon.69de7dcc') . '.png') }}"
                                             alt="">
                                     </div>
                                     <div data-v-427eef2e="" data-v-6e2d35de="" class="flex1">
-                                        <div data-v-427eef2e="" data-v-6e2d35de="" class="title">G0</div>
-                                        <div data-v-427eef2e="" data-v-6e2d35de="" class="rate">1.20%-1.50% </div>
+                                        <div data-v-427eef2e="" data-v-6e2d35de="" class="title">VIP{{Auth::user()->rank}}</div>
+                                        <div data-v-427eef2e="" data-v-6e2d35de="" class="rate">Reward: {{ number_format(getPackageRoi(Auth::user()->package), 2) }}</div>
                                     </div>
-                                    <div data-v-427eef2e="" data-v-6e2d35de="" class="val"> 0-200 USDT </div><i
+                                    <div data-v-427eef2e="" data-v-6e2d35de="" class="val">{{number_format(Auth::user()->package,2)}} USDT </div><i
                                         data-v-427eef2e="" data-v-6e2d35de="" class="van-icon van-icon-arrow">
                                         <!---->
                                     </i>
                                 </div>
-                                <div data-v-427eef2e="" data-v-6e2d35de="" class="btns">
-                                    <div data-v-c95fb5c2="" data-v-427eef2e="" class="btn_box" data-v-6e2d35de="">
-                                        <div data-v-c95fb5c2="" class="btn submit"> Trading without appointment </div>
-                                    </div>
-                                </div>
+                               
 
                                 {{-- loader --}}
 
@@ -987,9 +983,8 @@
 
                                 <div class="order-box">
                                     <h3>ORDER DESCRIPTION</h3>
-                                    <p>(1): Based on the VIP level, task orders are automatically matched through LXJT’s
-                                        cloud system.</p>
-                                    <p>(2): According to the VIP level, get the corresponding commission.</p>
+                                    <p>Task orders are intelligently matched through TTMD’s cloud system, based on your current VIP level.</p>
+                                    <p>Receive commissions that align with your VIP tier — the higher your level, the greater your earnings.</p>
                                 </div>
 
 
@@ -1021,10 +1016,6 @@
 
 
                             <div data-v-68c18260="" class="list" id="billContent" style="display: none;">
-
-
-
-
                                 @if (is_array($level_income) || $level_income)
                                 @foreach ($level_income as $value)
                                 <div data-v-68c18260="" class="list-item">

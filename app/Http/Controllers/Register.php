@@ -125,7 +125,7 @@ class Register extends Controller
             //     'viewpage' => 'register_sucess',
             //      'link'=>route('login'),
             // ]);
-         
+            addNotification($registered_user_id, 'Welcome to TTMD', 'Start exploring, earn rewards, and connect with others. We’re here if you need help. Let’s grow together.Our team is here for help if you need any assistance.Thank you for joining us, and we look forward to your success!');
             $notify[] = ['success', 'Account Created Successfully'];
             return redirect()->route('home')->withNotify($notify);
             //  return redirect()
