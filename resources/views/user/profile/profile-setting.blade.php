@@ -291,13 +291,17 @@
 </a>
 
                                     <li data-v-184f5bd0="" data-v-6e2d35de="">
+                                    <a
+                                    href="{{ route('user.about') }}">
                                         <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img
                                                 data-v-184f5bd0="" data-v-6e2d35de=""
                                                 src="{{ asset('') }}static/img/8.png" alt=""></div>
                                         <div data-v-184f5bd0="" data-v-6e2d35de="" class="n"
                                             style="color:white;">
                                             @lang('About Us')</div>
+</a>
                                     </li>
+
                                     <a
                                                 href="{{ route('user.terms') }}">
                                     <li data-v-184f5bd0="" data-v-6e2d35de="">
@@ -386,7 +390,7 @@ href="{{ route('user.reward-bonus') }}">
                                             data-v-184f5bd0="" data-v-6e2d35de=""
                                             src="{{ asset('') }}static/img/114.png" alt=""></div>
                                 </li>
-                                <li data-v-184f5bd0="" data-v-6e2d35de="">
+                                <!-- <li data-v-184f5bd0="" data-v-6e2d35de="">
                                     <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img
                                             data-v-184f5bd0="" data-v-6e2d35de=""
                                             src="{{ asset('') }}static/img/41.png" alt=""></div>
@@ -400,7 +404,7 @@ href="{{ route('user.reward-bonus') }}">
                                             data-v-184f5bd0="" data-v-6e2d35de=""
                                             src="{{ asset('') }}static/img/114.png" alt="">
                                     </div>
-                                </li>
+                                </li> -->
                                 </ul>
                                 <ul data-v-184f5bd0="" data-v-6e2d35de="" class="ul1">
                                     <li data-v-184f5bd0="" data-v-6e2d35de="">

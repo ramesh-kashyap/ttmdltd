@@ -208,14 +208,14 @@
                    
 
                                                 <div data-v-8b8e62ac="" class="flex">
-                                                    <div data-v-8b8e62ac="" class="title">Order revenue</div>
+                                                    <div data-v-8b8e62ac="" class="title">{{$value->remarks}}</div>
                                                     <div data-v-8b8e62ac="" class="amount" >{{$value->comm}} USDT</div>
                                                 </div>
                                                 <div data-v-8b8e62ac="" class="flex">
                                                     <div data-v-8b8e62ac="" class="time">{{ date('D, d M Y H:i:s', strtotime($value->created_at)) }}</div>
                                                     <div data-v-8b8e62ac="" class="str"><span data-v-8b8e62ac=""
                                                             class="s1"></span>
-                                                            {{$value->remarks}} </div>
+                                                             Completed </div>
                                                 </div>
                                               
                                                                      

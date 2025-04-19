@@ -160,12 +160,18 @@
                         <div data-v-0d336a05="" data-v-4f616302="" class="tab_list" data-v-6e2d35de="">
                         @for ($l=1;$l<=3;$l++)
 
-<div id="van-tabs-1-0" role="tab"
-class="van-tab van-tab--line van-tab--grow <?php echo  (Session::get('selected_level')==$l)?"van-tab--active":""?>
-tabindex="0" aria-selected="true" aria-controls="van-tab-2">  <a style="color: <?php echo  (Session::get('selected_level')==$l)?"#0f0e11":"#000"?>" href="{{route('user.referral-team') }}?selected_level={{$l}}" ><span
-    class="van-tab__text" style="
-    color: white;
-">@lang('Level') {{$l}}</span> </a></div>
+                        <div id="van-tabs-1-0" role="tab"
+    class="van-tab van-tab--line van-tab--grow {{ Session::get('selected_level') == $l ? 'van-tab--active' : '' }}"
+    style="background: {{ Session::get('selected_level') == $l ? '#96c906' : '#2b2b3a' }};
+           border-radius: 5px; padding: 8px 15px; margin: 5px;">
+    <a href="{{ route('user.referral-team') }}?selected_level={{ $l }}"
+       style="color: {{ Session::get('selected_level') == $l ? '#000' : '#000' }};
+              font-weight: bold; text-decoration: none;">
+        <span class="van-tab__text" style="color: white;">
+            @lang('Level') {{ $l }}
+        </span>
+    </a>
+</div>
 
 
 @endfor

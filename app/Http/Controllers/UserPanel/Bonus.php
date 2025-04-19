@@ -11,11 +11,20 @@ use App\Models\Reward;
 use App\Models\Boost_direct;
 use App\Models\User_trade;
 use Illuminate\Support\Facades\DB;
+use App\Models\Contract;
+use App\Models\Task;
+use App\Models\Order
+;
+
+
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Http;
+
 use Auth;
 use Log;
 use Redirect;
 use Hash;
-use Validator;
 
 class Bonus extends Controller
 {
@@ -174,13 +183,115 @@ class Bonus extends Controller
 
 
 
+    public function my_level_team_count($userid,$level=3){
+        $arrin=array($userid);
+        $ret=array();
+
+        $i=1;
+        while(!empty($arrin)){
+            $alldown=User::select('id')->whereIn('sponsor',$arrin)->get()->toArray();
+            if(!empty($alldown)){
+                $arrin = array_column($alldown,'id');
+                $ret[$i]=$arrin;
+                $i++;
+
+                if ($i>$level) {
+                  break;
+                 }
+
+            }else{
+                $arrin = array();
+            }
+        }
+
+        // $final = array();
+        // if(!empty($ret)){
+        //     array_walk_recursive($ret, function($item, $key) use (&$final){
+        //         $final[] = $item;
+        //     });
+        // }
+
+
+        return $ret;
+
+    }
+
+
+
+
+
     public function reward_income(Request $request)
     {
-           $user=Auth::user();
-
-    $this->data['first_lvl'] = Reward::where('user_id',$user->id)->where('level',1)->first();
-    $this->data['second_lvl'] = Reward::where('user_id',$user->id)->where('level',2)->first();
-    $this->data['third_lvl'] = Reward::where('user_id',$user->id)->where('level',3)->first();
+        date_default_timezone_set("Asia/Kolkata");   //India time (GMT+5:30)
+        $user=Auth::user();
+        
+           $my_level_team=$this->my_level_team_count($user->id);
+    $gen_team1 =  (array_key_exists(1,$my_level_team) ? $my_level_team[1]:array());
+    $gen_team2 =  (array_key_exists(2,$my_level_team) ? $my_level_team[2]:array());
+    $gen_team3 =  (array_key_exists(3,$my_level_team) ? $my_level_team[3]:array());
+  
+    $gen_team1 = User::where(function($query) use($gen_team1)
+            {
+              if(!empty($gen_team1)){
+                foreach ($gen_team1 as $key => $value) {
+                //   $f = explode(",", $value);
+                //   print_r($f)."<br>";
+                  $query->orWhere('id', $value);
+                }
+              }else{$query->where('id',null);}
+            })->orderBy('id', 'DESC')->get();
+            
+      $gen_team2 = User::where(function($query) use($gen_team2)
+            {
+              if(!empty($gen_team2)){
+                foreach ($gen_team2 as $key => $value) {
+                //   $f = explode(",", $value);
+                //   print_r($f)."<br>";
+                  $query->orWhere('id', $value);
+                }
+              }else{$query->where('id',null);}
+            })->orderBy('id', 'DESC')->get();
+       $gen_team3 = User::where(function($query) use($gen_team3)
+            {
+              if(!empty($gen_team3)){
+                foreach ($gen_team3 as $key => $value) {
+                //   $f = explode(",", $value);
+                //   print_r($f)."<br>";
+                  $query->orWhere('id', $value);
+                }
+              }else{$query->where('id',null);}
+            })->orderBy('id', 'DESC')->get();
+  
+  
+    
+  
+      $this->data['gen_team1total'] =$gen_team1->count();
+      $this->data['active_gen_team1total'] =$gen_team1->where('active_status','Active')->count();
+      $this->data['gen_team2total'] =$gen_team2->count();
+      $this->data['active_gen_team2total'] =$gen_team2->where('active_status','Active')->count();
+  
+      $this->data['gen_team3total'] =$gen_team3->count();
+      $this->data['active_gen_team3total'] =$gen_team3->where('active_status','Active')->count();
+  
+  
+      $this->data['gen_team1Income'] =$gen_team1->count();
+  
+      $notes = Order::where('user_id',$user->id)->orderBy('id','DESC')->get();
+        
+  
+        $userDirect = User::where('sponsor',$user->id)->where('active_status','Active')->where('package','>=',30)->count();
+        $totalRoi = \DB::table('contract')->where('user_id',$user->id)->sum('profit');
+        $todaysRoi = \DB::table('orders')->where('user_id',$user->id)->where('ttime',date('Y-m-d'))->get();
+        $this->data['todaysTrade'] = $todaysRoi;
+        $this->data['totalRoi'] = $totalRoi;
+        $this->data['userDirect'] = $userDirect;
+        $this->data['todaysRoi'] = $todaysRoi->count();
+        $this->data['todaysRoiSum'] = \DB::table('orders')->where('user_id',$user->id)->where('ttime',date('Y-m-d'))->sum('roi');
+        $this->data['todaysLevelIncome'] = \DB::table('incomes')->where('user_id',$user->id)->where('ttime',date('Y-m-d'))->where('remarks','Quantify Level Income')->sum('comm');
+        $this->data['totalLevelIncome'] = \DB::table('incomes')->where('user_id',$user->id)->where('remarks','Quantify Level Income')->sum('comm');
+        $this->data['balance'] =round($user->available_balance(),2);
+        $this->data['level_income'] =$notes;
+   
     $this->data['page'] = 'user.bonus.reward-bonus';
     return $this->dashboard_layout();
 

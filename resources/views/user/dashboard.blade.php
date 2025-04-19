@@ -311,6 +311,7 @@ style="width: 80px; height: 37px;" alt="">  -->
     font-size: .24rem;
 }
 </style>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
 <body class="mein_cn">
     <div id="app" class="applang">
@@ -364,20 +365,44 @@ style="width: 80px; height: 37px;" alt="">  -->
                 <div data-v-6e2d35de="" id="content" class="content-scroll">
                     <!---->
                     <div data-v-6b16f068="" data-v-6e2d35de="" class="home" style="">
+
+                    
                         <div data-v-6b16f068="" data-v-6e2d35de="" class="container">
+
+
                             <div data-v-cd710fca="" data-v-6b16f068="" class="banner" data-v-6e2d35de="">
-                                <div data-v-cd710fca=""
-                                    class="swiper-container swiper-container-initialized swiper-container-horizontal">
-                                    <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
-                                        <div data-v-cd710fca="" class="swiper-slide swiper-slide-active">
-                                            <div data-v-cd710fca="" class="item"><img data-v-cd710fca=""
-                                                    src="{{ asset('') }}static/img/12.png" alt=""
-                                                    data-src="{{ asset('') }}static/img/12.png" lazy="loading">
-                                            </div>
-                                        </div>
-                                    </div> <span class="swiper-notification" aria-live="assertive"
-                                        aria-atomic="true"></span>
-                                </div>
+
+
+                            <div class="swiper-container">
+  <div class="swiper-wrapper">
+    <!-- Slide 1 -->
+    <div class="swiper-slide">
+      <div class="item">
+        <img src="{{ asset('') }}static/img/12.png" alt="">
+      </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="swiper-slide">
+      <div class="item">
+        <img src="{{ asset('') }}static/img/r7.png" alt="">
+      </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="swiper-slide">
+      <div class="item">
+        <img src="{{ asset('') }}static/img/r8.png" alt="">
+      </div>
+    </div>
+  </div>
+  <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+</div>
+
+
+
+
+
+
+
                             </div>
                             <ul data-v-2b218ac2="" data-v-6b16f068="" class="flex list" data-v-6e2d35de="">
 
@@ -529,3 +554,37 @@ style="width: 80px; height: 37px;" alt="">  -->
                     </div>
                 </div>
             </div>
+            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Swiper Init Script -->
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    loop: true,
+    autoplay: {
+      delay: 1000, // 10 seconds
+      disableOnInteraction: false,
+    },
+    speed: 800,
+    slidesPerView: 1,
+  });
+</script>
+
+<!-- Optional CSS to Style Swiper -->
+<style>
+  .swiper-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .swiper-slide .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide .item img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+</style>
