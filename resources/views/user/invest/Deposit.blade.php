@@ -275,7 +275,7 @@
 							src="https://tux-all.s3.ap-southeast-1.amazonaws.com/upload/20240723/bcabd0a39b535b0c04e14dc6b5f16bdd.png">
                             </div>
                             <div data-v-28f4094c="" class="item-right">
-                                <h2 data-v-28f4094c="" style="color:white;">BNB SMART CHAIN(BEP20)</h2>
+                                <h2 data-v-28f4094c="" style="color:white;">TRON(TRC20)</h2>
                                 <div data-v-28f4094c="" class="text">
                                     <p data-v-28f4094c=""> Estimated Arrival Time ≈ 8 minutes </p>
                                     <p data-v-28f4094c=""> Minimum Deposit≥ 1 USDT </p>
