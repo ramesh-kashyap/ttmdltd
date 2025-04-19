@@ -178,46 +178,38 @@
                         <div data-v-679886a1="" data-v-6e2d35de="" class="item valMob">
                             <div data-v-679886a1="" data-v-6e2d35de="" class="cname">@lang('Select Currency')</div>
                             <div data-v-679886a1="" data-v-6e2d35de="" class="inp" style="background: #0f0e11">
-                                <div data-v-679886a1="" data-v-6e2d35de="" class="icon">
-									
-								
-								<img data-v-679886a1=""
+                                <div data-v-679886a1="" data-v-6e2d35de="" class="icon"><img data-v-679886a1=""
                                         data-v-6e2d35de=""
                                         src="https://lumex-all.s3.ap-southeast-1.amazonaws.com/upload/20250303/f710b0ea16ca629941e92e00e453fd1b.png"
-                                        alt=""></div><input data-v-679886a1="" data-v-6e2d35de="" type="text"
-                                    value="USDT" readonly="readonly" style="color:white;">
+                                        alt=""></div>
 
 
-									
+                                <input data-v-679886a1="" data-v-6e2d35de="" type="text" value="USDT"
+                                    readonly="readonly" style="color:white;">
                                 <div data-v-679886a1="" data-v-6e2d35de="" class="arr">
                                 </div>
                             </div>
                         </div>
-
-
                         <div data-v-679886a1="" data-v-887483d6="" class="item valMob">
-                            <div data-v-679886a1="" data-v-887483d6="" class="cname" style="color:white;"> Select Network</div>
-
-
-
+                            <div data-v-679886a1="" data-v-887483d6="" class="cname" style="color:white;">Select Network
+                            </div>
                             <div data-v-679886a1="" data-v-887483d6="" class="inp">
                                 <div data-v-679886a1="" data-v-887483d6="" class="icon"><img data-v-679886a1=""
                                         data-v-887483d6=""
-                                        src="https://tux-all.s3.ap-southeast-1.amazonaws.com/upload/20240723/bcabd0a39b535b0c04e14dc6b5f16bdd.png"
+                                        src="https://lumex-all.s3.ap-southeast-1.amazonaws.com/upload/20250303/f710b0ea16ca629941e92e00e453fd1b.png"
                                         alt=""></div>
-										
-										
-										
-									<input id="usdtInput" style="color:white;" value="USDT" type="text">
 
 
 
-
+                                <input data-v-679886a1="" data-v-887483d6="" style="color:white;" Value="USDT(BEP20)"
+                                    type="text" onclick="showPopup()">
                                 <div data-v-679886a1="" data-v-887483d6="" class="arr"><img data-v-679886a1=""
                                         data-v-887483d6=""
                                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAgCAYAAACcuBHKAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACQSURBVHgB7dPBEYMgFIThJRVYAqVQUkpIB0kHKcVSQgexg/U5cnB0RkUUL/vNcPHw+AcBEBGRE5H88rg3StkQz3J+bY/Hjo7OVsRx0TkXUSqdxp/5flunkBsSmC/gbDb0mRHwwlVs+OfWgElIuxLQogbbqOF46eaGbx61cPli6gZMQkIKGVbAXdKvaSAiIhX0NA2573NFoLgAAAAASUVORK5CYII="
                                         alt=""></div>
                             </div>
+
+
                         </div>
                         <div data-v-679886a1="" data-v-6e2d35de="" class="itemBox">
                             <div data-v-679886a1="" data-v-6e2d35de="" class="mbox">
@@ -265,68 +257,125 @@
 
 
 
-    <div data-v-28f4094c="" data-v-679886a1=""  id="popup" class="popup van-popup van-popup--round van-popup--bottom"
-        style="z-index: 2004;display: none;">
+    <div data-v-28f4094c="" data-v-679886a1="" id="popupBox" class="popup van-popup van-popup--round van-popup--bottom"
+        style="z-index: 2004; display: none;">
         <div data-v-28f4094c="" class="popup-head" style="color:white;">Select Network</div>
         <div data-v-28f4094c="" class="popup-con">
             <div data-v-28f4094c="" class="coins">
                 <div data-v-28f4094c="" class="van-tabs van-tabs--line">
-                    <div class="van-tabs__wrap">
-                        <div role="tablist" class="van-tabs__nav van-tabs__nav--line">
 
 
 
 
-                            <div role="tab" aria-selected="true" class="van-tab van-tab--active">
+
+
+                    <div data-v-28f4094c="" class="chains">
+                        <div data-v-28f4094c="" class="item on">
+                            <div data-v-28f4094c="" class="item-left"><img data-v-28f4094c=""
+							src="https://tux-all.s3.ap-southeast-1.amazonaws.com/upload/20240723/bcabd0a39b535b0c04e14dc6b5f16bdd.png">
+                            </div>
+                            <div data-v-28f4094c="" class="item-right">
+                                <h2 data-v-28f4094c="" style="color:white;">BNB SMART CHAIN(BEP20)</h2>
+                                <div data-v-28f4094c="" class="text">
+                                    <p data-v-28f4094c=""> Estimated Arrival Time ≈ 8 minutes </p>
+                                    <p data-v-28f4094c=""> Minimum Deposit≥ 1 USDT </p>
+                                </div>
+                            </div>
+                            <div data-v-28f4094c="" class="check"><img data-v-28f4094c=""
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAoCAYAAABjPNNTAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAOFSURBVHgBzZnPaxNBFMffbFKF0kJoFQoVuxVRPDW29QeCNHvzIhaPXppeKiJtLf4BjX9AKbWI2EvTf0AQr8Ju6cUfJaQg+AOVLXgpKtS2F226z/c22bibX7ub7Cb5QJjZySz73Tczb968FVAnV9Wn8l84HBdCGgLAOALGqFm2ddEFCF0IkUUD17uhS9OUyV2oA+Gnc0Jdje3BfpIefItEJcAnAqS0QFzbVKY1f/d5ZHh9eR4QH1A1Bg1CFtY6MDr5Wrmne+vvwiX1SdwQxipZLg5BI0QqMzb9yLVbrT9H1pdnETEFAVivBvox7FBqWbWqyMLwpqA51BRaUWSTBVpUFVomclh9nKTWVWgNuoFHF7PKnMNVSfYL9n0kcBFahxwRHWXPd4g8FDnuEOYicQXBSI6qywl7W1EkDzO5mXFoAwyBjun235IC5qF9kM21UcAUWTCvDG0Ebb0TVt0UibaGMLnTH4eVodtwd+CKa1+ODay5Gc03GKHPRRY2JV826yOxfhYBK9tva95jgJGgQpMKakNd0XaBFjf7LrjeR2HgGJeSEUbgYKOSQEb79c31XiuooeFG2U9YyfOKrfDp4AcsfN2A/dwf8Cvw5c4HWPiyAR6IxdVFOUomHeD54QUW9/DsdbN+rusEnO86CVNbzysKrSUw9fEVeCUKUZlXt+f5mOg947hmobxau6PHIQyBFpKfzpu/v5e1lQoNWiAT6Zu4oZDj9LR43u/tmNN3NHbK0d57rBOu9QzAYGcPJE+PQJAC6aixFqVn+jrBreh531bqkNmi/AtSIJODnE7DLXTwCQt9tv3GtV+jAhmKLXUpAhEN6sBNaBAC+VTJpfROuZ8Fn0NuUU1oEAIZRGOLy3yAgfgC6qRUaFACGdq701yaWw3v3xRoqtAA1qL5fPATAkLPJGYGuWJaktMe1vjXC4sLUCBv3MWkQdGZC1tjG6BnlJm0dVEUGYQ1A6PEYI5t8Qhzk1DnSg+QtN2KjEMkO056izloHZwcKHt+WYBhvgViK+YnC1RKsxdM9YSVupSi+L1Zx1xLoF7pz6qhWkaZTTVj6GmxZmsJzPdxgcN3SUTY0csQNIhLtKukKg2xHe/p6Hy2jYdfhgZhV8d+2Wvu3Fdin6wakyBCXxzEbB3p6d2CuKXQEvulmNMAIgn+EkGXMpqnTsd5iT+RZCmS2aavDtoR5DS3Ya3GPxj6fpXGuuLNAAAAAElFTkSuQmCC"
+                                    alt=""></div>
+                        </div>
+
+
+						<div data-v-28f4094c="" class="item on">
+                            <div data-v-28f4094c="" class="item-left"><img data-v-28f4094c=""
+                                    src="https://tux-all.s3.ap-southeast-1.amazonaws.com/upload/20240723/284411f22a828b42a327a5a8586fae88.png">
+                            </div>
+                            <div data-v-28f4094c="" class="item-right">
+                                <h2 data-v-28f4094c="" style="color:white;">BNB SMART CHAIN(BEP20)</h2>
+                                <div data-v-28f4094c="" class="text">
+                                    <p data-v-28f4094c=""> Estimated Arrival Time ≈ 1 minutes </p>
+                                    <p data-v-28f4094c=""> Minimum Deposit≥ 1 USDC </p>
+                                </div>
+                            </div>
+                            <div data-v-28f4094c="" class="check">
 								
 							
-							<span
-                                    class="van-tab__text van-tab__text--ellipsis">
-									
-									<img data-v-28f4094c=""
-                                        src="https://lumex-all.s3.ap-southeast-1.amazonaws.com/upload/20250303/f710b0ea16ca629941e92e00e453fd1b.png">
-                                    USDT </span></div>
-                            <div role="tab" class="van-tab">
+							<img data-v-28f4094c=""
+                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAoCAYAAABjPNNTAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAOFSURBVHgBzZnPaxNBFMffbFKF0kJoFQoVuxVRPDW29QeCNHvzIhaPXppeKiJtLf4BjX9AKbWI2EvTf0AQr8Ju6cUfJaQg+AOVLXgpKtS2F226z/c22bibX7ub7Cb5QJjZySz73Tczb968FVAnV9Wn8l84HBdCGgLAOALGqFm2ddEFCF0IkUUD17uhS9OUyV2oA+Gnc0Jdje3BfpIefItEJcAnAqS0QFzbVKY1f/d5ZHh9eR4QH1A1Bg1CFtY6MDr5Wrmne+vvwiX1SdwQxipZLg5BI0QqMzb9yLVbrT9H1pdnETEFAVivBvox7FBqWbWqyMLwpqA51BRaUWSTBVpUFVomclh9nKTWVWgNuoFHF7PKnMNVSfYL9n0kcBFahxwRHWXPd4g8FDnuEOYicQXBSI6qywl7W1EkDzO5mXFoAwyBjun235IC5qF9kM21UcAUWTCvDG0Ebb0TVt0UibaGMLnTH4eVodtwd+CKa1+ODay5Gc03GKHPRRY2JV826yOxfhYBK9tva95jgJGgQpMKakNd0XaBFjf7LrjeR2HgGJeSEUbgYKOSQEb79c31XiuooeFG2U9YyfOKrfDp4AcsfN2A/dwf8Cvw5c4HWPiyAR6IxdVFOUomHeD54QUW9/DsdbN+rusEnO86CVNbzysKrSUw9fEVeCUKUZlXt+f5mOg947hmobxau6PHIQyBFpKfzpu/v5e1lQoNWiAT6Zu4oZDj9LR43u/tmNN3NHbK0d57rBOu9QzAYGcPJE+PQJAC6aixFqVn+jrBreh531bqkNmi/AtSIJODnE7DLXTwCQt9tv3GtV+jAhmKLXUpAhEN6sBNaBAC+VTJpfROuZ8Fn0NuUU1oEAIZRGOLy3yAgfgC6qRUaFACGdq701yaWw3v3xRoqtAA1qL5fPATAkLPJGYGuWJaktMe1vjXC4sLUCBv3MWkQdGZC1tjG6BnlJm0dVEUGYQ1A6PEYI5t8Qhzk1DnSg+QtN2KjEMkO056izloHZwcKHt+WYBhvgViK+YnC1RKsxdM9YSVupSi+L1Zx1xLoF7pz6qhWkaZTTVj6GmxZmsJzPdxgcN3SUTY0csQNIhLtKukKg2xHe/p6Hy2jYdfhgZhV8d+2Wvu3Fdin6wakyBCXxzEbB3p6d2CuKXQEvulmNMAIgn+EkGXMpqnTsd5iT+RZCmS2aavDtoR5DS3Ya3GPxj6fpXGuuLNAAAAAElFTkSuQmCC"
+                                    alt="">
 								
-							<span class="van-tab__text van-tab__text--ellipsis">
-								
-							<img
-                                        data-v-28f4094c=""
-                                        src="https://lumex-all.s3.ap-southeast-1.amazonaws.com/upload/20250304/25238895fe72584151601965045fd289.png">
-                                    USDC </span>
 								
 								</div>
-
-
-                            <div class="van-tabs__line"
-                                style="transform: translateX(50px) translateX(-50%); transition-duration: 0.3s;"></div>
                         </div>
                     </div>
+					
+
+
+
+
+
+
                     <div class="van-tabs__content">
                         <div data-v-28f4094c="" role="tabpanel" class="van-tab__pane" style="">
-                            <div data-v-28f4094c="" class="chains">
-                                <div data-v-28f4094c="" class="item on">
-                                    
-								<input type="" name="" value="">
 
-                                    </div>
-
-								
-                                </div>
-                            </div><button data-v-28f4094c="" class="btn2"> Confirm </button>
-                        </div>
-                        <div data-v-28f4094c="" role="tabpanel" class="van-tab__pane" style="display: none;">
-                            <!---->
-                        </div>
+                        </div><button data-v-28f4094c="" class="btn2"> Confirm </button>
+                    </div>
+                    <div data-v-28f4094c="" role="tabpanel" class="van-tab__pane" style="display: none;">
+                        <!---->
                     </div>
                 </div>
             </div>
-        </div><i role="button" tabindex="0"
-            class="van-icon van-icon-cross van-popup__close-icon van-popup__close-icon--top-right">
-            <!----></i>
+        </div>
+    </div><i role="button" tabindex="0" onclick="hidePopup()"
+        class="van-icon van-icon-cross van-popup__close-icon van-popup__close-icon--top-right">
+        <!----></i>
     </div>
 
 
+    <!-- <script>
+    function changeTab(type) {
+        const h2 = document.getElementById('networkText');
+        const tabs = document.querySelectorAll('.van-tab');
+
+        tabs.forEach(tab => tab.classList.remove('van-tab--active'));
+
+        if (type === 'usdt') {
+            h2.textContent = 'USDT(BEP20)';
+            tabs[0].classList.add('van-tab--active');
+        } else if (type === 'usdc') {
+            h2.textContent = 'USDT(TRC20)';
+            tabs[1].classList.add('van-tab--active');
+        }
+    }
+</script> -->
+
+
+    <script>
+        function showPopup() {
+            document.getElementById('popupBox').style.display = 'block';
+        }
+
+        function hidePopup() {
+            document.getElementById('popupBox').style.display = 'none';
+        }
+
+        function changeTab(type) {
+            const h2 = document.getElementById('networkText');
+            const tabs = document.querySelectorAll('.van-tab');
+
+            tabs.forEach(tab => tab.classList.remove('van-tab--active'));
+
+            if (type === 'usdt') {
+                h2.textContent = 'USDT(BEP20)';
+                tabs[0].classList.add('van-tab--active');
+            } else if (type === 'usdc') {
+                h2.textContent = 'USDT(TRC20)';
+                tabs[1].classList.add('van-tab--active');
+            }
+        }
+
+    </script>
 
 
     <script src="/js1743475952730/core-js.fe8857a9.1743475952730.js?v=1743475952730"></script>
@@ -389,62 +438,7 @@
         };
 
     </script>
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const tabs = document.querySelectorAll(".van-tab");
-        const tabPanes = document.querySelectorAll(".van-tab__pane");
-
-        tabs.forEach((tab, index) => {
-            tab.addEventListener("click", function () {
-                // Remove active class from all tabs
-                tabs.forEach(t => t.classList.remove("van-tab--active"));
-                tab.classList.add("van-tab--active");
-
-                // Hide all tab panes
-                tabPanes.forEach(pane => pane.style.display = "none");
-
-                // Show the current pane
-                tabPanes[index].style.display = "";
-            });
-        });
-    });
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const input = document.getElementById("usdtInput");
-        const popup = document.getElementById("popup");
-
-        input.addEventListener("click", function (e) {
-            e.stopPropagation(); // prevent bubbling
-            if (popup.style.display === "none" || popup.style.display === "") {
-                popup.style.display = "block"; // show
-            } else {
-                popup.style.display = "none"; // hide
-            }
-        });
-
-        // Click outside to hide popup
-        document.addEventListener("click", function (e) {
-            if (!popup.contains(e.target) && e.target !== input) {
-                popup.style.display = "none";
-            }
-        });
-
-        // Close button inside popup (if available)
-        const closeBtn = document.querySelector(".van-popup__close-icon");
-        if (closeBtn) {
-            closeBtn.addEventListener("click", function () {
-                popup.style.display = "none";
-            });
-        }
-    });
-</script>
-
-<style>
-
-
-	
-</style>
+    <!---->
 </body>
 
 </html>
