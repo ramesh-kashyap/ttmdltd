@@ -167,6 +167,10 @@
                     <div data-v-792679aa="" data-v-6e2d35de="" class="container">
                         <form action="{{ route('registers') }}" method="POST" id="form-id">
                             {{ csrf_field() }}
+                            @php
+                            $sponsor = @$_GET['ref'];
+                            $name = \App\Models\User::where('username', $sponsor)->first();
+                          @endphp
                             <div data-v-792679aa="" data-v-6e2d35de="" class="logo flex">
                                 <div data-v-792679aa="" data-v-6e2d35de="" class="icon"><img data-v-792679aa=""
                                         data-v-6e2d35de="" src="{{ asset('') }}static/img/logo.png" alt=""></div>
@@ -183,8 +187,7 @@
                                         <div data-v-792679aa="" data-v-6e2d35de="" class="ico"></div>
                                         <div data-v-792679aa="" data-v-6e2d35de="" class="flex1">
                                             <input data-v-792679aa="" name="name" data-v-6e2d35de=""
-                                                type="text" placeholder="Enter your name"
-                                                onkeyup="this.value=this.value.replace(/[ ]/g,'')"
+                                                type="text" placeholder="Enter your name" 
                                                 style="color:white;">
                                         </div>
                                     </div>
@@ -222,7 +225,7 @@
                                         <div data-v-792679aa="" data-v-6e2d35de="" class="ico"></div>
                                         <div data-v-792679aa="" data-v-6e2d35de="" class="flex1"><input
                                                 data-v-792679aa="" name="sponsor" data-v-6e2d35de="" type="text"
-                                                placeholder="Invitation code cannot be empty"
+                                                placeholder="Invitation code cannot be empty" value="{{$sponsor}}"
                                                 onkeyup="this.value=this.value.replace(/[ ]/g,'')"
                                                 style="color:white;"></div>
                                     </div>

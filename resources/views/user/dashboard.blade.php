@@ -305,6 +305,11 @@ style="width: 80px; height: 37px;" alt="">  -->
         object-fit: contain;
         filter: brightness(0) invert(1);
     }
+    .info p[data-v-d59d9098] {
+    margin: .16rem 14px .4rem 0px;
+    color: #848489;
+    font-size: .24rem;
+}
 </style>
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
@@ -335,7 +340,9 @@ style="width: 80px; height: 37px;" alt="">  -->
                         <div data-v-b73557e2="" class="notice" style="margin-left: 0rem; margin-right: 0.32rem;">
                             <a href="{{ route('user.notice') }}">
                                 <img data-v-b73557e2="" src="{{ asset('static/img//bell.png') }}" alt="">
+                                @if($notificationCount > 0)
                                 <span data-v-b73557e2=""> {{ $notificationCount ?? 0 }}</span>
+                                @endif
                         </div>
                         </a>
                         <div data-v-b73557e2="" class="lang">
@@ -422,10 +429,10 @@ style="width: 80px; height: 37px;" alt="">  -->
                                             alt="">
                                     </div>
 
-                                  
-                                    <div data-v-2b218ac2="" class="val" style="">  <img data-v-2b218ac2=""
-                                                src="{{ asset('') }}static/img/V0_icon.69de7dcc.png"
-                                                alt="">VIP0 </div>
+                                    
+                                    <div data-v-2b218ac2="" class="val" style=""><img  style="width: 23px;height: 22px;"
+                                        src="{{ asset('static/img/' . (Auth::user()->rank > 0 ? 'rank' . Auth::user()->rank : 'V0_icon.69de7dcc') . '.png') }}" 
+                                        alt="User Rank Icon"> VIP {{Auth::user()->rank}}</div>
                                             </a> 
                                 </li>
 
@@ -438,7 +445,7 @@ style="width: 80px; height: 37px;" alt="">  -->
                                             class="van-icon__image">
                                         <!----></i>
                                     <marquee behavior="scroll" direction="left" scrollamount="4">
-                                        10***66Recharge60 10***13Recharge192.034338 ...
+                                        We’re thrilled to have you on board as part of this exciting journey. TTMD isn’t just a project — it’s a vision driven by innovation, collaboration, and purpose.
                                     </marquee>
 
                                 </div>
@@ -448,8 +455,7 @@ style="width: 80px; height: 37px;" alt="">  -->
                             <div data-v-d59d9098="" data-v-6b16f068="" class="info" data-v-6e2d35de="">
                                 <h3 data-v-d59d9098="">@lang(' Campaigns Order
                                                                                                                                                                     ')</h3>
-                                <p data-v-d59d9098="">@lang('Complete Daily Tasks & Earn Rewards Instantly!
-                                                                                                                                                                    Explore Exciting Offers from Top International Brands like')</p>
+                                <p data-v-d59d9098="">@lang('Invite your friends to join TTMD and start building your dream team today. The more your team grows, the more rewards and benefits you unlock.')</p>
                               
                             </div></a>
                             <div data-v-6b16f068="" data-v-6e2d35de="" class="itemBox">

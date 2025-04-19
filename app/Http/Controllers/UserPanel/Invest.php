@@ -810,8 +810,8 @@ public function viewdetail($txnId)
       $this->data['userDirect'] = $userDirect;
       $this->data['todaysRoi'] = $todaysRoi->count();
       $this->data['todaysRoiSum'] = \DB::table('orders')->where('user_id',$user->id)->where('ttime',date('Y-m-d'))->sum('roi');
-      $this->data['todaysLevelIncome'] = \DB::table('incomes')->where('user_id',$user->id)->where('ttime',date('Y-m-d'))->where('remarks','Quantify Level Income')->sum('comm');
-      $this->data['totalLevelIncome'] = \DB::table('incomes')->where('user_id',$user->id)->where('remarks','Quantify Level Income')->sum('comm');
+      $this->data['todaysLevelIncome'] = \DB::table('incomes')->where('user_id',$user->id)->where('ttime',date('Y-m-d'))->sum('comm');
+      $this->data['totalLevelIncome'] = \DB::table('incomes')->where('user_id',$user->id)->whereIn('remarks',['Level Bonus','Team Bonus'])->sum('comm');
       $this->data['balance'] =round($user->available_balance(),2);
       $this->data['level_income'] =$notes;
      

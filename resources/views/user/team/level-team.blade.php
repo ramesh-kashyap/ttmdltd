@@ -108,22 +108,22 @@
     <script charset="utf-8" src="/js1743475952730/chunk-0119f9da.fe8857a9.1743475952730.js?v=1743475952730"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('') }}static/css/chunk-bb17762c.89cc2aa3.css">
     <script charset="utf-8" src="/js1743475952730/chunk-bb17762c.fe8857a9.1743475952730.js?v=1743475952730"></script>
-    <link rel="icon"  href="{{ asset('static/img/logo2.png') }}">
+    <link rel="icon" href="{{ asset('static/img/logo2.png') }}">
 
 </head>
 
 <style>
     .info[data-v-5105ae1a] {
-    background-size: 100% 100%;
-    flex-wrap: wrap;
-    padding: 0 .32rem;
-    margin: .32rem 0;
-    background: linear-gradient(180deg, #111116, #141519);
-    border: .02rem solid hsla(0, 0%, 100%, .1);
-    border-radius: 10px;
-}
-
+        background-size: 100% 100%;
+        flex-wrap: wrap;
+        padding: 0 .32rem;
+        margin: .32rem 0;
+        background: linear-gradient(180deg, #111116, #141519);
+        border: .02rem solid hsla(0, 0%, 100%, .1);
+        border-radius: 10px;
+    }
 </style>
+
 <body class="mein_cn">
     <div id="app" class="applang">
         <div data-v-127dfd5e="" class="home">
@@ -136,7 +136,7 @@
                                     src="{{ asset('') }}static/img/logo.png" style=" width: 80px; height: 37px;"
                                     alt=""></div><!----><!----><!----><!---->
                             <div data-v-b73557e2="" class="flex1"></div>
-                           
+
                             <div data-v-b73557e2="" class="notice" style="margin-left: 0rem; margin-right: 0.32rem;">
                                 <a href="{{ route('user.notice') }}">
                                     <img data-v-b73557e2="" src="{{ asset('static/img//bell.png') }}"
@@ -234,26 +234,27 @@
                                     </div>
                                     <div data-v-602cab3f="" data-v-127dfd5e="" class="chart_box" data-v-6e2d35de="">
 
-                                        
+
                                     </div>
-                                    <a href="{{route('user.share')}}">
-                                    <div data-v-361779d3="" data-v-127dfd5e="" data-v-6e2d35de="">
-                                        <div data-v-361779d3="" class="invate-com">
-                                            <div data-v-361779d3="" class="com1" style="color:white;">
-                                                @lang('Invite friends') </div>
-                                            <div data-v-361779d3="" class="com2" style="color:white;">
-                                                @lang('Invite friends and earn coins together')
-                                            </div>
-                                            <div data-v-361779d3="" class="com3" style="color:white;">
-                                                @lang('Go to invite') <a href="{{route('user.share')}}"><img data-v-361779d3=""
-                                                    src="{{ asset('') }}static/img/ero.png
+                                    <a href="{{ route('user.share') }}">
+                                        <div data-v-361779d3="" data-v-127dfd5e="" data-v-6e2d35de="">
+                                            <div data-v-361779d3="" class="invate-com">
+                                                <div data-v-361779d3="" class="com1" style="color:white;">
+                                                    @lang('Invite friends') </div>
+                                                <div data-v-361779d3="" class="com2" style="color:white;">
+                                                    @lang('Invite friends and earn coins together')
+                                                </div>
+                                                <div data-v-361779d3="" class="com3" style="color:white;">
+                                                    @lang('Go to invite') <a href="{{ route('user.share') }}"><img
+                                                            data-v-361779d3=""
+                                                            src="{{ asset('') }}static/img/ero.png
                                                     "
-                                                    alt=""></a></div>
+                                                            alt=""></a></div>
+                                            </div>
                                         </div>
-                                    </div>
                                 </div>
                             </div>
-</a>
+                            </a>
                             <div data-v-127dfd5e="" data-v-6e2d35de="" class="itemBox">
                                 <div data-v-42e6b7af="" data-v-127dfd5e="" data-v-6e2d35de="">
 

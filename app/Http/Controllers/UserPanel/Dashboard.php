@@ -49,10 +49,8 @@ class Dashboard extends Controller
 
       $tolteam=$this->my_level_team($user->id);               
  
-      
-      $latestNotifications = Notification::orderBy('id', 'desc')->take(7)->get();
-
-      $notificationCount = $latestNotifications->count();
+ 
+      $notificationCount = \DB::table('notifications')->where('read_status',0)->where('user_id',$user->id)->count();
      
       $deposit_report = Investment::where('user_id',$user->id)->orderBy('id','desc')->get();
       $weekly_profit = Income::where('user_id',$user->id)
@@ -1099,7 +1097,12 @@ public function tradeOnBack()
 
 public function notice()
 {
-  $notifications = Notification::orderBy('id', 'desc')->take(7)->get();
+  \DB::table('notifications')
+  ->where('user_id', auth()->id())
+  ->where('read_status', 0)
+  ->update(['read_status' => 1]);
+  
+  $notifications = Notification::orderBy('id', 'desc')->get();
   return view('user.notice', compact('notifications'));
 }
 

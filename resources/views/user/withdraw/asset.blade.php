@@ -127,22 +127,14 @@
     border-radius: 15px;
     border: .02rem solid hsla(0, 0%, 100%, .1);
 }
+.list .item[data-v-56ab0919] {
+    padding: 0.3rem 0;
+}
 </style>
 
 
 
-    <?php
     
-    $quantifiable_count = 0;
-    if ($balance >= 30 && $balance < 500) {
-        $quantifiable_count = 3;
-    } elseif ($balance >= 500 && $userDirect >= 5) {
-        $quantifiable_count = 4;
-    } else {
-        $quantifiable_count = 3;
-    }
-    // dd($balance);
-    ?>
     <div id="app" class="applang">
         <div data-v-6e2d35de="" data-v-32fa28da="" class="page">
             <div data-v-6e2d35de="" class="headers">
@@ -187,8 +179,8 @@
                                             ${{ number_format(Auth::user()->available_balance(), 2) }} </div>
                                     </div>
                                     <div data-v-7e49fd41="" class="it">
-                                        <div data-v-7e49fd41="" class="name"> @lang('Token Volume') </div>
-                                        <div data-v-7e49fd41="" class="val" style="white-space: nowrap;"> 200
+                                        <div data-v-7e49fd41="" class="name"> @lang('Current Package') </div>
+                                        <div data-v-7e49fd41="" class="val" style="white-space: nowrap;"> ${{number_format(Auth::user()->package,2)}}
                                         </div>
                                     </div>
                                 </div>
@@ -203,9 +195,9 @@
                                     <li data-v-7e49fd41=""
                                         style=" color:black; background:#c2fa2d">
                                         <div data-v-7e49fd41="" class="title"><span data-v-7e49fd41=""
-                                                style="color:black;">@lang('To be unlocked')
+                                                style="color:black;">@lang('Total Withdraw')
                                             </span></div>
-                                        <div data-v-7e49fd41="" class="val"> 30 </div>
+                                        <div data-v-7e49fd41="" class="val"> ${{number_format(Auth::user()->withdraw(),2)}} </div>
                                     </li>
                                 </ul>
                             </div>
@@ -229,7 +221,7 @@
 
                             </ul>
                         </div>
-                        <div data-v-32fa28da="" data-v-6e2d35de="" class="box-com">
+                        {{-- <div data-v-32fa28da="" data-v-6e2d35de="" class="box-com">
                             <div data-v-396fd10e="" data-v-32fa28da="" class="box" data-v-6e2d35de="">
                                 <div data-v-396fd10e="" class="cname"> @lang('My income')<a href="{{route('user.roi-bonus')}}"><img data-v-396fd10e=""
                                         src="{{ asset('') }}static/img/ero.png" alt=""></a></div>
@@ -266,7 +258,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> --}}
                         <div data-v-56ab0919="" data-v-32fa28da="" class="itemBox" data-v-6e2d35de="">
                             <div data-v-56ab0919="" class="cname">@lang('List of Assets')</div>
                             <div data-v-56ab0919="" class="list">
