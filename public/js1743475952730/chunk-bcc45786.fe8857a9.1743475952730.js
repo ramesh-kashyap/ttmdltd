@@ -1129,7 +1129,7 @@
                         return {
                             generationsData: [],
                             arcId: "home",
-                            title: "Lume-X",
+                            title: "TTMD",
                             isOpenLucky: !1,
                             showinfotips: !1,
                             swiperOptions: {

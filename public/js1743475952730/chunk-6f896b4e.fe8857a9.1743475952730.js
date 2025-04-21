@@ -413,7 +413,7 @@
                             isDisable: !1,
                             soAreaId: "",
                             checked1: !1,
-                            projectName: "Lume-X"
+                            projectName: "TTMD"
                         }
                     },
                     computed: {

@@ -159,7 +159,7 @@
                             <h2 data-v-b01bcdbc="" data-v-6e2d35de="" style="display: none;"> Operation Center </h2>
                             <div data-v-b01bcdbc="" data-v-6e2d35de="" class="p">
                                 <p><img src="https://lumex-all.s3.ap-southeast-1.amazonaws.com/upload/20250317/9154f1658c732d489c2f099765efa353.png"><br>
-                                    Lume-X is a platform providing investment, team management, and cryptocurrency revenue services. The following content is based on user input to ensure clarity and compliance with policies.</p>
+                                    TTMD is a platform providing investment, team management, and cryptocurrency revenue services. The following content is based on user input to ensure clarity and compliance with policies.</p>
 
                                 <h3>&nbsp;</h3>
 
@@ -187,7 +187,7 @@
 
                                 <h4><span style="color:#2ecc71">Background and Policy Framework</span></h4>
 
-                                <p>Lume-X provides services such as investment, team management, and revenue calculation. The privacy policy covers key modules such as data collection scope, usage, sharing, security measures, and user rights. Additionally, special clauses on cross-border transfers and dispute resolution address complex data processing scenarios.<br>
+                                <p>TTMD provides services such as investment, team management, and revenue calculation. The privacy policy covers key modules such as data collection scope, usage, sharing, security measures, and user rights. Additionally, special clauses on cross-border transfers and dispute resolution address complex data processing scenarios.<br>
                                     &nbsp;</p>
 
                                 <p>According to industry research on February 25, 2025, privacy policies for investment platforms typically need to comply with regulations such as GDPR (General Data Protection Regulation) and CCPA (California Consumer Privacy Act), particularly regarding cross-border data transfers and user rights. Lazard Asset Management's policy details data collection, usage, and EU user rights, while Investor's Business Daily emphasizes user choices and data security measures.<br>
@@ -202,7 +202,7 @@
                                 <h5>&nbsp;</h5>
 
                                 <ul>
-                                    <li>Welcome to Lume-X products and services! We are committed to strictly adhering to relevant laws and regulations to ensure the security of personal information.</li>
+                                    <li>Welcome to TTMD products and services! We are committed to strictly adhering to relevant laws and regulations to ensure the security of personal information.</li>
                                     <li>Please read this policy carefully. By agreeing, you acknowledge that you understand the purposes of collecting and using necessary information. For additional features or non-essential information processing, we will seek separate consent.<br>
                                         &nbsp;</li>
                                 </ul>
@@ -223,11 +223,11 @@
 
                                 <p>7. Dispute Resolution: Typically resolved through arbitration, involving the selection of arbitration institutions (e.g., JAMS) and waiver of jury trials. Specific procedures are outlined in the arbitration agreement.</p>
 
-                                <p>8. Agreement Termination: Lume-X may terminate the agreement without cause, with prior notice (usually two months). Users have 90 days post-termination to transfer assets.</p>
+                                <p>8. Agreement Termination: TTMD may terminate the agreement without cause, with prior notice (usually two months). Users have 90 days post-termination to transfer assets.</p>
 
                                 <p>9. User Control and Instructions: Users control their digital asset wallets and can withdraw assets at any time, subject to downtime, agreement requirements, and other policies.</p>
 
-                                <p>10. Risks and Disclaimers: Lume-X does not guarantee the value of digital assets and is not responsible for replacing lost, stolen, or damaged digital assets or private keys.</p>
+                                <p>10. Risks and Disclaimers: TTMD does not guarantee the value of digital assets and is not responsible for replacing lost, stolen, or damaged digital assets or private keys.</p>
 
                                 <p>11. Fees and Charges: Users must pay various transaction fees, which may vary depending on the type of service (e.g., advanced trading). Fees are automatically deducted from accounts.<br>
                                     &nbsp;</p>
