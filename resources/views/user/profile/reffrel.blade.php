@@ -180,10 +180,12 @@
                                 <div data-v-7ca1be93="" data-v-6e2d35de="" class="m">
                                     <div data-v-7ca1be93="" data-v-6e2d35de="" class="qrcode"
                                         title="{{ url('') }}/register?inviteCode={{ Auth::user()->username }}">
-                                        <canvas width="180" height="180" style="display: none;"></canvas><img
+                                       <img
                                             alt="Scan me!"
-                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAAAXNSR0IArs4c6QAAD+5JREFUeF7tnW1228gORJ2tOPtfUtaSOc5545CywttXBYrKm/JffBcK6JYsUd9+/vz58+1Jf9+/f99F+vHjx2Fkq09l3PojfZJT/mRP+dz6T/GgeJTvrXw6Pxv/nv63EvpxGEvo/UJKB+7xTvy2LKEDFEvoFyf01UcSTTjJb7n5avqUHx3p0/apP+ILXUmCXfLL9N5C2W1oStAmQAVNy6lBtFHPHgDKr4R2DCuhh1+E2gEoofdvCjj6ftUuoUto9a4SnRh0otMJ/HRC0xFNG8cWNB2PAJtuCNVLckugaX+E13S8M/p9eIeeDmgJRAA/+8i3+VN+r+aP8C6hb45420ACmAhj7e2GtPpnE8LiS/q2Pqs/vTA/4ndDH7D+1Qk4nR8tgOl4/3eEpoLSDUwNshuKNhC9pqB8CA/yP21v8Sd9khM+K/aXbmhqwEoBBMKRvIQ+/myNxZ/0SU69XLEvoQlFcSWhDUqhaMDJ/7T9CoG2OZE+yQmfFfsSmlAsoT8RoIEhwpGcWrFi/1KEpoRJbjeY9UeAT8un8yN/JKf6yJ7kqf/L3+WgV81WXkIfU4IIRfKUcGf7L6HlFw6oodPylADPHnDKl+SE34p9rxwbFOmOSIBPy1caaGKSP5JTLLIneeofNzQFILm9Mpz9NhptLKrnVk71kT8aICIA4UX+p/GYxucR/F7689BUEAFI9kQIsi+hjxFK8bH4d0Pf3KEJQBogOyC0Qbuh3cCU0CX0jjF2IGkBXL6hKcFUbjcOAVK5+5Lq1fin/Fmxf6lvfV8NeONnn+0g/FYImeqU0BsEqSGVZ4RPybpiX0KX0J8InD2wK4RMdb69v78/7VFglCy96k/fN52+c0/nQ/hQPFsf+Zt+V8fW94h+Cb1B7WxCEEFsA9ONWkJbxKV+N7QDrIT+ilc3dDf0H+/QdKJMv2/txvm+tiI0HcnTAKTxLEC08aw/q0/xiUAWL9svOkFtfoQP4XHPvoTeoPIIgNQUI6f4ljCkX0KHz9mYBpgaYsj0oUuEsv6sPsUn/Lqh3966obuhPxGggfgrrhzbJ/jThkg3Dm1U2kBn20/XZ/1Zwlh9yocITfYkp3zJfkU++o2V24BE0BTAafsVwLY6VJ/1Rw23C8fml+JJ9VJ9ZL8iL6FXUPqDjiUMhaKGl9CE4PCz7bqhGfAjjRI6w+/DWn0Fyx5J1CAaALK3G4vi2Ts64ZHmb+uzJ0aav6Uf5Uf5UH9KaPjGCgFs5TRQ0/6IcGk88k/1EkHtAJTQJfSOU/ZEKKEBAQuo1Z/eGOmGo/xJbuuxG5GuTC9PaEowBZgAskcM6VMDiRDT+VI8wt/Wc3Y8ywdbn+3vlysHBbQFpPrUQFuwJajVp3zPJpjtH+lTPba/Np7tbwl9g7BtEAGeDgQRgPyfPUAWL6pnIl/1nUJbQKpvNwQBRgQ4O9+Jhm19UD1nx7N4UX8m8t19OIle5NiEUn/UMLshSZ/qs/WcrU8DTwQhfMne4kX6Vn6vnyW0QPFsglr/JfTXn1ouoUvoZQTsCWdPgOVE/qfYDf3kZ9nZjWv1u6FhQ1uA0jtWGs/GP3tj2HyofnrRlcopX8IrjU/2j+R3+I0VKogC2iPExrPxU/+2nvSIpoancsKP8Erjk/0j+ZXQlqVCv4SefRbeygCU0IKgVrWEfnFC04SQnI4QSxi6g1I8ehFGcso3tU/rI/uzB47wSeX4LocFgBpm72BpgTaezX+aALZeW5/tJ+Vj8SJ/qbyEht8lpBOmhHa/GJASluxL6BJ6x5HpAaUThAhq5Ujo9Eg5G6DUPwF29oa28Uk/7Zd9jUH69opD+dv6P/TVv75pAlPCvRqhzgD8qEln40cEIfxLaECQCENyahANIDXo6vi2PktIWz/pd0PDwx+vJtTV8UvoYwTuLSz1XA6aQGqAPVLJX7qBqZ40X8pveqNO40X+LD60IEhO+fy6Qx89rJEcUMPsEUXxiIBkTw2YAHSbA+FTQrv/JFJ/S+gbhEroFcr81qEFQQuIBtr6L6FLaMfgG21LOFoYJF9JNvqS7EqAIx1bgNWn/Mgfya1/0rcEoQ1I8eyV0OJh9W2+9/RL6A0q00cg3aEtoajhNp6Nbwlq9am+FXkJXUJ/IkAnhCWo1V8hLOmU0CV0Cf0vAjSBJKc7IG0Mmlbr3x7Z9opC/p9dr8WH9OkKk9ZP9h/xow1NhCU5AfTsBq8Ats25hN5/nLSEvkHADkA39DECFs9Uv4QuoXcIPPtESk9IOtHoBKMBoPzujbP617ctYHqDPlKguSJMA0wETTciEcbGp35Nx6P8KJ8SGr6xUkIfU6iEliOWbiwKRw0poUvo0TtgCf31WW1bgAkfkp99ZaMrhM2PFtTdK8f7+/vPPxnSnfmRgEc2BAjFo3xpQ9v4FI/ytfI0P7Inwl1dL+X3gefok5Nsg+wRT/4J8BJ69gSgfqTyR/pVQm9Qpw2WHtnTDSZ/KxstudJQ/FReQt98R5FOANvwEvr4P4MpgSf6Nbqhr95wNNEpYPZKQw2mgaJ45N/2g/zRQNt4Z9RfQm+6lAL8Cg3dks7mU0LfIGABTDeQ3bhWP934RJB0gMi/7Qf564YGhErocx9++J8nNBGMNta0PN0IaT3TG93iY+tP67X52ROG/NMJsWJ/+Gy7v62hRABbj9UnwK2c6iF/V+dvCV9Cw8+0pRvrakKU0HsEVga4G/rgXY4S2t3xiXAkH9nQ20eBpQ7ti5D0SLIApflZfEjfniC0se0AWn3CO8WX7Amvj3pO/U6hbSgBZhtA+jY/0qeGpIRM7YkQhL+VE1600Gy9JTQgTgQ4e2BoQCg/IiDlT4QjeQkdfqPENtgCTvpEQLtxyJ+tN9WnAaF8qX6yp/x/bejt56HtxK0EIBJs5QTY9Eah3CYAphhXyqk+yu3s/lP8e/IS+gA1avh0Qx9pYGJD9ZHv6frTfLqhoWME8HRDiUDTcqqP4k3Xn+ZTQpfQxNlD+UsSOvlJigiNt7e39M5uJ5rikZzqJXsrp3hUv41H/igfIrh9jUSvme7eoUvo37AQAWxDqYEkp3hEQKqH5BT/Vl5Cw8+6EWDUUGufNpjsrZwIRfXbeOSP8imhS+gdR4gQ9gj+TxLaPJfDTnDaoKsbYutNTwQiLOFJ+Vp7iz/lfzY+X97lsAHTI4gAsIBSQ22+Z/tLCUb4UT/J3uJP/igf+5riXn/Ul2Rtg6lhBIAF1OZnAaaBsP4In4kGb3NK452dz4T/EnrTcRqgEvr4l19pQZ098PrKYRO2BEj1U0Km9tSwFD/asOSf7O2GtP16xgmqNjQBZguc1k8JmdqX0McdLaEl41NCpvYldAktKXusnhIytS+hX5zQlm3TdzR7RNn4loB05aKBoPwIb8KD4qf1Un4WH9KnePfwPLxDk0MLkH3RQQ1M41t7agARqoR2v2tI/Cuhw+d4lNBEsb38igXWDb3pgd2g1DCSO3q8vdGJRSdEeiKl+RK+VN9K/oe/U0gA2QRTfymgZE/10IZeAfwoBxoA23CbD/knfM7On/r3IS+hBze0JRANCC2AlQZvdSwhbT0ltHxsgW0gbRzbMCLgtL8S2na8G3qHGG2wEtq9SzE9kCv0Vo8xsA1fSWCrYzcq+SdASW79k34qT4906h/hT/ZUX5r/yglYQm9QooauAEpNTeQpIYiQVD/ZU21p/iv4l9Al9CcCJTSNpJQToNIdPiahV449ooT/X7ehLWGs/tmATL9os0ck1WcJQ/EJ/zQe+ad6qR92oazEG/1P4TQAFhDSX7mDHb1IpQYQ4CnByH9aP+Vn8aN8CM9H4pXQB1NIG5Lk1FBqmPU/HW96QVE9NFArA11Cl9DLLwppAGkAnkJo8xsrZ28AewQRgDTRtBGogWRP9Vg54U/1TtsT/lfI1W+sECBnE8ACRA0mQp5dTwltO8r6JTRj9KlBBLQDQP7sQJI+LSRrL6B7mmoJLaAmApbQAsyTVNV/CqlhdgPQiwTrz2JE8elKkhI8zZfsbX7WH/WH/Fn5yglSQm9QtQRI9W1DacBo4Vh78ldCw+NzaQJpo6YESQlKhKH6KH/yTwS09uSvhC6hibOHcktIO6CUHA2kzY/i2YH60I/+sUKATQNA8R4B4AhUOhGogTZf2+BUn/IjucXb4knx7/GrhD5ghW0ANZgGICWotbeEofztAkvjl9Cy4yX0/itXJfTNnTl9EUETTRtS8vnLczDS+EQIm1+qT/WQ3OJtFwTFxw1NRwYBSA0j/7ZgC+j0QFl/tn6qL8Ur9U98SOXEp3v+D9+HtglRArahNKHUEMqf8rX+yZ+tn+KX0F87XEIT6zfyaUKmG76ELqF3CNBGpQ2ZEjK1L6HvENr8NLLdUPbKQMuS4hNBKB8rp3ytnAaM8qN4hB/FtwNO+ZCc8rn7orCE/g0rEYYIQQ0iuW0g6VsCTvujeklO+ZTQ8l/vdKRTQ6zcNpD0S+jwgeBEANsA25BeOY5HiE4Y2x/yZwea+rfCh+hf32nCdMSvFGBysANH+ZGcciN7K6d4KWEsfpQPDQTFu+e/hN6gQgBauW2o9U+EoPi0ke1AkT+7oAiPEhqeR00AWjkRKiVMCf0V4W7obug/zl06cHag6Uq0MsDRl2QpYUqQ7KkAOuKsPelTvnaDUzyqj45wmw/VZ/NNB8LG+8i/hN50kQCkhlsCUbwS2v1iQAk9/BsvJfT33cx3Q9+swHSDWXvS74Z2G/NyQtsjjhpMBVl7eye3BKX6yR/Z2zsv6RN+hBf1J5VTfuTf2n+5ctiG2IDWf0ogsqeGW0Kl9ZG9rYfqI0Kl8iv4cfjDm5QQyQkQa08NsgSc9keEpPzIvoTeI3gPjxJ6g1FKKLIvoY8JmeKHVw67EeyrfNvgdONPx7P40Ik0Lad+2HjT/ij+I/HUb32nCdAEEmFJTvmV0MfvUhB+jxCMfB7JH4lXQh9cOWiAuqGzASGyl9CE0I3cEvYRgGVKo+rT+U77o2IfiXfphk4JRVeIFLD0imTze6SB2xjT9oSfPaGekV8JvekaDRgR1A7Arb/phqeEK6Ev/rxx2sASev9ZjBK6hD7kAA1cN/TxCNEJ+PLvQ9OGIPkKAOTjSJ4SlAicyulKY2uneileak9XvhLadhTeJbENTQlL9pSPLT8lZGpfQsNjGWxDVwA17zoQIVN5CR1+4N02wBLEErBXjj1iKR7phk3tV/jyUh9Omn6XgQCcHkDyRwNJ9iSnjUz4Xo0X4bMiL6E3KFHDaUNYwr0aAUtoGJlpgkwTighIRzTVRwQpod373t3Q8jdeiKDTA1VCn0zolQlIdNKNZwlF+lQL5Uv2tKFT/1Sf9U/5Ur1WnuZ3z/6lnssxvSGp4dQAC7iNl/qneNZ/CU2MuJETwCW0BPRG3eJHA5Flw9bEB8qvGxru1HSn5RbtNWjj2YZS/BL6xR4FZhuS6hNBUsKV0McIW3xX+v0P0o65PhdKmnUAAAAASUVORK5CYII="
-                                            style="display: block;"></div>
+                                            src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{ url('') }}/register?inviteCode={{ Auth::user()->username }}"
+                                            style="display: block;">
+                                        </div>
+
                                 </div>
                                 <div data-v-7ca1be93="" data-v-6e2d35de="" class="link-com">
                                     <div data-v-7ca1be93="" data-v-6e2d35de="" class="name">Invitation method</div>
@@ -223,33 +225,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div data-v-7ca1be93="" data-v-6e2d35de="" class="team">
-                                <div data-v-7ca1be93="" data-v-6e2d35de="" class="title">Team data</div>
-                                <div data-v-7ca1be93="" data-v-6e2d35de="" class="team-list">
-                                    <div data-v-7ca1be93="" data-v-6e2d35de="" class="team-info">
-                                        <div data-v-7ca1be93="" data-v-6e2d35de="" class="name">Team size</div>
-                                        <div data-v-7ca1be93="" data-v-6e2d35de="" class="value"
-                                            style="color:white;"> 0man </div>
-                                    </div>
-                                    <div data-v-7ca1be93="" data-v-6e2d35de="" class="team-info">
-                                        <div data-v-7ca1be93="" data-v-6e2d35de="" class="name">Total rewards</div>
-                                        <div data-v-7ca1be93="" data-v-6e2d35de="" class="value"
-                                            style="color:white;"> 0USDT </div>
-                                    </div>
-                                    <div data-v-7ca1be93="" data-v-6e2d35de="" class="team-info">
-                                        <div data-v-7ca1be93="" data-v-6e2d35de="" class="name">Today's income
-                                        </div>
-                                        <div data-v-7ca1be93="" data-v-6e2d35de="" class="value green"
-                                            style="color:white;"> 0USDT </div>
-                                    </div>
-                                    <div data-v-7ca1be93="" data-v-6e2d35de="" class="team-info">
-                                        <div data-v-7ca1be93="" data-v-6e2d35de="" class="name">This month's income
-                                        </div>
-                                        <div data-v-7ca1be93="" data-v-6e2d35de="" class="value"
-                                            style="color:white;"> 0USDT </div>
-                                    </div>
-                                </div>
-                            </div>
+                           
                             <div data-v-7ca1be93="" data-v-6e2d35de="" class="shaer-box">
                                 <div data-v-7ca1be93="" data-v-6e2d35de="" class="name">Share the Media</div>
                                 <ul data-v-7ca1be93="" data-v-6e2d35de="" class="shaer-list">

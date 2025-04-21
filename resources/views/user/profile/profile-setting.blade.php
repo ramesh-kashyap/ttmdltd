@@ -112,7 +112,7 @@
     <script charset="utf-8" src="/js1743475952730/chunk-0119f9da.fe8857a9.1743475952730.js?v=1743475952730"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('') }}static/css/chunk-0b116a05.250ed6be.css">
     <script charset="utf-8" src="/js1743475952730/chunk-0b116a05.fe8857a9.1743475952730.js?v=1743475952730"></script>
-    <link rel="icon"  href="{{ asset('static/img/logo2.png') }}">
+    <link rel="icon" href="{{ asset('static/img/logo2.png') }}">
 
 </head>
 <style>
@@ -125,40 +125,45 @@
         border: .02rem solid hsla(0, 0%, 100%, .1);
         border-radius: 8px;
     }
+
     .invate-com .com1[data-v-0e8d00e8] {
-    font-size: .28rem;
-    font-weight: 600;
-    line-height: .28rem;
-}
-.invate-com .com2[data-v-0e8d00e8] {
-    opacity: .6;
-    margin-top: .16rem;
-    font-size: .24rem;
-    margin-bottom: .4rem;
-}
-.invate-com .com3[data-v-0e8d00e8] {
-    font-size: .24rem;
-}
-.invate-com .com3 img[data-v-0e8d00e8] {
-    height: .32rem;
-}
-.invate-com[data-v-184f5bd0] {
- 
-    color: #ffffff;
-    line-height: 100%;
-}
-.level-com .str[data-v-0e8d00e8] {
-    border-radius: .86rem;
-    background: linear-gradient(90deg, var(--token-c56d9be0-ff1a-4142-9896-10e19a52f142, rgb(62 179 209)) 0%, rgb(63 174 219) 48.91786%, var(--token-f05fe42a-0284-4847-be0d-a2808346fd91, rgb(11, 229, 116)) 100%);
-    display: flex
-;
-    height: .48rem;
-    justify-content: center;
-    align-items: center;
-    color: #000;
-    font-size: .24rem;
-    padding: 0 .32rem;
-}
+        font-size: .28rem;
+        font-weight: 600;
+        line-height: .28rem;
+    }
+
+    .invate-com .com2[data-v-0e8d00e8] {
+        opacity: .6;
+        margin-top: .16rem;
+        font-size: .24rem;
+        margin-bottom: .4rem;
+    }
+
+    .invate-com .com3[data-v-0e8d00e8] {
+        font-size: .24rem;
+    }
+
+    .invate-com .com3 img[data-v-0e8d00e8] {
+        height: .32rem;
+    }
+
+    .invate-com[data-v-184f5bd0] {
+
+        color: #ffffff;
+        line-height: 100%;
+    }
+
+    .level-com .str[data-v-0e8d00e8] {
+        border-radius: .86rem;
+        background: linear-gradient(90deg, var(--token-c56d9be0-ff1a-4142-9896-10e19a52f142, rgb(62 179 209)) 0%, rgb(63 174 219) 48.91786%, var(--token-f05fe42a-0284-4847-be0d-a2808346fd91, rgb(11, 229, 116)) 100%);
+        display: flex;
+        height: .48rem;
+        justify-content: center;
+        align-items: center;
+        color: #000;
+        font-size: .24rem;
+        padding: 0 .32rem;
+    }
 </style>
 
 <body class="mein_cn">
@@ -179,7 +184,7 @@
                         <!---->
                         <!---->
                         <div data-v-b73557e2="" class="flex1"></div>
-                       
+
                         <div data-v-b73557e2="" class="notice" style="margin-left: 0rem; margin-right: 0.32rem;">
                             <a href="{{ route('user.notice') }}">
                                 <img data-v-b73557e2="" src="{{ asset('static/img//bell.png') }}" alt="">
@@ -212,7 +217,7 @@
                                             data-v-184f5bd0="" data-v-6e2d35de=""
                                             src="{{ asset('') }}static/img/logo2.png" alt=""></div>
 
-                                    
+
                                     <div data-v-184f5bd0="" data-v-6e2d35de="" class="edit"><a
                                             href="{{ route('user.showinfo') }}" style="color:black;">
                                             @lang('Edit') </a></div>
@@ -251,146 +256,140 @@
                                     <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico">
 
                                         <img data-v-184f5bd0="" data-v-6e2d35de=""
-                                            src="{{ asset('') }}static/img/V0_icon.69de7dcc.png">
+                                            src="{{ asset('static/img/' . (Auth::user()->rank > 0 ? 'rank' . Auth::user()->rank : 'V0_icon.69de7dcc') . '.png') }}">
                                     </div>
                                     <div data-v-184f5bd0="" data-v-6e2d35de="" class="flex1" style="color:white;">
                                         <span data-v-184f5bd0="" data-v-6e2d35de=""
                                             style="color:white;">@lang('My level')</span>
-                                        VIP0
+                                        VIP {{ Auth::user()->rank }}
                                     </div>
-                                    <div data-v-0e8d00e8="" data-v-887483d6="" class="str" style="color:black;"> <a href="{{route('user.share')}}"> Upgrade</a></div>
-                                   
+                                    <div data-v-0e8d00e8="" data-v-887483d6="" class="str" style="color:black;">
+                                        <a href="{{ route('user.share') }}"> Upgrade</a></div>
+
 
                                     <!-- <div data-v-184f5bd0="" data-v-6e2d35de="" class="str"> <a href="{{ route('user.vip') }}">@lang('Upgrade')</div> -->
                                 </div>
                             </div>
-                            <a href="{{route('user.share')}}">
+                            <a href="{{ route('user.share') }}">
 
-                            <div data-v-184f5bd0="" data-v-6e2d35de="" class="invate-com">
-                                <div data-v-0e8d00e8="" data-v-887483d6="" class="com1"> Invite friends </div>
-                                <div data-v-0e8d00e8="" data-v-887483d6="" class="com2"> Invite friends and earn
-                                    coins together </div>
-                                <div data-v-0e8d00e8="" data-v-887483d6="" class="com3"> Go to invite
-                                    <img data-v-0e8d00e8="" data-v-887483d6="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAHlBMVEUAAAA0v5MzwJM4v5czwJMywJIzwJMyv5IywJIywJI0qxk+AAAACXRSTlMAIM8Qr9+/MK9o/IQhAAAAdUlEQVQoz63QMQqEQBBE0ZFdjDU0NhAz9QSmHshDGCoozG2FrpIPxlYy8HlM0OmrFbX3hC17s0F+tlssr+A/1gjs17/ClE8FQBcBcIwRAG0RATAoAJICwAGgAHAAKAAcAAoAB0Bs0cXKAEH0NALsfwmwKn28G90HOf4DSvFJAAAAAElFTkSuQmCC" alt=""></div>
+                                <div data-v-184f5bd0="" data-v-6e2d35de="" class="invate-com">
+                                    <div data-v-0e8d00e8="" data-v-887483d6="" class="com1"> Invite friends </div>
+                                    <div data-v-0e8d00e8="" data-v-887483d6="" class="com2"> Invite friends and
+                                        earn
+                                        coins together </div>
+                                    <div data-v-0e8d00e8="" data-v-887483d6="" class="com3"> Go to invite
+                                        <img data-v-0e8d00e8="" data-v-887483d6=""
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAHlBMVEUAAAA0v5MzwJM4v5czwJMywJIzwJMyv5IywJIywJI0qxk+AAAACXRSTlMAIM8Qr9+/MK9o/IQhAAAAdUlEQVQoz63QMQqEQBBE0ZFdjDU0NhAz9QSmHshDGCoozG2FrpIPxlYy8HlM0OmrFbX3hC17s0F+tlssr+A/1gjs17/ClE8FQBcBcIwRAG0RATAoAJICwAGgAHAAKAAcAAoAB0Bs0cXKAEH0NALsfwmwKn28G90HOf4DSvFJAAAAAElFTkSuQmCC"
+                                            alt="">
+                                    </div>
 
                                 </div>
-                            </div>
-</a>
-                            <div data-v-184f5bd0="" data-v-6e2d35de="" class="container">
-                                <ul data-v-184f5bd0="" data-v-6e2d35de="" class="nav1">
+                        </div>
+                        </a>
+                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="container">
+                            <ul data-v-184f5bd0="" data-v-6e2d35de="" class="nav1">
 
-                                <a
-                                href="{{ route('user.roi-bonus') }}">
+                                <a href="{{ route('user.roi-bonus') }}">
                                     <li data-v-184f5bd0="" data-v-6e2d35de="">
                                         <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img
                                                 data-v-184f5bd0="" data-v-6e2d35de=""
                                                 src="{{ asset('') }}static/img/13.png" alt=""></div>
-                                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="n" style="color:white;">@lang('My income')</div>
+                                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="n"
+                                            style="color:white;">@lang('My income')</div>
                                     </li>
 
-</a>
+                                </a>
 
-                                    <li data-v-184f5bd0="" data-v-6e2d35de="">
-                                    <a
-                                    href="{{ route('user.about') }}">
+                                <li data-v-184f5bd0="" data-v-6e2d35de="">
+                                    <a href="{{ route('user.about') }}">
                                         <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img
                                                 data-v-184f5bd0="" data-v-6e2d35de=""
                                                 src="{{ asset('') }}static/img/8.png" alt=""></div>
                                         <div data-v-184f5bd0="" data-v-6e2d35de="" class="n"
                                             style="color:white;">
                                             @lang('About Us')</div>
-</a>
-                                    </li>
+                                    </a>
+                                </li>
 
-                                    <a
-                                                href="{{ route('user.terms') }}">
+                                <a href="{{ route('user.terms') }}">
                                     <li data-v-184f5bd0="" data-v-6e2d35de="">
                                         <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img
                                                 data-v-184f5bd0="" data-v-6e2d35de=""
                                                 src="{{ asset('') }}static/img/34.png" alt=""></div>
-                                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="n">@lang('Terms of Use')</a></div>
-                                    </li>
-</a>    <a
-href="{{ route('user.reward-bonus') }}">
+                                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="n">@lang('Terms of Use')
+                                </a>
+                        </div>
+                        </li>
+                        </a> <a href="{{ route('user.reward-bonus') }}">
+                            <li data-v-184f5bd0="" data-v-6e2d35de="">
+                                <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img data-v-184f5bd0=""
+                                        data-v-6e2d35de="" src="{{ asset('') }}static/img/34.png"
+                                        alt="">
+
+                                </div>
+                                <div data-v-184f5bd0="" data-v-6e2d35de="" class="n" style="color:white;">
+
+                                    @lang('Record')</div>
+                            </li>
+                        </a>
+                        </ul>
+                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="line">
+                            <ul data-v-184f5bd0="" data-v-6e2d35de="" class="ul1">
+
+
+                                @if (empty(Auth::user()->email))
                                     <li data-v-184f5bd0="" data-v-6e2d35de="">
+
                                         <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img
                                                 data-v-184f5bd0="" data-v-6e2d35de=""
-                                                src="{{ asset('') }}static/img/34.png" alt="">
+                                                src="{{ asset('') }}static/img/122.png" alt=""></div>
+                                        <a href="{{ route('user.bindMail') }}">
+                                            <div data-v-184f5bd0="" data-v-6e2d35de="" class="flex1">@lang
+                                                @lang('Bind Email')
+                                        </a>
 
-                                        </div>
-                                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="n" style="color:white;">
-                                            
-                                    @lang('Record')</div>
-                                    </li>
-</a>
-                                </ul>
-                                <div data-v-184f5bd0="" data-v-6e2d35de="" class="line">
-                                    <ul data-v-184f5bd0="" data-v-6e2d35de="" class="ul1">
+                        </div>
 
 
-                                    @if (empty(Auth::user()->email))
-
-                                        <li data-v-184f5bd0="" data-v-6e2d35de="">
-                                            
-                                            <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img
-                                                    data-v-184f5bd0="" data-v-6e2d35de=""
-                                                    src="{{ asset('') }}static/img/122.png" alt=""></div>
-                                            <a href="{{ route('user.bindMail') }}">
-                                                <div data-v-184f5bd0="" data-v-6e2d35de="" class="flex1">@lang
-                                                    @lang('Bind Email')
-                                            </a>
-
-                                </div>
+                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="arr"><img data-v-184f5bd0=""
+                                data-v-6e2d35de="" src="{{ asset('') }}static/img/114.png" alt="">
+                        </div>
 
 
-                                <div data-v-184f5bd0="" data-v-6e2d35de="" class="arr"><img
-                                            data-v-184f5bd0="" data-v-6e2d35de=""
-                                            src="{{ asset('') }}static/img/114.png" alt="">
-                                    </div>
+                        </li>
+                    @else
+                        <li data-v-184f5bd0="" data-v-6e2d35de="">
+
+                            <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img data-v-184f5bd0=""
+                                    data-v-6e2d35de="" src="{{ asset('') }}static/img/122.png" alt="">
+                            </div>
+                            <a href="{{ route('user.ChangeMail') }}">
+                                <div data-v-184f5bd0="" data-v-6e2d35de="" class="flex1">@lang
+                                    @lang('Change Email')
+                            </a>
 
 
-</li>
-
-@else
-
-<li data-v-184f5bd0="" data-v-6e2d35de="">
-                                            
-                                            <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img
-                                                    data-v-184f5bd0="" data-v-6e2d35de=""
-                                                    src="{{ asset('') }}static/img/122.png" alt=""></div>
-                                            <a href="{{ route('user.ChangeMail') }}">
-                                                <div data-v-184f5bd0="" data-v-6e2d35de="" class="flex1">@lang
-                                                    @lang('Change Email')
-                                            </a>
+                    </div>
 
 
-                                </div>
+                    <div data-v-184f5bd0="" data-v-6e2d35de="" class="arr"><img data-v-184f5bd0=""
+                            data-v-6e2d35de="" src="{{ asset('') }}static/img/114.png" alt="">
+                    </div>
 
+                    </li>
+                    @endif
 
-                                <div data-v-184f5bd0="" data-v-6e2d35de="" class="arr"><img
-                                            data-v-184f5bd0="" data-v-6e2d35de=""
-                                            src="{{ asset('') }}static/img/114.png" alt="">
-                                    </div>
+                    <li data-v-184f5bd0="" data-v-6e2d35de="">
+                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img data-v-184f5bd0=""
+                                data-v-6e2d35de="" src="{{ asset('') }}static/img/51.png" alt=""></div>
 
-</li>
-
-                                
-
-@endif
-
-                                <li data-v-184f5bd0="" data-v-6e2d35de="">
-                                    <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img
-                                            data-v-184f5bd0="" data-v-6e2d35de=""
-                                            src="{{ asset('') }}static/img/51.png" alt=""></div>
-
-                                    <div data-v-184f5bd0="" data-v-6e2d35de="" class="flex1"> <a
-                                            href="{{ route('user.ChangePass') }}">
-                                            @lang('Login Password')</a></div>
-                                    <div data-v-184f5bd0="" data-v-6e2d35de="" class="arr"><img
-                                            data-v-184f5bd0="" data-v-6e2d35de=""
-                                            src="{{ asset('') }}static/img/114.png" alt=""></div>
-                                </li>
-                                <!-- <li data-v-184f5bd0="" data-v-6e2d35de="">
+                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="flex1"> <a
+                                href="{{ route('user.ChangePass') }}">
+                                @lang('Login Password')</a></div>
+                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="arr"><img data-v-184f5bd0=""
+                                data-v-6e2d35de="" src="{{ asset('') }}static/img/114.png" alt=""></div>
+                    </li>
+                    <!-- <li data-v-184f5bd0="" data-v-6e2d35de="">
                                     <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img
                                             data-v-184f5bd0="" data-v-6e2d35de=""
                                             src="{{ asset('') }}static/img/41.png" alt=""></div>
@@ -405,89 +404,89 @@ href="{{ route('user.reward-bonus') }}">
                                             src="{{ asset('') }}static/img/114.png" alt="">
                                     </div>
                                 </li> -->
-                                </ul>
-                                <ul data-v-184f5bd0="" data-v-6e2d35de="" class="ul1">
-                                    <li data-v-184f5bd0="" data-v-6e2d35de="">
-                                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img
-                                                data-v-184f5bd0="" data-v-6e2d35de=""
-                                                src="{{ asset('') }}static/img/31.png" alt=""></div>
-                                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="flex1"><a
-                                                href="{{ route('user.GenerateTicket') }}">@lang('Feedback')</a>
-                                        </div>
-                                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="arr"><img
-                                                data-v-184f5bd0="" data-v-6e2d35de=""
-                                                src="{{ asset('') }}static/img/114.png" alt=""></div>
-                                    </li>
-                                    <li data-v-184f5bd0="" data-v-6e2d35de="">
-                                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img
-                                                data-v-184f5bd0="" data-v-6e2d35de=""
-                                                src="{{ asset('') }}static/img/7.png" alt=""></div>
-                                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="flex1">@lang('Help Center')
-                                        </div>
-                                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="arr"><img
-                                                data-v-184f5bd0="" data-v-6e2d35de=""
-                                                src="{{ asset('') }}static/img/114.png" alt=""></div>
-                                    </li>
-
-                                    <li data-v-184f5bd0="" data-v-6e2d35de="">
-                                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img
-                                                data-v-184f5bd0="" data-v-6e2d35de=""
-                                                src="{{ asset('') }}static/img/21.png" alt=""></div>
-                                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="flex1"> <a
-                                                href="{{ route('user.about') }}">@lang('About')</a></div>
-                                        <div data-v-184f5bd0="" data-v-6e2d35de="" class="arr"><img
-                                                data-v-184f5bd0="" data-v-6e2d35de=""
-                                                src="{{ asset('') }}static/img/114.png" alt=""></div>
-                                    </li>
-
-
-                                </ul>
+                    </ul>
+                    <ul data-v-184f5bd0="" data-v-6e2d35de="" class="ul1">
+                        <li data-v-184f5bd0="" data-v-6e2d35de="">
+                            <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img data-v-184f5bd0=""
+                                    data-v-6e2d35de="" src="{{ asset('') }}static/img/31.png" alt="">
                             </div>
-                            <div data-v-184f5bd0="" data-v-6e2d35de="" class="btn_list">
-                                <div data-v-184f5bd0="" data-v-6e2d35de="" class="go"><button data-v-184f5bd0=""
-                                        data-v-6e2d35de=""
-                                        style="  color:black;  background: linear-gradient(90deg, var(--token-c56d9be0-ff1a-4142-9896-10e19a52f142, rgb(255, 91, 255)) 0%, var(--token-66f80229-774a-4cca-92cb-b110eff3766a, rgb(4, 182, 216)) 48.91786%, var(--token-f05fe42a-0284-4847-be0d-a2808346fd91, rgb(11, 229, 116)) 100%);"
-                                        href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
+                            <div data-v-184f5bd0="" data-v-6e2d35de="" class="flex1"><a
+                                    href="{{ route('user.GenerateTicket') }}">@lang('Feedback')</a>
+                            </div>
+                            <div data-v-184f5bd0="" data-v-6e2d35de="" class="arr"><img data-v-184f5bd0=""
+                                    data-v-6e2d35de="" src="{{ asset('') }}static/img/114.png" alt="">
+                            </div>
+                        </li>
+                        <li data-v-184f5bd0="" data-v-6e2d35de="">
+                            <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img data-v-184f5bd0=""
+                                    data-v-6e2d35de="" src="{{ asset('') }}static/img/7.png" alt="">
+                            </div>
+                            <div data-v-184f5bd0="" data-v-6e2d35de="" class="flex1">@lang('Help Center')
+                            </div>
+                            <div data-v-184f5bd0="" data-v-6e2d35de="" class="arr"><img data-v-184f5bd0=""
+                                    data-v-6e2d35de="" src="{{ asset('') }}static/img/114.png" alt="">
+                            </div>
+                        </li>
+
+                        <li data-v-184f5bd0="" data-v-6e2d35de="">
+                            <div data-v-184f5bd0="" data-v-6e2d35de="" class="ico"><img data-v-184f5bd0=""
+                                    data-v-6e2d35de="" src="{{ asset('') }}static/img/21.png" alt="">
+                            </div>
+                            <div data-v-184f5bd0="" data-v-6e2d35de="" class="flex1"> <a
+                                    href="{{ route('user.about') }}">@lang('About')</a></div>
+                            <div data-v-184f5bd0="" data-v-6e2d35de="" class="arr"><img data-v-184f5bd0=""
+                                    data-v-6e2d35de="" src="{{ asset('') }}static/img/114.png" alt="">
+                            </div>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <div data-v-184f5bd0="" data-v-6e2d35de="" class="btn_list">
+                    <div data-v-184f5bd0="" data-v-6e2d35de="" class="go"><button data-v-184f5bd0=""
+                            data-v-6e2d35de=""
+                            style="  color:black;  background: linear-gradient(90deg, var(--token-c56d9be0-ff1a-4142-9896-10e19a52f142, rgb(255, 91, 255)) 0%, var(--token-66f80229-774a-4cca-92cb-b110eff3766a, rgb(4, 182, 216)) 48.91786%, var(--token-f05fe42a-0284-4847-be0d-a2808346fd91, rgb(11, 229, 116)) 100%);"
+                            href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">@lang('Sign Out')</button>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    </div>
 
 
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                @csrf
-            </form>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+        @csrf
+    </form>
 
 
-            <script>
-                function copyById(elementId) {
-                    const text = document.getElementById(elementId)?.innerText?.trim();
-                    if (!text) return;
+    <script>
+        function copyById(elementId) {
+            const text = document.getElementById(elementId)?.innerText?.trim();
+            if (!text) return;
 
-                    navigator.clipboard.writeText(text)
-                        .then(() => {
-                            showToast("Copied: " + text);
-                        })
-                        .catch(() => {
-                            showToast("Failed to copy");
-                        });
-                }
+            navigator.clipboard.writeText(text)
+                .then(() => {
+                    showToast("Copied: " + text);
+                })
+                .catch(() => {
+                    showToast("Failed to copy");
+                });
+        }
 
-                function showToast(message) {
-                    const toast = document.getElementById("copyToast");
-                    toast.innerText = message;
-                    toast.style.visibility = "visible";
-                    toast.style.opacity = "1";
-                    toast.style.bottom = "50px";
+        function showToast(message) {
+            const toast = document.getElementById("copyToast");
+            toast.innerText = message;
+            toast.style.visibility = "visible";
+            toast.style.opacity = "1";
+            toast.style.bottom = "50px";
 
-                    setTimeout(() => {
-                        toast.style.visibility = "hidden";
-                        toast.style.opacity = "0";
-                        toast.style.bottom = "30px";
-                    }, 2000);
-                }
-            </script>
+            setTimeout(() => {
+                toast.style.visibility = "hidden";
+                toast.style.opacity = "0";
+                toast.style.bottom = "30px";
+            }, 2000);
+        }
+    </script>
